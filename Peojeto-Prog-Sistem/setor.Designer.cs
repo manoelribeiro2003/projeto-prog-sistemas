@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbxSubDivisao = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -76,17 +77,28 @@
             this.btnSalvar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Location = new System.Drawing.Point(151, 163);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(139, 32);
+            this.btnSalvar.Size = new System.Drawing.Size(96, 32);
             this.btnSalvar.TabIndex = 2;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(269, 163);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 32);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Sai&r";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // setor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 231);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.tbxSubDivisao);
             this.Controls.Add(this.label2);
@@ -95,6 +107,7 @@
             this.Name = "setor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PatriMundi - Cadastro de Setor";
+            this.Load += new System.EventHandler(this.setor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +120,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxSubDivisao;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button button1;
     }
 }

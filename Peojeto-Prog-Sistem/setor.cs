@@ -26,5 +26,10 @@ namespace Peojeto_Prog_Sistem
 
             Banco.CadastrarSetor2(cadastrarSetor);
         }
+
+        private void setor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
