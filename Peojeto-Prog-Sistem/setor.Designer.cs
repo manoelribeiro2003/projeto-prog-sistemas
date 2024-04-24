@@ -61,7 +61,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 21);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Subdivisao";
+            this.label2.Text = "Subdivisão";
             // 
             // tbxSubDivisao
             // 
