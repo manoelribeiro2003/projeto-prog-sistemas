@@ -16,7 +16,7 @@ namespace Peojeto_Prog_Sistem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            Application.Run(new Dashboard());
             //Application.Run(new CadastroPatrimonio());
         }
     }
