@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioDoSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -153,16 +153,16 @@
             this.label7.Text = "Seja bem vindo";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // label8
+            // lblUserName
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(196, 107);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 21);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "(nome)";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(196, 107);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(67, 21);
+            this.lblUserName.TabIndex = 16;
+            this.lblUserName.Text = "(nome)";
+            this.lblUserName.Click += new System.EventHandler(this.label8_Click);
             // 
             // cadastroToolStripMenuItem
             // 
@@ -181,7 +181,7 @@
             this.usuarioDoSistemaToolStripMenuItem,
             this.usuarioPatrimonioToolStripMenuItem});
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             // 
             // usuarioDoSistemaToolStripMenuItem
@@ -199,21 +199,21 @@
             // patrimonioToolStripMenuItem
             // 
             this.patrimonioToolStripMenuItem.Name = "patrimonioToolStripMenuItem";
-            this.patrimonioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.patrimonioToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.patrimonioToolStripMenuItem.Text = "Patrimônio";
             this.patrimonioToolStripMenuItem.Click += new System.EventHandler(this.patrimonioToolStripMenuItem_Click);
             // 
             // fornecedorToolStripMenuItem
             // 
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.fornecedorToolStripMenuItem.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
             // 
             // setoToolStripMenuItem
             // 
             this.setoToolStripMenuItem.Name = "setoToolStripMenuItem";
-            this.setoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setoToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.setoToolStripMenuItem.Text = "Setor";
             this.setoToolStripMenuItem.Click += new System.EventHandler(this.setoToolStripMenuItem_Click);
             // 
@@ -461,7 +461,7 @@
             this.Controls.Add(this.guna2TextBox3);
             this.Controls.Add(this.guna2TextBox2);
             this.Controls.Add(this.guna2TextBox1);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
@@ -490,7 +490,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem patrimonioToolStripMenuItem;
