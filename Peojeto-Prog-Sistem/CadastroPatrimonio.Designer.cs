@@ -89,7 +89,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(66, 549);
+            this.label3.Location = new System.Drawing.Point(73, 549);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 67;
@@ -100,7 +100,7 @@
             this.labelGestorResp.AutoSize = true;
             this.labelGestorResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGestorResp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelGestorResp.Location = new System.Drawing.Point(16, 457);
+            this.labelGestorResp.Location = new System.Drawing.Point(21, 457);
             this.labelGestorResp.Name = "labelGestorResp";
             this.labelGestorResp.Size = new System.Drawing.Size(158, 20);
             this.labelGestorResp.TabIndex = 66;
@@ -111,7 +111,7 @@
             this.labelOperador.AutoSize = true;
             this.labelOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOperador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelOperador.Location = new System.Drawing.Point(92, 411);
+            this.labelOperador.Location = new System.Drawing.Point(99, 411);
             this.labelOperador.Name = "labelOperador";
             this.labelOperador.Size = new System.Drawing.Size(80, 20);
             this.labelOperador.TabIndex = 65;
@@ -122,7 +122,7 @@
             this.labelLocalizacao.AutoSize = true;
             this.labelLocalizacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLocalizacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelLocalizacao.Location = new System.Drawing.Point(76, 365);
+            this.labelLocalizacao.Location = new System.Drawing.Point(82, 365);
             this.labelLocalizacao.Name = "labelLocalizacao";
             this.labelLocalizacao.Size = new System.Drawing.Size(97, 20);
             this.labelLocalizacao.TabIndex = 64;
@@ -133,7 +133,7 @@
             this.labelLocacao.AutoSize = true;
             this.labelLocacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLocacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelLocacao.Location = new System.Drawing.Point(100, 319);
+            this.labelLocacao.Location = new System.Drawing.Point(105, 319);
             this.labelLocacao.Name = "labelLocacao";
             this.labelLocacao.Size = new System.Drawing.Size(74, 20);
             this.labelLocacao.TabIndex = 63;
@@ -144,7 +144,7 @@
             this.labelStatus.AutoSize = true;
             this.labelStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelStatus.Location = new System.Drawing.Point(120, 273);
+            this.labelStatus.Location = new System.Drawing.Point(119, 273);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(60, 20);
             this.labelStatus.TabIndex = 62;
@@ -155,18 +155,18 @@
             this.labelCadastro.AutoSize = true;
             this.labelCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCadastro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelCadastro.Location = new System.Drawing.Point(95, 43);
+            this.labelCadastro.Location = new System.Drawing.Point(101, 43);
             this.labelCadastro.Name = "labelCadastro";
-            this.labelCadastro.Size = new System.Drawing.Size(78, 20);
+            this.labelCadastro.Size = new System.Drawing.Size(80, 20);
             this.labelCadastro.TabIndex = 61;
-            this.labelCadastro.Text = "Cadastro:";
+            this.labelCadastro.Text = "Descrição";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(97, 227);
+            this.label2.Location = new System.Drawing.Point(104, 227);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 20);
             this.label2.TabIndex = 60;
@@ -177,7 +177,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(18, 181);
+            this.label1.Location = new System.Drawing.Point(32, 181);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 20);
             this.label1.TabIndex = 59;
@@ -188,7 +188,7 @@
             this.labelFornecedor.AutoSize = true;
             this.labelFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelFornecedor.Location = new System.Drawing.Point(76, 135);
+            this.labelFornecedor.Location = new System.Drawing.Point(80, 135);
             this.labelFornecedor.Name = "labelFornecedor";
             this.labelFornecedor.Size = new System.Drawing.Size(99, 20);
             this.labelFornecedor.TabIndex = 58;
@@ -199,7 +199,7 @@
             this.labelNF.AutoSize = true;
             this.labelNF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelNF.Location = new System.Drawing.Point(145, 89);
+            this.labelNF.Location = new System.Drawing.Point(141, 89);
             this.labelNF.Name = "labelNF";
             this.labelNF.Size = new System.Drawing.Size(38, 20);
             this.labelNF.TabIndex = 57;
@@ -540,12 +540,13 @@
             // 
             // buttonSalvar
             // 
+            this.buttonSalvar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvar.ForeColor = System.Drawing.Color.Black;
-            this.buttonSalvar.Location = new System.Drawing.Point(653, 636);
+            this.buttonSalvar.Location = new System.Drawing.Point(215, 679);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalvar.Size = new System.Drawing.Size(107, 34);
             this.buttonSalvar.TabIndex = 98;
-            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.Text = "&Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click_1);
             // 
