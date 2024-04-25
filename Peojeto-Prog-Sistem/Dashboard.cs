@@ -17,45 +17,10 @@ namespace Peojeto_Prog_Sistem
             InitializeComponent();
         }
 
-        private void CadastroPatrimonio_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void patrimonioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastroPatrimonio cp = new CadastroPatrimonio();
             cp.Show();
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Locados_Click(object sender, EventArgs e)
