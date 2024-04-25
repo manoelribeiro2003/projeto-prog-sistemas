@@ -28,7 +28,42 @@ namespace Peojeto_Prog_Sistem
             cp.Show();
         }
 
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Locados_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
@@ -51,9 +86,16 @@ namespace Peojeto_Prog_Sistem
             mfcs.ShowDialog();
         }
 
+        private void cadastrarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            CadastroManutencao cm = new CadastroManutencao();
+                cm.ShowDialog();
+        }
+
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ConsultaManutencao conManu = new ConsultaManutencao();
+            conManu.ShowDialog();
         }
     }
 }

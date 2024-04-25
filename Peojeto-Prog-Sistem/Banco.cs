@@ -187,6 +187,29 @@ namespace Peojeto_Prog_Sistem
                 throw ex;
             }
         }
+        public static DataTable ObterManutencao()
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT id_manutencao, cadastro, previsao, motivo FROM t_manutencao";
+
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
 
     }
 }
