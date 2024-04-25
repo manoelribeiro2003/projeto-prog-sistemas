@@ -25,6 +25,7 @@ namespace Peojeto_Prog_Sistem
         private void buttonSalvar_Click_1(object sender, EventArgs e)
         {
             Patrimonio patrimonio     = new Patrimonio();
+
             patrimonio.descricaoPatri = txbDescricaoPatri.Text;
             patrimonio.nf             = txbNf.Text;
             patrimonio.fornecedor     = txbFornecedor.Text;
