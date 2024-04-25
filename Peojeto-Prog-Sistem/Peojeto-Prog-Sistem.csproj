@@ -175,6 +175,12 @@
     <Compile Include="setor.Designer.cs">
       <DependentUpon>setor.cs</DependentUpon>
     </Compile>
+    <Compile Include="StatusPatrimonio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusPatrimonio.Designer.cs">
+      <DependentUpon>StatusPatrimonio.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CadastroFornecedor.resx">
       <DependentUpon>CadastroFornecedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +210,9 @@
     </Compile>
     <EmbeddedResource Include="setor.resx">
       <DependentUpon>setor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusPatrimonio.resx">
+      <DependentUpon>StatusPatrimonio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
