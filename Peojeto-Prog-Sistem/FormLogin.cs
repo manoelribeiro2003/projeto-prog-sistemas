@@ -7,12 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Peojeto_Prog_Sistem
 {
     public partial class FormLogin : Form
     {
         DataTable dt = new DataTable();
+        Thread td;
+        string login;
+        string senha;
+        string nomeUsuario;
+        int adm;
         public FormLogin()
         {
             InitializeComponent();
@@ -20,51 +26,61 @@ namespace Peojeto_Prog_Sistem
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            // pegar os valores das caixas de texto tbxLogin e tbxSenha
-            string login = txbLogin.Text;
-            string senha = txbSenha.Text;
-            // verificar se Usuário e senha são válido
+            login = txbLogin.Text;
+            senha = txbSenha.Text;
 
             if (login == "" || senha == "")
             {
-                MessageBox.Show("usuario ou senha invalida");
+                MessageBox.Show("Preencha os campos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txbLogin.Focus();
                 return;
             }
-            string sql = "SELECT * FROM t_usuarios WHERE usuario = '" + login + "' AND senha = '" + senha + "'";
-            dt = Banco.consulta(sql);
-            if (dt.Rows.Count == 1)
-            {
-                Dashboard d = new Dashboard();
-                d.Show();
-            }
             else
             {
-                MessageBox.Show("Usuário e senha incorreta");
-            }
-            
-        }
-    }
-}
-                /*if (senha == "admin123")
-                {
-                    MsnConfirm.ForeColor = Color.Green;
-                    MsnConfirm.Text = "Bem-Vindo! Ok, Acesso Confirmado!";
+                string sql = $"SELECT * FROM usuario_sis WHERE usuario = '{login}' AND senha = '{senha}'";
+                dt = Banco.consulta(sql);
 
+                if (dt.Rows.Count == 1)
+                {
+                    DataRow dataRow = dt.Rows[0];
+                    nomeUsuario = dataRow["nome"].ToString();
+                    adm = Convert.ToInt32(dataRow["adm"].ToString());
+
+                    this.Close();
+
+                    td = new Thread(abrirDashboard);
+                    td.SetApartmentState(ApartmentState.STA);
+                    td.Start();
                 }
                 else
                 {
-                    MsnConfirm.ForeColor = Color.Red;
-                    MsnConfirm.Text = "Senha incorreta!";
+                    MessageBox.Show("Dados Incorretos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
-            {
-                MsnConfirm.ForeColor = Color.Red;
-                MsnConfirm.Text = "Login incorreto.";
-            }
-            // modificar o label MsnConfirm
-        }*/
+        }
+
+        public void abrirDashboard(object obj)
+        {
+            Application.Run(new Dashboard(nomeUsuario, adm));
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txbSenha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnEntrar.PerformClick();
+        }
+
+        private void txbSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
 
              
             

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
@@ -14,7 +10,7 @@ namespace Peojeto_Prog_Sistem
     {
         private static SQLiteConnection conexao;
 
-        private static SQLiteConnection ConexaoBanco()
+        public static SQLiteConnection ConexaoBanco()
         {
             conexao = new SQLiteConnection("Data Source = ..\\..\\..\\Banco\\patriBanco.db");
             conexao.Open();
@@ -22,7 +18,7 @@ namespace Peojeto_Prog_Sistem
         }
         public static DataTable consulta(string sql)
         {
-            SQLiteDataAdapter da = null;
+            SQLiteDataAdapter da;
             DataTable dt = new DataTable();
             try
             {
@@ -82,6 +78,92 @@ namespace Peojeto_Prog_Sistem
             }
            
         }
+
+        public static void DmlStatus(string comando, string oldStatus, string newStatus = "")
+        {
+            if (comando == "INSERT")
+            {
+                if (existeStatus(newStatus))
+                {
+                    MessageBox.Show("Este status já está cadastrado!", "Erro");
+                }
+                else
+                {
+                    try
+                    {
+                        using (var cmd = ConexaoBanco().CreateCommand())
+                        {
+                            cmd.CommandText = $"INSERT INTO configuracoes (ListStatusPatri) VALUES ('{newStatus}')";
+
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Status cadastrado com sucesso", "PatriMundo - Cadastro de Status");
+                            ConexaoBanco().Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Status");
+                        ConexaoBanco().Close();
+                        throw ex;
+                    }
+                }
+            }
+            else if (comando == "UPDATE")
+            {
+                if (oldStatus != newStatus && newStatus != "")
+                {
+                    if (existeStatus(oldStatus))
+                    {
+                        try
+                        {
+                            using (var cmd = ConexaoBanco().CreateCommand())
+                            {
+                                cmd.CommandText = $"UPDATE configuracoes SET ListStatusPatri = '{newStatus}' WHERE ListStatusPatri = '{oldStatus}'";
+
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("Status editado com sucesso", "PatriMundo - Cadastro de Status");
+                                ConexaoBanco().Close();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Ops!!! erro na edição do status", "PatriMundo - Cadastro de Status");
+                            ConexaoBanco().Close();
+                            throw ex;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Status já cadastrado!", "Erro");
+                }
+            }
+            else if (comando == "DELETE")
+            {
+                if (existeStatus(oldStatus))
+                {
+                    try
+                    {
+                        using (var cmd = ConexaoBanco().CreateCommand())
+                        {
+                            cmd.CommandText = $"DELETE from configuracoes WHERE ListStatusPatri = '{oldStatus}'";
+
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Status deletado com sucesso", "PatriMundo - Cadastro de Status");
+                            ConexaoBanco().Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ops!!! erro na deleção do status", "PatriMundo - Cadastro de Status");
+                        ConexaoBanco().Close();
+                        throw ex;
+                    }
+                }
+            }
+            
+        }
+
         private static bool existePatrimonio(Patrimonio c)
         {
             DataTable dt = null;
@@ -94,6 +176,19 @@ namespace Peojeto_Prog_Sistem
             }
             return res;
         }
+
+        private static bool existeStatus(string status)
+        {
+            DataTable dt = null;
+            bool res = false;
+            string sql = $"SELECT * FROM configuracoes WHERE ListStatusPatri = '{status}'";
+            dt = Banco.consulta(sql);
+            if (dt.Rows.Count > 0)
+            {
+                res = true;
+            }
+            return res;
+        }
         public static void cadastroManutencao(Manutencao c)
         {
             try
@@ -101,19 +196,20 @@ namespace Peojeto_Prog_Sistem
                 using (var cmd = ConexaoBanco().CreateCommand())
                 {
                     //preenche o comando com a string
-                    cmd.CommandText = "INSERT INTO t_manutencao (cadastro, previsao, motivo) VALUES (@cadastro, @previsao, @motivo)";
-                    cmd.Parameters.AddWithValue("@cadastro", c.cadastro);
+                    cmd.CommandText = "INSERT INTO t_manutencao (id_patrimonio, descPatri, previsao, motivo) VALUES (@id_patrimonio, @descPatri, @previsao, @motivo)";
+                    cmd.Parameters.AddWithValue("@id_patrimonio", c.id_patrimonio);
+                    cmd.Parameters.AddWithValue("@descPatri", c.descPatri);
                     cmd.Parameters.AddWithValue("@previsao", c.previsao);
                     cmd.Parameters.AddWithValue("@motivo", c.motivo);
                     
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Manutenção cadastrada com sucesso", "PatriMundo - Cadastro de Manutenção");
+                    MessageBox.Show("Manutenção cadastrada com sucesso", "PatriMundo - Cadastro de Manutenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConexaoBanco().Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Manutenção");
+                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Manutenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ConexaoBanco().Close();
                 throw ex;
             }
@@ -163,9 +259,8 @@ namespace Peojeto_Prog_Sistem
             }
         }
         /*Cadastro de setor*/
-        public static void CadastrarSetor2(CadastrarSetor c)
+        public static void CadastrarSetor(CadastrarSetor c)
         {
-            
             try
             {
                 using (var cmd = ConexaoBanco().CreateCommand())
@@ -176,7 +271,7 @@ namespace Peojeto_Prog_Sistem
                     cmd.Parameters.AddWithValue("@subDivisao", c.subDivisao);
                     
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Setpr cadastrado com sucesso!!!", "PatriMundo - Cadastro de Setor");
+                    MessageBox.Show("Setor cadastrado com sucesso!!!", "PatriMundo - Cadastro de Setor");
                     ConexaoBanco().Close();
                 }
             }
@@ -187,16 +282,103 @@ namespace Peojeto_Prog_Sistem
                 throw ex;
             }
         }
-        public static DataTable ObterManutencao()
+        public static void cadastrarUserSis(UsuarioSistema usuarioSistema)
         {
-            SQLiteDataAdapter da = null;
-            DataTable dt = new DataTable();
-
             try
             {
                 using (var cmd = ConexaoBanco().CreateCommand())
                 {
-                    cmd.CommandText = "SELECT id_manutencao, cadastro, previsao, motivo FROM t_manutencao";
+                    //preenche o comando com a string
+                    cmd.CommandText = $"INSERT INTO usuario_sis (usuario, senha, adm, nome) VALUES ('{usuarioSistema.usuario}', '{usuarioSistema.senha}', {usuarioSistema.adm}, '{usuarioSistema.nome}')";
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Usuário cadastrado com sucesso!!!", "PatriMundo - Cadastro de Usuários");
+                    ConexaoBanco().Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Usuário");
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+
+        public static void cadastrarUserPatri(UsuarioPatri usuarioPatri)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    //preenche o comando com a string
+                    cmd.CommandText = $"INSERT INTO t_usuario_patri (nome, responsavel, cargo, setor, subdivisao) VALUES ('{usuarioPatri.nome}', '{usuarioPatri.responsavel}', '{usuarioPatri.cargo}', '{usuarioPatri.setor}', '{usuarioPatri.subdivisao}')";
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Usuário cadastrado com sucesso!!!", "PatriMundo - Cadastro de Usuários");
+                    ConexaoBanco().Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Usuário");
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+
+        public static DataTable ObterManutencao(string descPatri = "")
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            if (descPatri == "")
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT id_manutencao as 'ID Manutenção', id_patrimonio as 'ID Patrimônio', descPatri as 'Descrição', previsao as 'Previsão', motivo as 'Motivo' FROM t_manutencao";
+
+                        da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                        da.Fill(dt);
+                        ConexaoBanco().Close();
+                        return dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            else 
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = $"SELECT * FROM t_manutencao WHERE descPatri = '{descPatri}'";
+
+                        da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                        da.Fill(dt);
+                        ConexaoBanco().Close();
+                        return dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            
+
+        }
+
+        public static DataTable ObterSetores()
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT id as 'ID', nome as 'Nome', subDivisao as 'Subdivisão' FROM t_setor";
 
                     da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
                     da.Fill(dt);
@@ -208,8 +390,357 @@ namespace Peojeto_Prog_Sistem
             {
                 throw ex;
             }
+        }
+
+        public static DataTable buscarListStatusPatri()
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT ListStatusPatri FROM configuracoes";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+
+
+            //Usando DataTable com auxilio de List<>
+            /*SQLiteDataReader reader;
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    List<string> listaStatus = new List<string>();
+                    cmd.CommandText = "SELECT ListStatusPatri FROM configuracoes";
+                    reader = cmd.ExecuteReader(); //retorna um DataReader
+
+                    //Aqui é como se fosse o Fill()
+                    while (reader.Read())//Lê o proximo registro
+                    {
+                        listaStatus.Add(reader.GetString(0));
+                        // substitua 0 pelo índice da coluna que você deseja adicionar à lista
+                        //Neste caso estou usando index 0 porque quero a coluna ListStatusPatri
+                    }
+                    reader.Close();
+                    ConexaoBanco().Close();
+                    return listaStatus;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }*/
+
+
 
         }
+
+        public static DataTable buscarListLocalizacoes(bool distinct = false, bool subdivisao = false, string setor = "")
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+
+            if (distinct == true && subdivisao == false && setor == "")
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT DISTINCT nome FROM t_setor";
+                        da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                        da.Fill(dt);
+                        ConexaoBanco().Close();
+                        return dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ConexaoBanco().Close();
+                    throw ex;
+                }
+            }
+            else if(distinct == false && subdivisao == true && setor == "")
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT subDivisao FROM t_setor";
+                        da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                        da.Fill(dt);
+                        ConexaoBanco().Close();
+                        return dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ConexaoBanco().Close();
+                    throw ex;
+                }
+            }
+            else if (distinct == false && subdivisao == true && setor != "")
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = $"SELECT * FROM t_setor WHERE nome = '{setor}' AND subDivisao != ''";
+                        da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                        da.Fill(dt);
+                        ConexaoBanco().Close();
+                        return dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ConexaoBanco().Close();
+                    throw ex;
+                }
+            }
+            else
+            {
+                return dt;
+            }
+            
+        }
+
+        public static DataTable buscarListLocacoes()
+        {
+            //Locacoes sao as subdivisoes. Se nao houver subdivisao, entao é so o nome do setor mesmo
+
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT DISTINCT nome FROM t_setor";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+        public static DataTable buscarListUserPatri(string setor)
+        {
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"SELECT DISTINCT * FROM T_usuario_patri WHERE setor = '{setor}'";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+
+        public static DataTable buscarListGestor()
+        {
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT DISTINCT responsavel FROM T_usuario_patri";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+
+        public static DataTable BuscarDescricao()
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT DISTINCT descricaoPatri FROM Patrimonios";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+
+        public static DataTable DashboardBuscarPatrimonioEspecifico(string descricaoPatri)
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"SELECT * FROM patrimonios WHERE descricaoPatri = '{descricaoPatri}'";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+
+        }
+
+        public static DataTable DashboardBuscarQuantAloc(string descricaoPatri)
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"SELECT * FROM patrimonios WHERE descricaoPatri = '{descricaoPatri}' AND locacao != 0";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+
+        }
+        public static void excluirManutencao(int id_manutencao)
+                           
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM t_manutencao WHERE id_manutencao = @id_manutencao";
+                    cmd.Parameters.AddWithValue("@id_manutencao", id_manutencao);
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir cadastro", "PatriMundi - Excluir cadastro de Manutencao");
+                ConexaoBanco().Close();
+                throw ex;
+            }
+            
+        }
+
+        public static bool editarManutencao(Manutencao manutencao)
+
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"UPDATE t_manutencao SET descPatri = '{manutencao.descPatri}', previsao = '{manutencao.previsao}', motivo = '{manutencao.motivo}' WHERE id_manutencao = {manutencao.id_manutencao}";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar cadastro", "PatriMundi - Edição cadastro de Manutencao");
+                ConexaoBanco().Close();
+                return false;
+            }
+
+        }
+
+        public static bool editarSetor(int id, string nome, string subdivisao)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"UPDATE t_setor SET nome = '{nome}', subDivisao = '{subdivisao}' WHERE id = {id}";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar cadastro", "PatriMundi - Edição cadastro de Setores", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConexaoBanco().Close();
+                return false;
+            }
+        }
+
+        public static bool editarPatrimonioManutencao(int id)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"UPDATE patrimonios SET status = 'Em manutenção', locacao = 'Manutenção' WHERE id = {id}";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar patrimônio\nCertifique-se que o Patrimônio está no setor de Manutenção", "PatriMundi - Edição de Patrimônios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConexaoBanco().Close();
+                return false;
+            }
+        }
+
 
     }
 }

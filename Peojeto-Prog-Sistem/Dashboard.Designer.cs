@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.Locados = new System.Windows.Forms.Label();
+            this.lblAlocados = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -38,12 +38,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioDoSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioPatrimonioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patrimonioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuárioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,18 +52,23 @@
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.menuStrip1.SuspendLayout();
+            this.msDashboard = new System.Windows.Forms.MenuStrip();
+            this.configuracoesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusDePatrimônioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeSetoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbxQuantidade = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbxAlocados = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbxManutencao = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbxDisponíveis = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbxManPreventiva = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbxUltAquisicao = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbxPatrimonio = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.usuárioDePatrimônioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuárioDoSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msDashboard.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -76,16 +81,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Quantidade";
             // 
-            // Locados
+            // lblAlocados
             // 
-            this.Locados.AutoSize = true;
-            this.Locados.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Locados.Location = new System.Drawing.Point(62, 253);
-            this.Locados.Name = "Locados";
-            this.Locados.Size = new System.Drawing.Size(75, 21);
-            this.Locados.TabIndex = 3;
-            this.Locados.Text = "Locados";
-            this.Locados.Click += new System.EventHandler(this.Locados_Click);
+            this.lblAlocados.AutoSize = true;
+            this.lblAlocados.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlocados.Location = new System.Drawing.Point(62, 253);
+            this.lblAlocados.Name = "lblAlocados";
+            this.lblAlocados.Size = new System.Drawing.Size(84, 21);
+            this.lblAlocados.TabIndex = 3;
+            this.lblAlocados.Text = "Alocados";
             // 
             // label4
             // 
@@ -123,19 +127,19 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(62, 421);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 21);
+            this.label3.Size = new System.Drawing.Size(139, 21);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Untima aquisição";
+            this.label3.Text = "Última aquisição";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(223, 57);
+            this.label1.Location = new System.Drawing.Point(214, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 32);
+            this.label1.Size = new System.Drawing.Size(309, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Gestão de Patrimônio";
+            this.label1.Text = "Gestão de Patrimônios";
             // 
             // label7
             // 
@@ -143,15 +147,16 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(62, 107);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 21);
+            this.label7.Size = new System.Drawing.Size(131, 21);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Seja bem vindo";
+            this.label7.Text = "Seja bem-vindo";
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(196, 107);
+            this.lblUserName.ForeColor = System.Drawing.Color.Teal;
+            this.lblUserName.Location = new System.Drawing.Point(187, 107);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(67, 21);
             this.lblUserName.TabIndex = 16;
@@ -160,34 +165,36 @@
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuárioToolStripMenuItem,
+            this.usuarioToolStripMenuItem,
             this.patrimonioToolStripMenuItem,
             this.fornecedorToolStripMenuItem,
-            this.setoToolStripMenuItem});
+            this.setorToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.cadastroToolStripMenuItem.Text = "&Cadastro";
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.cadastroToolStripMenuItem.Text = "&Cadastrar";
             // 
-            // usuárioToolStripMenuItem
+            // usuarioToolStripMenuItem
             // 
-            this.usuárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuarioDoSistemaToolStripMenuItem,
             this.usuarioPatrimonioToolStripMenuItem});
-            this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.usuárioToolStripMenuItem.Text = "Usuário";
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.usuarioToolStripMenuItem.Text = "Usuário";
             // 
             // usuarioDoSistemaToolStripMenuItem
             // 
             this.usuarioDoSistemaToolStripMenuItem.Name = "usuarioDoSistemaToolStripMenuItem";
             this.usuarioDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.usuarioDoSistemaToolStripMenuItem.Text = "Usuario do Sistema";
+            this.usuarioDoSistemaToolStripMenuItem.Text = "Usuário do Sistema";
+            this.usuarioDoSistemaToolStripMenuItem.Click += new System.EventHandler(this.usuarioDoSistemaToolStripMenuItem_Click);
             // 
             // usuarioPatrimonioToolStripMenuItem
             // 
             this.usuarioPatrimonioToolStripMenuItem.Name = "usuarioPatrimonioToolStripMenuItem";
             this.usuarioPatrimonioToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.usuarioPatrimonioToolStripMenuItem.Text = "Usuário Patrimônio";
+            this.usuarioPatrimonioToolStripMenuItem.Click += new System.EventHandler(this.usuarioPatrimonioToolStripMenuItem_Click);
             // 
             // patrimonioToolStripMenuItem
             // 
@@ -203,12 +210,12 @@
             this.fornecedorToolStripMenuItem.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
             // 
-            // setoToolStripMenuItem
+            // setorToolStripMenuItem
             // 
-            this.setoToolStripMenuItem.Name = "setoToolStripMenuItem";
-            this.setoToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.setoToolStripMenuItem.Text = "Setor";
-            this.setoToolStripMenuItem.Click += new System.EventHandler(this.setoToolStripMenuItem_Click);
+            this.setorToolStripMenuItem.Name = "setorToolStripMenuItem";
+            this.setorToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.setorToolStripMenuItem.Text = "Setor";
+            this.setorToolStripMenuItem.Click += new System.EventHandler(this.setoToolStripMenuItem_Click);
             // 
             // consultaToolStripMenuItem
             // 
@@ -217,11 +224,14 @@
             this.fornecedorToolStripMenuItem1,
             this.patrimonioToolStripMenuItem1});
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.consultaToolStripMenuItem.Text = "Consulta";
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.consultaToolStripMenuItem.Text = "Consultar";
             // 
             // usuárioToolStripMenuItem1
             // 
+            this.usuárioToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuárioDePatrimônioToolStripMenuItem,
+            this.usuárioDoSistemaToolStripMenuItem});
             this.usuárioToolStripMenuItem1.Name = "usuárioToolStripMenuItem1";
             this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.usuárioToolStripMenuItem1.Text = "Usuário";
@@ -236,7 +246,7 @@
             // 
             this.patrimonioToolStripMenuItem1.Name = "patrimonioToolStripMenuItem1";
             this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.patrimonioToolStripMenuItem1.Text = "Patrimonio";
+            this.patrimonioToolStripMenuItem1.Text = "Patrimônio";
             // 
             // manutençãoToolStripMenuItem
             // 
@@ -250,32 +260,33 @@
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // cadastrarToolStripMenuItem
             // 
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click_1);
             // 
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sobreToolStripMenuItem,
+            this.sairToolStripMenuItem,
             this.ajudaToolStripMenuItem1,
             this.sobreToolStripMenuItem1});
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
             this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.ajudaToolStripMenuItem.Text = "Opções";
             // 
-            // sobreToolStripMenuItem
+            // sairToolStripMenuItem
             // 
-            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.sobreToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // ajudaToolStripMenuItem1
             // 
@@ -289,157 +300,220 @@
             this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
             this.sobreToolStripMenuItem1.Text = "Sobre";
             // 
-            // menuStrip1
+            // msDashboard
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
-            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msDashboard.BackColor = System.Drawing.Color.White;
+            this.msDashboard.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.msDashboard.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.consultaToolStripMenuItem,
             this.manutençãoToolStripMenuItem,
+            this.configuracoesToolStripMenuItem,
             this.ajudaToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(738, 24);
-            this.menuStrip1.TabIndex = 14;
-            this.menuStrip1.Text = "menuStrip1";
+            this.msDashboard.Location = new System.Drawing.Point(0, 0);
+            this.msDashboard.Name = "msDashboard";
+            this.msDashboard.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.msDashboard.Size = new System.Drawing.Size(738, 24);
+            this.msDashboard.TabIndex = 14;
+            this.msDashboard.Text = "menuStrip1";
             // 
-            // guna2TextBox1
+            // configuracoesToolStripMenuItem
             // 
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(572, 204);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(110, 28);
-            this.guna2TextBox1.TabIndex = 96;
+            this.configuracoesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusDePatrimônioToolStripMenuItem,
+            this.cadastroDeSetoresToolStripMenuItem});
+            this.configuracoesToolStripMenuItem.Name = "configuracoesToolStripMenuItem";
+            this.configuracoesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.configuracoesToolStripMenuItem.Text = "Configurações";
             // 
-            // guna2TextBox2
+            // statusDePatrimônioToolStripMenuItem
             // 
-            this.guna2TextBox2.BorderRadius = 10;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(572, 246);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(110, 28);
-            this.guna2TextBox2.TabIndex = 97;
+            this.statusDePatrimônioToolStripMenuItem.Name = "statusDePatrimônioToolStripMenuItem";
+            this.statusDePatrimônioToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.statusDePatrimônioToolStripMenuItem.Text = "Status de Patrimônio";
+            this.statusDePatrimônioToolStripMenuItem.Click += new System.EventHandler(this.statusDePatrimônioToolStripMenuItem_Click);
             // 
-            // guna2TextBox3
+            // cadastroDeSetoresToolStripMenuItem
             // 
-            this.guna2TextBox3.BorderRadius = 10;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Location = new System.Drawing.Point(572, 288);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(110, 28);
-            this.guna2TextBox3.TabIndex = 98;
+            this.cadastroDeSetoresToolStripMenuItem.Name = "cadastroDeSetoresToolStripMenuItem";
+            this.cadastroDeSetoresToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.cadastroDeSetoresToolStripMenuItem.Text = "Cadastro de Setores";
+            this.cadastroDeSetoresToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeSetoresToolStripMenuItem_Click);
             // 
-            // guna2TextBox4
+            // tbxQuantidade
             // 
-            this.guna2TextBox4.BorderRadius = 10;
-            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox4.DefaultText = "";
-            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Location = new System.Drawing.Point(572, 330);
-            this.guna2TextBox4.Name = "guna2TextBox4";
-            this.guna2TextBox4.PasswordChar = '\0';
-            this.guna2TextBox4.PlaceholderText = "";
-            this.guna2TextBox4.SelectedText = "";
-            this.guna2TextBox4.Size = new System.Drawing.Size(110, 28);
-            this.guna2TextBox4.TabIndex = 99;
+            this.tbxQuantidade.BorderRadius = 10;
+            this.tbxQuantidade.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxQuantidade.DefaultText = "";
+            this.tbxQuantidade.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbxQuantidade.DisabledState.FillColor = System.Drawing.Color.White;
+            this.tbxQuantidade.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.tbxQuantidade.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxQuantidade.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxQuantidade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxQuantidade.ForeColor = System.Drawing.Color.Black;
+            this.tbxQuantidade.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxQuantidade.Location = new System.Drawing.Point(572, 204);
+            this.tbxQuantidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxQuantidade.Name = "tbxQuantidade";
+            this.tbxQuantidade.PasswordChar = '\0';
+            this.tbxQuantidade.PlaceholderText = "";
+            this.tbxQuantidade.ReadOnly = true;
+            this.tbxQuantidade.SelectedText = "";
+            this.tbxQuantidade.Size = new System.Drawing.Size(110, 28);
+            this.tbxQuantidade.TabIndex = 96;
+            this.tbxQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2TextBox5
+            // tbxAlocados
             // 
-            this.guna2TextBox5.BorderRadius = 10;
-            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox5.DefaultText = "";
-            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.Location = new System.Drawing.Point(572, 372);
-            this.guna2TextBox5.Name = "guna2TextBox5";
-            this.guna2TextBox5.PasswordChar = '\0';
-            this.guna2TextBox5.PlaceholderText = "";
-            this.guna2TextBox5.SelectedText = "";
-            this.guna2TextBox5.Size = new System.Drawing.Size(110, 28);
-            this.guna2TextBox5.TabIndex = 100;
+            this.tbxAlocados.BorderRadius = 10;
+            this.tbxAlocados.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxAlocados.DefaultText = "";
+            this.tbxAlocados.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbxAlocados.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbxAlocados.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxAlocados.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxAlocados.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxAlocados.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxAlocados.ForeColor = System.Drawing.Color.Black;
+            this.tbxAlocados.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxAlocados.Location = new System.Drawing.Point(572, 246);
+            this.tbxAlocados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxAlocados.Name = "tbxAlocados";
+            this.tbxAlocados.PasswordChar = '\0';
+            this.tbxAlocados.PlaceholderText = "";
+            this.tbxAlocados.ReadOnly = true;
+            this.tbxAlocados.SelectedText = "";
+            this.tbxAlocados.Size = new System.Drawing.Size(110, 28);
+            this.tbxAlocados.TabIndex = 97;
+            this.tbxAlocados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2TextBox6
+            // tbxManutencao
             // 
-            this.guna2TextBox6.BorderRadius = 10;
-            this.guna2TextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox6.DefaultText = "";
-            this.guna2TextBox6.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox6.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox6.Location = new System.Drawing.Point(572, 414);
-            this.guna2TextBox6.Name = "guna2TextBox6";
-            this.guna2TextBox6.PasswordChar = '\0';
-            this.guna2TextBox6.PlaceholderText = "";
-            this.guna2TextBox6.SelectedText = "";
-            this.guna2TextBox6.Size = new System.Drawing.Size(110, 28);
-            this.guna2TextBox6.TabIndex = 101;
+            this.tbxManutencao.BorderRadius = 10;
+            this.tbxManutencao.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxManutencao.DefaultText = "";
+            this.tbxManutencao.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbxManutencao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbxManutencao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxManutencao.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxManutencao.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxManutencao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxManutencao.ForeColor = System.Drawing.Color.Black;
+            this.tbxManutencao.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxManutencao.Location = new System.Drawing.Point(572, 288);
+            this.tbxManutencao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxManutencao.Name = "tbxManutencao";
+            this.tbxManutencao.PasswordChar = '\0';
+            this.tbxManutencao.PlaceholderText = "";
+            this.tbxManutencao.ReadOnly = true;
+            this.tbxManutencao.SelectedText = "";
+            this.tbxManutencao.Size = new System.Drawing.Size(110, 28);
+            this.tbxManutencao.TabIndex = 98;
+            this.tbxManutencao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2ComboBox1
+            // tbxDisponíveis
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderRadius = 10;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(62, 146);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(620, 36);
-            this.guna2ComboBox1.TabIndex = 102;
+            this.tbxDisponíveis.BorderRadius = 10;
+            this.tbxDisponíveis.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxDisponíveis.DefaultText = "";
+            this.tbxDisponíveis.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbxDisponíveis.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbxDisponíveis.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxDisponíveis.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxDisponíveis.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxDisponíveis.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxDisponíveis.ForeColor = System.Drawing.Color.Black;
+            this.tbxDisponíveis.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxDisponíveis.Location = new System.Drawing.Point(572, 330);
+            this.tbxDisponíveis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDisponíveis.Name = "tbxDisponíveis";
+            this.tbxDisponíveis.PasswordChar = '\0';
+            this.tbxDisponíveis.PlaceholderText = "";
+            this.tbxDisponíveis.ReadOnly = true;
+            this.tbxDisponíveis.SelectedText = "";
+            this.tbxDisponíveis.Size = new System.Drawing.Size(110, 28);
+            this.tbxDisponíveis.TabIndex = 99;
+            this.tbxDisponíveis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbxManPreventiva
+            // 
+            this.tbxManPreventiva.BorderRadius = 10;
+            this.tbxManPreventiva.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxManPreventiva.DefaultText = "";
+            this.tbxManPreventiva.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbxManPreventiva.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbxManPreventiva.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxManPreventiva.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxManPreventiva.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxManPreventiva.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxManPreventiva.ForeColor = System.Drawing.Color.Black;
+            this.tbxManPreventiva.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxManPreventiva.Location = new System.Drawing.Point(572, 372);
+            this.tbxManPreventiva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxManPreventiva.Name = "tbxManPreventiva";
+            this.tbxManPreventiva.PasswordChar = '\0';
+            this.tbxManPreventiva.PlaceholderText = "";
+            this.tbxManPreventiva.ReadOnly = true;
+            this.tbxManPreventiva.SelectedText = "";
+            this.tbxManPreventiva.Size = new System.Drawing.Size(110, 28);
+            this.tbxManPreventiva.TabIndex = 100;
+            this.tbxManPreventiva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbxUltAquisicao
+            // 
+            this.tbxUltAquisicao.BorderRadius = 10;
+            this.tbxUltAquisicao.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxUltAquisicao.DefaultText = "";
+            this.tbxUltAquisicao.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbxUltAquisicao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbxUltAquisicao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxUltAquisicao.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxUltAquisicao.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxUltAquisicao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxUltAquisicao.ForeColor = System.Drawing.Color.Black;
+            this.tbxUltAquisicao.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxUltAquisicao.Location = new System.Drawing.Point(572, 414);
+            this.tbxUltAquisicao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxUltAquisicao.Name = "tbxUltAquisicao";
+            this.tbxUltAquisicao.PasswordChar = '\0';
+            this.tbxUltAquisicao.PlaceholderText = "";
+            this.tbxUltAquisicao.ReadOnly = true;
+            this.tbxUltAquisicao.SelectedText = "";
+            this.tbxUltAquisicao.Size = new System.Drawing.Size(110, 28);
+            this.tbxUltAquisicao.TabIndex = 101;
+            this.tbxUltAquisicao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cbxPatrimonio
+            // 
+            this.cbxPatrimonio.BackColor = System.Drawing.Color.Transparent;
+            this.cbxPatrimonio.BorderRadius = 10;
+            this.cbxPatrimonio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxPatrimonio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPatrimonio.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxPatrimonio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxPatrimonio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPatrimonio.ForeColor = System.Drawing.Color.Black;
+            this.cbxPatrimonio.ItemHeight = 30;
+            this.cbxPatrimonio.Location = new System.Drawing.Point(62, 146);
+            this.cbxPatrimonio.Name = "cbxPatrimonio";
+            this.cbxPatrimonio.Size = new System.Drawing.Size(620, 36);
+            this.cbxPatrimonio.TabIndex = 102;
+            this.cbxPatrimonio.SelectionChangeCommitted += new System.EventHandler(this.cbxPatrimonio_SelectionChangeCommitted);
+            this.cbxPatrimonio.Click += new System.EventHandler(this.cbxPatrimonio_Click);
+            // 
+            // usuárioDePatrimônioToolStripMenuItem
+            // 
+            this.usuárioDePatrimônioToolStripMenuItem.Name = "usuárioDePatrimônioToolStripMenuItem";
+            this.usuárioDePatrimônioToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.usuárioDePatrimônioToolStripMenuItem.Text = "Usuário de Patrimônio";
+            this.usuárioDePatrimônioToolStripMenuItem.Click += new System.EventHandler(this.usuárioDePatrimônioToolStripMenuItem_Click);
+            // 
+            // usuárioDoSistemaToolStripMenuItem
+            // 
+            this.usuárioDoSistemaToolStripMenuItem.Name = "usuárioDoSistemaToolStripMenuItem";
+            this.usuárioDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.usuárioDoSistemaToolStripMenuItem.Text = "Usuário do Sistema";
             // 
             // Dashboard
             // 
@@ -447,28 +521,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(738, 528);
-            this.Controls.Add(this.guna2ComboBox1);
-            this.Controls.Add(this.guna2TextBox6);
-            this.Controls.Add(this.guna2TextBox5);
-            this.Controls.Add(this.guna2TextBox4);
-            this.Controls.Add(this.guna2TextBox3);
-            this.Controls.Add(this.guna2TextBox2);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.cbxPatrimonio);
+            this.Controls.Add(this.tbxUltAquisicao);
+            this.Controls.Add(this.tbxManPreventiva);
+            this.Controls.Add(this.tbxDisponíveis);
+            this.Controls.Add(this.tbxManutencao);
+            this.Controls.Add(this.tbxAlocados);
+            this.Controls.Add(this.tbxQuantidade);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.Locados);
+            this.Controls.Add(this.lblAlocados);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.msDashboard);
+            this.MainMenuStrip = this.msDashboard;
             this.Name = "Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.msDashboard.ResumeLayout(false);
+            this.msDashboard.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,7 +551,7 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label Locados;
+        private System.Windows.Forms.Label lblAlocados;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -485,10 +560,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem patrimonioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fornecedorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem fornecedorToolStripMenuItem1;
@@ -497,18 +572,23 @@
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private System.Windows.Forms.MenuStrip msDashboard;
+        private Guna.UI2.WinForms.Guna2TextBox tbxQuantidade;
+        private Guna.UI2.WinForms.Guna2TextBox tbxAlocados;
+        private Guna.UI2.WinForms.Guna2TextBox tbxManutencao;
+        private Guna.UI2.WinForms.Guna2TextBox tbxDisponíveis;
+        private Guna.UI2.WinForms.Guna2TextBox tbxManPreventiva;
+        private Guna.UI2.WinForms.Guna2TextBox tbxUltAquisicao;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxPatrimonio;
         private System.Windows.Forms.ToolStripMenuItem usuarioDoSistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioPatrimonioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuracoesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statusDePatrimônioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastroDeSetoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuárioDePatrimônioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuárioDoSistemaToolStripMenuItem;
     }
 }

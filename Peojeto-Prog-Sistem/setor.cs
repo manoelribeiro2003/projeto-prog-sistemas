@@ -13,6 +13,7 @@ namespace Peojeto_Prog_Sistem
 {
     public partial class setor : Form
     {
+        CadastrarSetor cadastrarSetor = new CadastrarSetor();
         public setor()
         {
             InitializeComponent();
@@ -20,16 +21,42 @@ namespace Peojeto_Prog_Sistem
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            CadastrarSetor cadastrarSetor   = new CadastrarSetor();
-            cadastrarSetor.nome             = tbxNome.Text;
-            cadastrarSetor.subDivisao       = tbxSubDivisao.Text;
 
-            Banco.CadastrarSetor2(cadastrarSetor);
+            cadastrarSetor.nome = tbxNome.Text;
+            cadastrarSetor.subDivisao = tbxSubDivisao.Text;
+
+            if (cadastrarSetor.nome == "")
+            {
+                MessageBox.Show("Preencha o nome do setor", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Banco.CadastrarSetor(cadastrarSetor);
+            }
+
+
         }
 
         private void setor_Load(object sender, EventArgs e)
         {
+            tbxSubDivisao.Enabled = false;
+        }
 
+        private void cbxSubdivisao_Click(object sender, EventArgs e)
+        {
+            if (cbxSubdivisao.Checked == true)
+            {
+                tbxSubDivisao.Enabled = true;
+            }
+            else
+            {
+                tbxSubDivisao.Enabled = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

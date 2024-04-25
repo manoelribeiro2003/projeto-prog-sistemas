@@ -12,50 +12,10 @@ namespace Peojeto_Prog_Sistem
 {
     public partial class ConsultaManutencao : Form
     {
-        Manutencao c = new Manutencao();
+        Manutencao manutencao = new Manutencao();
         public ConsultaManutencao()
         {
             InitializeComponent();
-        }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelFornecedor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelNF_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void ConsultaManutencao_Load(object sender, EventArgs e)
@@ -70,13 +30,55 @@ namespace Peojeto_Prog_Sistem
             int contLinhas = dgv.SelectedRows.Count;
             if (contLinhas > 0)
             {
-                DataTable dt = new DataTable();
-                string vid = dgv.SelectedRows[0].Cells[0].Value.ToString();
-                c.id_manutencao = Convert.ToInt32(dgv.SelectedRows[0].Cells["id_manutencao"].Value);
-                tbxCadastro.Text = dgv.SelectedRows[0].Cells["cadastro"].Value.ToString();
-                tbxPrevisao.Text = dgv.SelectedRows[0].Cells["previsao"].Value.ToString();
-                tbxObs.Text = dgv.SelectedRows[0].Cells["motivo"].Value.ToString();
+                manutencao.id_manutencao = Convert.ToInt32(dgv.SelectedRows[0].Cells["ID Manutenção"].Value);
+
+                tbxDescPatri.Text = dgv.SelectedRows[0].Cells["Descrição"].Value.ToString();
+                tbxPrevisao.Text = dgv.SelectedRows[0].Cells["Previsão"].Value.ToString();
+                tbxObs.Text = dgv.SelectedRows[0].Cells["Motivo"].Value.ToString();
+                tbxPatrimonio.Text = dgv.SelectedRows[0].Cells["ID Patrimônio"].Value.ToString();
             }
+        }
+
+        private void btnExcluirManut_Click(object sender, EventArgs e)
+        {
+            manutencao.descPatri = dgvManutencao.SelectedRows[0].Cells["Descrição"].Value.ToString();
+            DialogResult res = MessageBox.Show("Confirmar exclusão de manutencao do item " + manutencao.descPatri + "?", "PatriMundi - Confirmar exclusao", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                manutencao.id_manutencao = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["ID Manutenção"].Value);
+                Banco.excluirManutencao(manutencao.id_manutencao);
+                dgvManutencao.DataSource = Banco.ObterManutencao();
+            }
+            tbxPatrimonio.Text = "";
+            tbxDescPatri.Text = "";
+            tbxPrevisao.Text = "";
+            tbxObs.Text = "";
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            manutencao.descPatri = tbxDescPatri.Text;
+            manutencao.previsao = tbxPrevisao.Text;
+            manutencao.motivo = tbxObs.Text;
+            string nome = dgvManutencao.SelectedRows[0].Cells["Descrição"].Value.ToString();
+            DialogResult res = MessageBox.Show("Confirmar edição de manutenção do item " + nome + "?", "PatriMundi - Confirmar exclusao", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                manutencao.id_manutencao = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["ID Manutenção"].Value.ToString());
+                bool rowsAffected = Banco.editarManutencao(manutencao);
+                if (rowsAffected)
+                {
+                    MessageBox.Show("Item editado com sucesso!", "Edição de manutenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                dgvManutencao.DataSource = Banco.ObterManutencao();
+
+            }
+            tbxPatrimonio.Text = "";
+            tbxDescPatri.Text = "";
+            tbxPrevisao.Text = "";
+            tbxObs.Text = "";
+
         }
     }
 }

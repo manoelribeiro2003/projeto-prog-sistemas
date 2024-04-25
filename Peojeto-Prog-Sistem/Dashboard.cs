@@ -7,77 +7,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using System.Web.UI.WebControls;
+using System.Threading;
 
 namespace Peojeto_Prog_Sistem
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        int adm;
+        public Dashboard(string login, int adm)
         {
             InitializeComponent();
-        }
+            lblUserName.Text = login;
+            this.adm = adm;
+            if (this.adm == 1)
+            {
+                usuarioToolStripMenuItem.Enabled = true;
+                setorToolStripMenuItem.Enabled = true;
+                configuracoesToolStripMenuItem.Enabled = true;
 
-        private void CadastroPatrimonio_Load(object sender, EventArgs e)
-        {
+            }
+            else
+            {
+                usuarioToolStripMenuItem.Enabled = false;
+                setorToolStripMenuItem.Enabled = false;
+                configuracoesToolStripMenuItem.Enabled = false;
+            }
 
         }
 
         private void patrimonioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastroPatrimonio cp = new CadastroPatrimonio();
-            cp.Show();
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Locados_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CadastroManutencao cm = new CadastroManutencao();
-            cm.Show();
+            cp.ShowDialog();
         }
 
         private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastroFornecedor cf = new CadastroFornecedor();
-            cf.Show();
+            cf.ShowDialog();
         }
 
         private void setoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,13 +58,104 @@ namespace Peojeto_Prog_Sistem
         private void cadastrarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             CadastroManutencao cm = new CadastroManutencao();
-                cm.ShowDialog();
+            cm.ShowDialog();
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultaManutencao conManu = new ConsultaManutencao();
             conManu.ShowDialog();
+        }
+
+        private void statusDePatrimônioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StatusPatrimonio statusPatrimonio = new StatusPatrimonio();
+            statusPatrimonio.ShowDialog();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            DataTable listDesc = Banco.BuscarDescricao();
+            foreach (DataRow item in listDesc.Rows)
+            {
+                cbxPatrimonio.Items.Add(item[0].ToString());
+            }
+        }
+
+        private void cbxPatrimonio_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            string descricaoPatri = cbxPatrimonio.SelectedItem.ToString();
+
+            DataTable dtQuantidade = Banco.DashboardBuscarPatrimonioEspecifico(descricaoPatri);
+            tbxQuantidade.Text = Convert.ToString(dtQuantidade.Rows.Count);
+
+            DataTable dtQuantAloc = Banco.DashboardBuscarQuantAloc(descricaoPatri);
+            tbxAlocados.Text = Convert.ToString(dtQuantAloc.Rows.Count);
+
+            DataTable dtQuantManut = Banco.ObterManutencao(descricaoPatri);
+            tbxManutencao.Text = Convert.ToString(dtQuantManut.Rows.Count);
+
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Thread td = new Thread(fecharDashboard);
+            td.SetApartmentState(ApartmentState.STA);
+            td.Start();
+        }
+
+        private void fecharDashboard()
+        {
+            this.Close();
+
+            Application.Run(new FormLogin());
+
+        }
+
+        private void sobreToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dashboard_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void usuarioDoSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroUsuarioSistema usuarioSistema = new CadastroUsuarioSistema();
+            usuarioSistema.ShowDialog();
+        }
+
+        private void usuarioPatrimonioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroUsuarioPatri cadastroUsuarioPatri = new CadastroUsuarioPatri();
+            cadastroUsuarioPatri.ShowDialog();
+        }
+
+        private void cadastroDeSetoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarSetores consultarSetores = new ConsultarSetores();
+            consultarSetores.ShowDialog();
+        }
+
+        private void cbxPatrimonio_Click(object sender, EventArgs e)
+        {
+            DataTable listDesc = Banco.BuscarDescricao();
+            foreach (DataRow item in listDesc.Rows)
+            {
+                cbxPatrimonio.Items.Add(item[0].ToString());
+            }
+        }
+
+        private void usuárioDePatrimônioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarUsuarioPatri cup = new ConsultarUsuarioPatri();
+            cup.ShowDialog();
         }
     }
 }

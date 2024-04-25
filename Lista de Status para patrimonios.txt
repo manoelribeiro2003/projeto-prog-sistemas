@@ -1,0 +1,27 @@
+
+-> LISTA DE STATUS PARA PATRIMONIOS
+
+Inativo - Não está em uso e não alocado-------------------------------|---Disponíveis
+Em estoque - Não está em uso e não alocado (localização Estoque) -----|
+
+
+
+Em manutenção - nao está em uso e está em um setor de manutenção -----|
+Perdido    		                                              |
+Emprestado     			                                      |---Indisponíveis
+Vendido    		                                              |
+Alocado - Alocados e em uso-------------------------------------------|
+
+-> DASHBOARD
+Disponíveis = Indisponíveis - Quantidade Total
+
+
+- Quando adicionar uma manutenção, automaticamente o status do patrimonio altera para 'Em manutenção'
+- Quando adicionar uma localizacao para um patri, adicionar o status 'Alocado' automaticamente
+- Mostrar a Lista de Operadores quando for cadastrar um patri
+- Mostrar a Lista de Gestor Responsavel quando for cadastrar um patri
+- Mostrar a Lista de Fornecedores quando for cadastrar um patri
+- Fazer Tela e lista de cadastro e edicao de setores
+
+- Ver depois a parte de cadastro de fornecedor, se tem sentido, pois no cadastro de patrimonio tem um tbx de fornecedor. Para que entao um cadastro de fornecedor?
+   - Fornecedor está praticamente OK
