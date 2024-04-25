@@ -32,10 +32,10 @@ namespace Peojeto_Prog_Sistem
                 return;
             }
             string sql = "SELECT * FROM t_usuarios WHERE usuario = '" + login + "' AND senha = '" + senha + "'";
-            dt = banco.consulta(sql);
+            dt = Banco.consulta(sql);
             if (dt.Rows.Count == 1)
             {
-                Form2 d = new Form2();
+                Dashboard d = new Dashboard();
                 d.Show();
             }
             else

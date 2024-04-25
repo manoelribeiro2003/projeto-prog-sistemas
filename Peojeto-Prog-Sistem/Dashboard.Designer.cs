@@ -75,7 +75,6 @@
             this.label2.Size = new System.Drawing.Size(108, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "Quantidade";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Locados
             // 
@@ -97,7 +96,6 @@
             this.label4.Size = new System.Drawing.Size(114, 21);
             this.label4.TabIndex = 4;
             this.label4.Text = "Manutenção";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -108,7 +106,6 @@
             this.label5.Size = new System.Drawing.Size(203, 21);
             this.label5.TabIndex = 5;
             this.label5.Text = "Manutenção Preventiva";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -119,7 +116,6 @@
             this.label6.Size = new System.Drawing.Size(94, 21);
             this.label6.TabIndex = 6;
             this.label6.Text = "Disponíveis";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label3
             // 
@@ -130,7 +126,6 @@
             this.label3.Size = new System.Drawing.Size(146, 21);
             this.label3.TabIndex = 7;
             this.label3.Text = "Untima aquisição";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
@@ -151,7 +146,6 @@
             this.label7.Size = new System.Drawing.Size(130, 21);
             this.label7.TabIndex = 15;
             this.label7.Text = "Seja bem vindo";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lblUserName
             // 
@@ -162,7 +156,6 @@
             this.lblUserName.Size = new System.Drawing.Size(67, 21);
             this.lblUserName.TabIndex = 16;
             this.lblUserName.Text = "(nome)";
-            this.lblUserName.Click += new System.EventHandler(this.label8_Click);
             // 
             // cadastroToolStripMenuItem
             // 
@@ -257,13 +250,14 @@
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
+            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // cadastrarToolStripMenuItem
             // 
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // ajudaToolStripMenuItem
