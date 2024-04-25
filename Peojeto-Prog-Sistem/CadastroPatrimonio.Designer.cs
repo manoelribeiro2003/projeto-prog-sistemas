@@ -276,8 +276,6 @@
             this.cbbStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbStatus.ItemHeight = 30;
-            this.cbbStatus.Items.AddRange(new object[] {
-            "Status 1"});
             this.cbbStatus.Location = new System.Drawing.Point(215, 265);
             this.cbbStatus.Name = "cbbStatus";
             this.cbbStatus.Size = new System.Drawing.Size(293, 36);

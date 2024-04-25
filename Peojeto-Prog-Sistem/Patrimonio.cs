@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Peojeto_Prog_Sistem
 {
-    internal class Patrimonio
+    class Patrimonio
     {
         public int id;
         public string descricaoPatri;
@@ -21,5 +21,13 @@ namespace Peojeto_Prog_Sistem
         public string gestorResp;
         public string valor;
         public string obs;
+
+        public List<string> listaStatus = new List<string>();
+        
+        public Patrimonio()
+        {
+            listaStatus.Add("Disponível");
+            listaStatus.Add("Indisponível");
+        }
     }
 }

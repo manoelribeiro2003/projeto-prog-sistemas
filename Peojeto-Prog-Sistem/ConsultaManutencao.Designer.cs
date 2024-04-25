@@ -63,7 +63,6 @@
             this.tbxObs.SelectedText = "";
             this.tbxObs.Size = new System.Drawing.Size(281, 110);
             this.tbxObs.TabIndex = 102;
-            this.tbxObs.TextChanged += new System.EventHandler(this.guna2TextBox5_TextChanged);
             // 
             // tbxPrevisao
             // 
@@ -84,7 +83,6 @@
             this.tbxPrevisao.SelectedText = "";
             this.tbxPrevisao.Size = new System.Drawing.Size(281, 28);
             this.tbxPrevisao.TabIndex = 101;
-            this.tbxPrevisao.TextChanged += new System.EventHandler(this.guna2TextBox3_TextChanged);
             // 
             // tbxCadastro
             // 
@@ -105,7 +103,6 @@
             this.tbxCadastro.SelectedText = "";
             this.tbxCadastro.Size = new System.Drawing.Size(281, 28);
             this.tbxCadastro.TabIndex = 100;
-            this.tbxCadastro.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
             // 
             // tbxPatrimonio
             // 
@@ -126,7 +123,6 @@
             this.tbxPatrimonio.SelectedText = "";
             this.tbxPatrimonio.Size = new System.Drawing.Size(281, 28);
             this.tbxPatrimonio.TabIndex = 99;
-            this.tbxPatrimonio.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // label1
             // 
@@ -138,7 +134,6 @@
             this.label1.Size = new System.Drawing.Size(97, 21);
             this.label1.TabIndex = 98;
             this.label1.Text = "Patrimônio:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -150,7 +145,6 @@
             this.label2.Size = new System.Drawing.Size(69, 21);
             this.label2.TabIndex = 97;
             this.label2.Text = "Motivo:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // labelFornecedor
             // 
@@ -162,7 +156,6 @@
             this.labelFornecedor.Size = new System.Drawing.Size(78, 21);
             this.labelFornecedor.TabIndex = 96;
             this.labelFornecedor.Text = "Previsão:";
-            this.labelFornecedor.Click += new System.EventHandler(this.labelFornecedor_Click);
             // 
             // labelNF
             // 
@@ -174,7 +167,6 @@
             this.labelNF.Size = new System.Drawing.Size(88, 21);
             this.labelNF.TabIndex = 95;
             this.labelNF.Text = "Cadastro:";
-            this.labelNF.Click += new System.EventHandler(this.labelNF_Click);
             // 
             // dgvManutencao
             // 

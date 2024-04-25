@@ -18,46 +18,6 @@ namespace Peojeto_Prog_Sistem
             InitializeComponent();
         }
 
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelFornecedor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelNF_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ConsultaManutencao_Load(object sender, EventArgs e)
         {
             dgvManutencao.DataSource = Banco.ObterManutencao();

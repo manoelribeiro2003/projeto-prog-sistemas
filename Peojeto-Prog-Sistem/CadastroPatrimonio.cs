@@ -14,7 +14,10 @@ namespace Peojeto_Prog_Sistem
     {
         public CadastroPatrimonio()
         {
+            Patrimonio patrimonio = new Patrimonio();
             InitializeComponent();
+            cbbStatus.Items.Add(patrimonio.listaStatus[0].ToString());
+            cbbStatus.Items.Add(patrimonio.listaStatus[1].ToString());
         }
 
         private void CadastroPatrimonio_Load(object sender, EventArgs e)
