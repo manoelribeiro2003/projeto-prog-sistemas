@@ -85,5 +85,17 @@ namespace Peojeto_Prog_Sistem
             setor mfcs = new setor();
             mfcs.ShowDialog();
         }
+
+        private void cadastrarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            CadastroManutencao cm = new CadastroManutencao();
+                cm.ShowDialog();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaManutencao conManu = new ConsultaManutencao();
+            conManu.ShowDialog();
+        }
     }
 }

@@ -39,6 +39,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioDoSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioPatrimonioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patrimonioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,8 +63,6 @@
             this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.usuarioDoSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuarioPatrimonioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,7 +138,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(223, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 33);
+            this.label1.Size = new System.Drawing.Size(297, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gestão de Patrimônio";
             // 
@@ -184,6 +184,18 @@
             this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             // 
+            // usuarioDoSistemaToolStripMenuItem
+            // 
+            this.usuarioDoSistemaToolStripMenuItem.Name = "usuarioDoSistemaToolStripMenuItem";
+            this.usuarioDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.usuarioDoSistemaToolStripMenuItem.Text = "Usuario do Sistema";
+            // 
+            // usuarioPatrimonioToolStripMenuItem
+            // 
+            this.usuarioPatrimonioToolStripMenuItem.Name = "usuarioPatrimonioToolStripMenuItem";
+            this.usuarioPatrimonioToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.usuarioPatrimonioToolStripMenuItem.Text = "Usuário Patrimônio";
+            // 
             // patrimonioToolStripMenuItem
             // 
             this.patrimonioToolStripMenuItem.Name = "patrimonioToolStripMenuItem";
@@ -218,19 +230,19 @@
             // usuárioToolStripMenuItem1
             // 
             this.usuárioToolStripMenuItem1.Name = "usuárioToolStripMenuItem1";
-            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.usuárioToolStripMenuItem1.Text = "Usuário";
             // 
             // fornecedorToolStripMenuItem1
             // 
             this.fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
-            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
             // 
             // patrimonioToolStripMenuItem1
             // 
             this.patrimonioToolStripMenuItem1.Name = "patrimonioToolStripMenuItem1";
-            this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.patrimonioToolStripMenuItem1.Text = "Patrimonio";
             // 
             // manutençãoToolStripMenuItem
@@ -245,14 +257,16 @@
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
+            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // cadastrarToolStripMenuItem
             // 
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+            this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click_1);
             // 
             // ajudaToolStripMenuItem
             // 
@@ -433,18 +447,6 @@
             this.guna2ComboBox1.Name = "guna2ComboBox1";
             this.guna2ComboBox1.Size = new System.Drawing.Size(620, 36);
             this.guna2ComboBox1.TabIndex = 102;
-            // 
-            // usuarioDoSistemaToolStripMenuItem
-            // 
-            this.usuarioDoSistemaToolStripMenuItem.Name = "usuarioDoSistemaToolStripMenuItem";
-            this.usuarioDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.usuarioDoSistemaToolStripMenuItem.Text = "Usuario do Sistema";
-            // 
-            // usuarioPatrimonioToolStripMenuItem
-            // 
-            this.usuarioPatrimonioToolStripMenuItem.Name = "usuarioPatrimonioToolStripMenuItem";
-            this.usuarioPatrimonioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.usuarioPatrimonioToolStripMenuItem.Text = "Usuário Patrimônio";
             // 
             // Dashboard
             // 

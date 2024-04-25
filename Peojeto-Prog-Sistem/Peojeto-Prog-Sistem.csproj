@@ -146,6 +146,12 @@
     <Compile Include="CadastroPatrimonio.Designer.cs">
       <DependentUpon>CadastroPatrimonio.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaManutencao.Designer.cs">
+      <DependentUpon>ConsultaManutencao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroPatrimonio.resx">
       <DependentUpon>CadastroPatrimonio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaManutencao.resx">
+      <DependentUpon>ConsultaManutencao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
