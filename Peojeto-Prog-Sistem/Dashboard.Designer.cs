@@ -135,7 +135,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(221, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 32);
+            this.label1.Size = new System.Drawing.Size(298, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gestão de Patrimônio";
             // 
@@ -167,8 +167,8 @@
             this.fornecedorToolStripMenuItem,
             this.setoToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.cadastroToolStripMenuItem.Text = "&Cadastro";
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.cadastroToolStripMenuItem.Text = "&Cadastrar";
             // 
             // usuárioToolStripMenuItem
             // 
@@ -176,7 +176,7 @@
             this.usuarioDoSistemaToolStripMenuItem,
             this.usuarioPatrimonioToolStripMenuItem});
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             // 
             // usuarioDoSistemaToolStripMenuItem
@@ -194,21 +194,21 @@
             // patrimonioToolStripMenuItem
             // 
             this.patrimonioToolStripMenuItem.Name = "patrimonioToolStripMenuItem";
-            this.patrimonioToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.patrimonioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.patrimonioToolStripMenuItem.Text = "Patrimônio";
             this.patrimonioToolStripMenuItem.Click += new System.EventHandler(this.patrimonioToolStripMenuItem_Click);
             // 
             // fornecedorToolStripMenuItem
             // 
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fornecedorToolStripMenuItem.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
             // 
             // setoToolStripMenuItem
             // 
             this.setoToolStripMenuItem.Name = "setoToolStripMenuItem";
-            this.setoToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.setoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.setoToolStripMenuItem.Text = "Setor";
             this.setoToolStripMenuItem.Click += new System.EventHandler(this.setoToolStripMenuItem_Click);
             // 
@@ -219,25 +219,25 @@
             this.fornecedorToolStripMenuItem1,
             this.patrimonioToolStripMenuItem1});
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.consultaToolStripMenuItem.Text = "Consulta";
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.consultaToolStripMenuItem.Text = "Consultar";
             // 
             // usuárioToolStripMenuItem1
             // 
             this.usuárioToolStripMenuItem1.Name = "usuárioToolStripMenuItem1";
-            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.usuárioToolStripMenuItem1.Text = "Usuário";
             // 
             // fornecedorToolStripMenuItem1
             // 
             this.fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
-            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
             // 
             // patrimonioToolStripMenuItem1
             // 
             this.patrimonioToolStripMenuItem1.Name = "patrimonioToolStripMenuItem1";
-            this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.patrimonioToolStripMenuItem1.Text = "Patrimonio";
             // 
             // manutençãoToolStripMenuItem
@@ -252,14 +252,14 @@
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // cadastrarToolStripMenuItem
             // 
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click_1);
             // 
@@ -332,15 +332,16 @@
             this.tbxQuantidade.DisabledState.FillColor = System.Drawing.Color.White;
             this.tbxQuantidade.DisabledState.ForeColor = System.Drawing.Color.Black;
             this.tbxQuantidade.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxQuantidade.Enabled = false;
             this.tbxQuantidade.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxQuantidade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxQuantidade.ForeColor = System.Drawing.Color.Black;
             this.tbxQuantidade.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxQuantidade.Location = new System.Drawing.Point(572, 204);
+            this.tbxQuantidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxQuantidade.Name = "tbxQuantidade";
             this.tbxQuantidade.PasswordChar = '\0';
             this.tbxQuantidade.PlaceholderText = "";
+            this.tbxQuantidade.ReadOnly = true;
             this.tbxQuantidade.SelectedText = "";
             this.tbxQuantidade.Size = new System.Drawing.Size(110, 28);
             this.tbxQuantidade.TabIndex = 96;
@@ -360,9 +361,11 @@
             this.tbxLocados.ForeColor = System.Drawing.Color.Black;
             this.tbxLocados.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxLocados.Location = new System.Drawing.Point(572, 246);
+            this.tbxLocados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxLocados.Name = "tbxLocados";
             this.tbxLocados.PasswordChar = '\0';
             this.tbxLocados.PlaceholderText = "";
+            this.tbxLocados.ReadOnly = true;
             this.tbxLocados.SelectedText = "";
             this.tbxLocados.Size = new System.Drawing.Size(110, 28);
             this.tbxLocados.TabIndex = 97;
@@ -382,9 +385,11 @@
             this.tbxManutencao.ForeColor = System.Drawing.Color.Black;
             this.tbxManutencao.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxManutencao.Location = new System.Drawing.Point(572, 288);
+            this.tbxManutencao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxManutencao.Name = "tbxManutencao";
             this.tbxManutencao.PasswordChar = '\0';
             this.tbxManutencao.PlaceholderText = "";
+            this.tbxManutencao.ReadOnly = true;
             this.tbxManutencao.SelectedText = "";
             this.tbxManutencao.Size = new System.Drawing.Size(110, 28);
             this.tbxManutencao.TabIndex = 98;
@@ -404,9 +409,11 @@
             this.tbxDisponíveis.ForeColor = System.Drawing.Color.Black;
             this.tbxDisponíveis.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxDisponíveis.Location = new System.Drawing.Point(572, 330);
+            this.tbxDisponíveis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxDisponíveis.Name = "tbxDisponíveis";
             this.tbxDisponíveis.PasswordChar = '\0';
             this.tbxDisponíveis.PlaceholderText = "";
+            this.tbxDisponíveis.ReadOnly = true;
             this.tbxDisponíveis.SelectedText = "";
             this.tbxDisponíveis.Size = new System.Drawing.Size(110, 28);
             this.tbxDisponíveis.TabIndex = 99;
@@ -426,9 +433,11 @@
             this.tbxManPreventiva.ForeColor = System.Drawing.Color.Black;
             this.tbxManPreventiva.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxManPreventiva.Location = new System.Drawing.Point(572, 372);
+            this.tbxManPreventiva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxManPreventiva.Name = "tbxManPreventiva";
             this.tbxManPreventiva.PasswordChar = '\0';
             this.tbxManPreventiva.PlaceholderText = "";
+            this.tbxManPreventiva.ReadOnly = true;
             this.tbxManPreventiva.SelectedText = "";
             this.tbxManPreventiva.Size = new System.Drawing.Size(110, 28);
             this.tbxManPreventiva.TabIndex = 100;
@@ -448,9 +457,11 @@
             this.tbxUltAquisicao.ForeColor = System.Drawing.Color.Black;
             this.tbxUltAquisicao.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxUltAquisicao.Location = new System.Drawing.Point(572, 414);
+            this.tbxUltAquisicao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxUltAquisicao.Name = "tbxUltAquisicao";
             this.tbxUltAquisicao.PasswordChar = '\0';
             this.tbxUltAquisicao.PlaceholderText = "";
+            this.tbxUltAquisicao.ReadOnly = true;
             this.tbxUltAquisicao.SelectedText = "";
             this.tbxUltAquisicao.Size = new System.Drawing.Size(110, 28);
             this.tbxUltAquisicao.TabIndex = 101;
@@ -464,8 +475,8 @@
             this.cbxPatrimonio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPatrimonio.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbxPatrimonio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxPatrimonio.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbxPatrimonio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxPatrimonio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPatrimonio.ForeColor = System.Drawing.Color.Black;
             this.cbxPatrimonio.ItemHeight = 30;
             this.cbxPatrimonio.Location = new System.Drawing.Point(62, 146);
             this.cbxPatrimonio.Name = "cbxPatrimonio";

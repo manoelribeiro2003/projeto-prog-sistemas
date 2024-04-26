@@ -15,11 +15,17 @@ namespace Peojeto_Prog_Sistem
         public StatusPatrimonio()
         {
             InitializeComponent();
-
         }
 
         private void StatusPatrimonio_Load(object sender, EventArgs e)
         {
+            btnAdicionar.Enabled = false;
+            if (lbxStatusPatri.SelectedItem == null)
+            {
+                btnEditar.Enabled = false;
+            }
+            
+
             //Usando apenas DataTable (sem uso de List<>)
             DataTable listStatus = Banco.buscarListStatusPatri();
             foreach (DataRow item in listStatus.Rows)
@@ -27,14 +33,63 @@ namespace Peojeto_Prog_Sistem
                 lbxStatusPatri.Items.Add(item[0].ToString());
             }
 
-
-
             //Usando DataTable com auxilio de List<>
             /*List<string> listStatus = Banco.buscarListStatusPatri();
             foreach (string item in listStatus)
             {
                 lbxStatusPatri.Items.Add(item.ToString());
             }*/
+        }
+
+        private void tbxAddPatrimonio_TextChanged(object sender, EventArgs e)
+        {
+            if (tbxAddPatrimonio.Text == "")
+            {
+                btnAdicionar.Enabled = false;
+            }
+            else
+            {
+                btnAdicionar.Enabled = true;
+            }
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            Banco.cadstrarStatus(tbxAddPatrimonio.Text);
+            lbxStatusPatri.Items.Clear();
+            DataTable listStatus = Banco.buscarListStatusPatri();
+            foreach (DataRow item in listStatus.Rows)
+            {
+                lbxStatusPatri.Items.Add(item[0].ToString());
+            }
+            btnEditar.Enabled = false;
+        }
+
+        private void lbxStatusPatri_DoubleClick(object sender, EventArgs e)
+        {
+                tbxAddPatrimonio.Text = lbxStatusPatri.SelectedItem.ToString();
+                btnEditar.Enabled = true;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (lbxStatusPatri.SelectedItem != null)
+            {
+                Banco.editarStatus(tbxAddPatrimonio.Text, lbxStatusPatri.SelectedItem.ToString());
+                lbxStatusPatri.Items.Clear();
+                DataTable listStatus = Banco.buscarListStatusPatri();
+                foreach (DataRow item in listStatus.Rows)
+                {
+                    lbxStatusPatri.Items.Add(item[0].ToString());
+                }
+            }
+
+            btnEditar.Enabled = false;
+        }
+
+        private void lbxStatusPatri_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnEditar.Enabled = false;
         }
     }
 }

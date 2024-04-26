@@ -86,16 +86,17 @@ namespace Peojeto_Prog_Sistem
         {
             //Usando apenas DataTable (sem uso de List<>)
             string descricaoPatri = cbxPatrimonio.SelectedItem.ToString();
-            DataTable dt = Banco.DashboardBuscarPatrimonioEspecifico(descricaoPatri);
-            tbxQuantidade.Text = Convert.ToString(dt.Rows.Count);
 
-            tbxQuantidade.TextAlign = HorizontalAlignment.Center;
+            DataTable dtQuantidade = Banco.DashboardBuscarPatrimonioEspecifico(descricaoPatri);
+            tbxQuantidade.Text = Convert.ToString(dtQuantidade.Rows.Count);
 
-            /*DataTable listDesc = Banco.DashboardBuscarQuant(descricaoPatri);
-            foreach (DataRow item in listDesc.Rows)
-            {
-                cbxPatrimonio.Items.Add(item[0].ToString());
-            }*/
+            DataTable dtQuantAloc = Banco.DashboardBuscarQuantAloc(descricaoPatri);
+            tbxLocados.Text = Convert.ToString(dtQuantAloc.Rows.Count);
+
         }
+
+
+
+
     }
 }

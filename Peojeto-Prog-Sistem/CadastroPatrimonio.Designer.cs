@@ -63,6 +63,9 @@
             this.manutençãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patrimônioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,9 +73,6 @@
             this.dtpDtAquisicao = new System.Windows.Forms.DateTimePicker();
             this.dtpDtGarantia = new System.Windows.Forms.DateTimePicker();
             this.buttonSalvar = new System.Windows.Forms.Button();
-            this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.patrimônioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,16 +83,16 @@
             this.labelValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelValor.Location = new System.Drawing.Point(129, 503);
             this.labelValor.Name = "labelValor";
-            this.labelValor.Size = new System.Drawing.Size(50, 20);
+            this.labelValor.Size = new System.Drawing.Size(56, 20);
             this.labelValor.TabIndex = 80;
-            this.labelValor.Text = "Valor:";
+            this.labelValor.Text = "Valor*:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(73, 549);
+            this.label3.Location = new System.Drawing.Point(79, 549);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 67;
@@ -103,7 +103,7 @@
             this.labelGestorResp.AutoSize = true;
             this.labelGestorResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGestorResp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelGestorResp.Location = new System.Drawing.Point(21, 457);
+            this.labelGestorResp.Location = new System.Drawing.Point(27, 457);
             this.labelGestorResp.Name = "labelGestorResp";
             this.labelGestorResp.Size = new System.Drawing.Size(158, 20);
             this.labelGestorResp.TabIndex = 66;
@@ -114,7 +114,7 @@
             this.labelOperador.AutoSize = true;
             this.labelOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOperador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelOperador.Location = new System.Drawing.Point(99, 411);
+            this.labelOperador.Location = new System.Drawing.Point(105, 411);
             this.labelOperador.Name = "labelOperador";
             this.labelOperador.Size = new System.Drawing.Size(80, 20);
             this.labelOperador.TabIndex = 65;
@@ -127,16 +127,16 @@
             this.labelLocalizacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelLocalizacao.Location = new System.Drawing.Point(82, 365);
             this.labelLocalizacao.Name = "labelLocalizacao";
-            this.labelLocalizacao.Size = new System.Drawing.Size(97, 20);
+            this.labelLocalizacao.Size = new System.Drawing.Size(103, 20);
             this.labelLocalizacao.TabIndex = 64;
-            this.labelLocalizacao.Text = "Localização:";
+            this.labelLocalizacao.Text = "Localização*:";
             // 
             // labelLocacao
             // 
             this.labelLocacao.AutoSize = true;
             this.labelLocacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLocacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelLocacao.Location = new System.Drawing.Point(105, 319);
+            this.labelLocacao.Location = new System.Drawing.Point(111, 319);
             this.labelLocacao.Name = "labelLocacao";
             this.labelLocacao.Size = new System.Drawing.Size(74, 20);
             this.labelLocacao.TabIndex = 63;
@@ -149,20 +149,20 @@
             this.labelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelStatus.Location = new System.Drawing.Point(119, 273);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(60, 20);
+            this.labelStatus.Size = new System.Drawing.Size(66, 20);
             this.labelStatus.TabIndex = 62;
-            this.labelStatus.Text = "Status:";
+            this.labelStatus.Text = "Status*:";
             // 
             // labelCadastro
             // 
             this.labelCadastro.AutoSize = true;
             this.labelCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCadastro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelCadastro.Location = new System.Drawing.Point(101, 43);
+            this.labelCadastro.Location = new System.Drawing.Point(95, 43);
             this.labelCadastro.Name = "labelCadastro";
-            this.labelCadastro.Size = new System.Drawing.Size(80, 20);
+            this.labelCadastro.Size = new System.Drawing.Size(90, 20);
             this.labelCadastro.TabIndex = 61;
-            this.labelCadastro.Text = "Descrição";
+            this.labelCadastro.Text = "Descrição*:";
             // 
             // label2
             // 
@@ -171,9 +171,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(104, 227);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 60;
-            this.label2.Text = "Garantia:";
+            this.label2.Text = "Garantia*:";
             // 
             // label1
             // 
@@ -182,9 +182,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(32, 181);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 20);
+            this.label1.Size = new System.Drawing.Size(153, 20);
             this.label1.TabIndex = 59;
-            this.label1.Text = "Data de Aquisição: ";
+            this.label1.Text = "Data de Aquisição*: ";
             // 
             // labelFornecedor
             // 
@@ -193,9 +193,9 @@
             this.labelFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelFornecedor.Location = new System.Drawing.Point(80, 135);
             this.labelFornecedor.Name = "labelFornecedor";
-            this.labelFornecedor.Size = new System.Drawing.Size(99, 20);
+            this.labelFornecedor.Size = new System.Drawing.Size(105, 20);
             this.labelFornecedor.TabIndex = 58;
-            this.labelFornecedor.Text = "Fornecedor: ";
+            this.labelFornecedor.Text = "Fornecedor*: ";
             // 
             // labelNF
             // 
@@ -204,12 +204,13 @@
             this.labelNF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelNF.Location = new System.Drawing.Point(141, 89);
             this.labelNF.Name = "labelNF";
-            this.labelNF.Size = new System.Drawing.Size(38, 20);
+            this.labelNF.Size = new System.Drawing.Size(44, 20);
             this.labelNF.TabIndex = 57;
-            this.labelNF.Text = "NF: ";
+            this.labelNF.Text = "NF*: ";
             // 
             // txbDescricaoPatri
             // 
+            this.txbDescricaoPatri.BorderColor = System.Drawing.Color.Black;
             this.txbDescricaoPatri.BorderRadius = 10;
             this.txbDescricaoPatri.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbDescricaoPatri.DefaultText = "";
@@ -218,7 +219,8 @@
             this.txbDescricaoPatri.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbDescricaoPatri.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbDescricaoPatri.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbDescricaoPatri.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbDescricaoPatri.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDescricaoPatri.ForeColor = System.Drawing.Color.Black;
             this.txbDescricaoPatri.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbDescricaoPatri.Location = new System.Drawing.Point(215, 39);
             this.txbDescricaoPatri.Name = "txbDescricaoPatri";
@@ -230,6 +232,7 @@
             // 
             // txbNf
             // 
+            this.txbNf.BorderColor = System.Drawing.Color.Black;
             this.txbNf.BorderRadius = 10;
             this.txbNf.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbNf.DefaultText = "";
@@ -238,7 +241,8 @@
             this.txbNf.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbNf.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbNf.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbNf.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbNf.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNf.ForeColor = System.Drawing.Color.Black;
             this.txbNf.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbNf.Location = new System.Drawing.Point(215, 85);
             this.txbNf.Name = "txbNf";
@@ -250,6 +254,7 @@
             // 
             // txbFornecedor
             // 
+            this.txbFornecedor.BorderColor = System.Drawing.Color.Black;
             this.txbFornecedor.BorderRadius = 10;
             this.txbFornecedor.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbFornecedor.DefaultText = "";
@@ -258,7 +263,8 @@
             this.txbFornecedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbFornecedor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbFornecedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbFornecedor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbFornecedor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbFornecedor.ForeColor = System.Drawing.Color.Black;
             this.txbFornecedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbFornecedor.Location = new System.Drawing.Point(215, 131);
             this.txbFornecedor.Name = "txbFornecedor";
@@ -271,6 +277,7 @@
             // cbbStatus
             // 
             this.cbbStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cbbStatus.BorderColor = System.Drawing.Color.Black;
             this.cbbStatus.BorderRadius = 10;
             this.cbbStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -287,6 +294,7 @@
             // cbbLocacao
             // 
             this.cbbLocacao.BackColor = System.Drawing.Color.Transparent;
+            this.cbbLocacao.BorderColor = System.Drawing.Color.Black;
             this.cbbLocacao.BorderRadius = 10;
             this.cbbLocacao.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbLocacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -305,6 +313,7 @@
             // cbbLocalizacao
             // 
             this.cbbLocalizacao.BackColor = System.Drawing.Color.Transparent;
+            this.cbbLocalizacao.BorderColor = System.Drawing.Color.Black;
             this.cbbLocalizacao.BorderRadius = 10;
             this.cbbLocalizacao.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbLocalizacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -323,6 +332,7 @@
             // cbbOperador
             // 
             this.cbbOperador.BackColor = System.Drawing.Color.Transparent;
+            this.cbbOperador.BorderColor = System.Drawing.Color.Black;
             this.cbbOperador.BorderRadius = 10;
             this.cbbOperador.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbOperador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -341,6 +351,7 @@
             // cbbGestorResp
             // 
             this.cbbGestorResp.BackColor = System.Drawing.Color.Transparent;
+            this.cbbGestorResp.BorderColor = System.Drawing.Color.Black;
             this.cbbGestorResp.BorderRadius = 10;
             this.cbbGestorResp.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbGestorResp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -358,6 +369,7 @@
             // 
             // txbValor
             // 
+            this.txbValor.BorderColor = System.Drawing.Color.Black;
             this.txbValor.BorderRadius = 10;
             this.txbValor.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbValor.DefaultText = "";
@@ -366,7 +378,8 @@
             this.txbValor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbValor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txbValor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbValor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbValor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbValor.ForeColor = System.Drawing.Color.Black;
             this.txbValor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbValor.Location = new System.Drawing.Point(215, 499);
             this.txbValor.Name = "txbValor";
@@ -378,6 +391,7 @@
             // 
             // cbxObservacoes
             // 
+            this.cbxObservacoes.BorderColor = System.Drawing.Color.Black;
             this.cbxObservacoes.BorderRadius = 10;
             this.cbxObservacoes.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.cbxObservacoes.DefaultText = "";
@@ -386,7 +400,8 @@
             this.cbxObservacoes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.cbxObservacoes.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.cbxObservacoes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxObservacoes.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cbxObservacoes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxObservacoes.ForeColor = System.Drawing.Color.Black;
             this.cbxObservacoes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbxObservacoes.Location = new System.Drawing.Point(215, 549);
             this.cbxObservacoes.Multiline = true;
@@ -498,6 +513,28 @@
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
+            // configuraçõesToolStripMenuItem
+            // 
+            this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.patrimônioToolStripMenuItem});
+            this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.configuraçõesToolStripMenuItem.Text = "Configurações";
+            // 
+            // patrimônioToolStripMenuItem
+            // 
+            this.patrimônioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusToolStripMenuItem});
+            this.patrimônioToolStripMenuItem.Name = "patrimônioToolStripMenuItem";
+            this.patrimônioToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.patrimônioToolStripMenuItem.Text = "Patrimônio";
+            // 
+            // statusToolStripMenuItem
+            // 
+            this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
+            this.statusToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.statusToolStripMenuItem.Text = "Status";
+            // 
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -511,19 +548,19 @@
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.sobreToolStripMenuItem.Text = "Sair";
             // 
             // ajudaToolStripMenuItem1
             // 
             this.ajudaToolStripMenuItem1.Name = "ajudaToolStripMenuItem1";
-            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
             this.ajudaToolStripMenuItem1.Text = "Ajuda";
             // 
             // sobreToolStripMenuItem1
             // 
             this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
             this.sobreToolStripMenuItem1.Text = "Sobre";
             // 
             // dtpDtAquisicao
@@ -546,7 +583,7 @@
             // 
             this.buttonSalvar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvar.ForeColor = System.Drawing.Color.Black;
-            this.buttonSalvar.Location = new System.Drawing.Point(215, 679);
+            this.buttonSalvar.Location = new System.Drawing.Point(619, 625);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(107, 34);
             this.buttonSalvar.TabIndex = 98;
@@ -554,34 +591,12 @@
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click_1);
             // 
-            // configuraçõesToolStripMenuItem
-            // 
-            this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.patrimônioToolStripMenuItem});
-            this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.configuraçõesToolStripMenuItem.Text = "Configurações";
-            // 
-            // patrimônioToolStripMenuItem
-            // 
-            this.patrimônioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusToolStripMenuItem});
-            this.patrimônioToolStripMenuItem.Name = "patrimônioToolStripMenuItem";
-            this.patrimônioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.patrimônioToolStripMenuItem.Text = "Patrimônio";
-            // 
-            // statusToolStripMenuItem
-            // 
-            this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
-            this.statusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.statusToolStripMenuItem.Text = "Status";
-            // 
             // CadastroPatrimonio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(767, 725);
+            this.ClientSize = new System.Drawing.Size(767, 679);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.dtpDtGarantia);
             this.Controls.Add(this.dtpDtAquisicao);

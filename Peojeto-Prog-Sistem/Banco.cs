@@ -83,6 +83,62 @@ namespace Peojeto_Prog_Sistem
             }
            
         }
+
+        public static void cadstrarStatus(string status)
+        {
+            if (existeStatus(status))
+            {
+                MessageBox.Show("Este status já está cadastrado!", "Erro");
+            }
+            else
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = $"INSERT INTO configuracoes (ListStatusPatri) VALUES ('{status}')";
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Status cadastrado com sucesso", "PatriMundo - Cadastro de Status");
+                        ConexaoBanco().Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Status");
+                    ConexaoBanco().Close();
+                    throw ex;
+                }
+            }
+        }
+
+        public static void editarStatus(string newStatus, string oldStatus)
+        {
+            if (existeStatus(oldStatus))
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = $"UPDATE configuracoes SET ListStatusPatri = '{newStatus}' WHERE ListStatusPatri = '{oldStatus}'";
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Status editado com sucesso", "PatriMundo - Cadastro de Status");
+                        ConexaoBanco().Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ops!!! erro na edição do status", "PatriMundo - Cadastro de Status");
+                    ConexaoBanco().Close();
+                    throw ex;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Erro ao editar o status!", "Erro");
+            }
+        }
         private static bool existePatrimonio(Patrimonio c)
         {
             DataTable dt = null;
@@ -90,6 +146,19 @@ namespace Peojeto_Prog_Sistem
             string sql = "SELECT descricaoPatri FROM patrimonios WHERE id = '" + c.descricaoPatri + "'";
             dt = Banco.consulta(sql);
             if (dt.Rows.Count > 0) 
+            {
+                res = true;
+            }
+            return res;
+        }
+
+        private static bool existeStatus(string status)
+        {
+            DataTable dt = null;
+            bool res = false;
+            string sql = $"SELECT * FROM configuracoes WHERE ListStatusPatri = '{status}'";
+            dt = Banco.consulta(sql);
+            if (dt.Rows.Count > 0)
             {
                 res = true;
             }
@@ -300,6 +369,30 @@ namespace Peojeto_Prog_Sistem
                 using (var cmd = ConexaoBanco().CreateCommand())
                 {
                     cmd.CommandText = $"SELECT * FROM patrimonios WHERE descricaoPatri = '{descricaoPatri}'";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+
+        }
+
+        public static DataTable DashboardBuscarQuantAloc(string descricaoPatri)
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"SELECT * FROM patrimonios WHERE descricaoPatri = '{descricaoPatri}' AND locacao != 0";
                     da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
                     da.Fill(dt);
                     ConexaoBanco().Close();
