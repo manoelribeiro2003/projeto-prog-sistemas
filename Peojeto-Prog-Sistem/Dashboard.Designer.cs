@@ -63,6 +63,8 @@
             this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusDePatrimônioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,7 +135,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(221, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 32);
+            this.label1.Size = new System.Drawing.Size(298, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gestão de Patrimônio";
             // 
@@ -297,6 +299,7 @@
             this.cadastroToolStripMenuItem,
             this.consultaToolStripMenuItem,
             this.manutençãoToolStripMenuItem,
+            this.configuraçõesToolStripMenuItem,
             this.ajudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -441,6 +444,21 @@
             this.guna2ComboBox1.Size = new System.Drawing.Size(620, 36);
             this.guna2ComboBox1.TabIndex = 102;
             // 
+            // configuraçõesToolStripMenuItem
+            // 
+            this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusDePatrimônioToolStripMenuItem});
+            this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.configuraçõesToolStripMenuItem.Text = "Configurações";
+            // 
+            // statusDePatrimônioToolStripMenuItem
+            // 
+            this.statusDePatrimônioToolStripMenuItem.Name = "statusDePatrimônioToolStripMenuItem";
+            this.statusDePatrimônioToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.statusDePatrimônioToolStripMenuItem.Text = "Status de Patrimônio";
+            this.statusDePatrimônioToolStripMenuItem.Click += new System.EventHandler(this.statusDePatrimônioToolStripMenuItem_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,5 +528,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private System.Windows.Forms.ToolStripMenuItem usuarioDoSistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioPatrimonioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statusDePatrimônioToolStripMenuItem;
     }
 }

@@ -62,5 +62,11 @@ namespace Peojeto_Prog_Sistem
             ConsultaManutencao conManu = new ConsultaManutencao();
             conManu.ShowDialog();
         }
+
+        private void statusDePatrimônioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StatusPatrimonio statusPatrimonio = new StatusPatrimonio();
+            statusPatrimonio.ShowDialog();
+        }
     }
 }

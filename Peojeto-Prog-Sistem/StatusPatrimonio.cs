@@ -15,6 +15,17 @@ namespace Peojeto_Prog_Sistem
         public StatusPatrimonio()
         {
             InitializeComponent();
+
+        }
+
+        private void StatusPatrimonio_Load(object sender, EventArgs e)
+        {
+            lbxStatusPatri.DataSource =  Banco.buscarListStatusPatri().ToString();
+            //lbxStatusPatri.Items.Add();
+
+
+            //dgvManutencao.DataSource = Banco.ObterManutencao();
+            //dgvManutencao.Columns[0].Width = 50;
         }
     }
 }
