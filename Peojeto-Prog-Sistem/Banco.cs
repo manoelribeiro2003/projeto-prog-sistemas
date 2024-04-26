@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
+using System.Security.Cryptography.X509Certificates;
 
 
 namespace Peojeto_Prog_Sistem
@@ -14,7 +15,7 @@ namespace Peojeto_Prog_Sistem
     {
         private static SQLiteConnection conexao;
 
-        private static SQLiteConnection ConexaoBanco()
+        public static SQLiteConnection ConexaoBanco()
         {
             conexao = new SQLiteConnection("Data Source = ..\\..\\..\\Banco\\patriBanco.db");
             conexao.Open();
@@ -213,15 +214,69 @@ namespace Peojeto_Prog_Sistem
 
         public static DataTable buscarListStatusPatri()
         {
-            SQLiteDataAdapter da = null;
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
             DataTable dt = new DataTable();
-
             try
             {
                 using (var cmd = ConexaoBanco().CreateCommand())
                 {
                     cmd.CommandText = "SELECT ListStatusPatri FROM configuracoes";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
 
+
+            //Usando DataTable com auxilio de List<>
+            /*SQLiteDataReader reader;
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    List<string> listaStatus = new List<string>();
+                    cmd.CommandText = "SELECT ListStatusPatri FROM configuracoes";
+                    reader = cmd.ExecuteReader(); //retorna um DataReader
+
+                    //Aqui é como se fosse o Fill()
+                    while (reader.Read())//Lê o proximo registro
+                    {
+                        listaStatus.Add(reader.GetString(0));
+                        // substitua 0 pelo índice da coluna que você deseja adicionar à lista
+                        //Neste caso estou usando index 0 porque quero a coluna ListStatusPatri
+                    }
+                    reader.Close();
+                    ConexaoBanco().Close();
+                    return listaStatus;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }*/
+
+
+
+        }
+
+        public static DataTable BuscarDescricao()
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT DISTINCT descricaoPatri FROM Patrimonios";
                     da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
                     da.Fill(dt);
                     ConexaoBanco().Close();
@@ -234,6 +289,31 @@ namespace Peojeto_Prog_Sistem
                 throw ex;
             }
         }
+
+        public static DataTable DashboardBuscarPatrimonioEspecifico(string descricaoPatri)
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"SELECT * FROM patrimonios WHERE descricaoPatri = '{descricaoPatri}'";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+
+        }
+
 
     }
 }

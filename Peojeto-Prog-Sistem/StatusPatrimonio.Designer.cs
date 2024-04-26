@@ -95,6 +95,7 @@
             this.Controls.Add(this.btnSalvar);
             this.Name = "StatusPatrimonio";
             this.Text = "Editar Status Patrimonio";
+            this.Load += new System.EventHandler(this.StatusPatrimonio_Load);
             this.ResumeLayout(false);
 
         }

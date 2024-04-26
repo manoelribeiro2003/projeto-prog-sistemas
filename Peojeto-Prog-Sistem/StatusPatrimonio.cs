@@ -20,12 +20,21 @@ namespace Peojeto_Prog_Sistem
 
         private void StatusPatrimonio_Load(object sender, EventArgs e)
         {
-            lbxStatusPatri.DataSource =  Banco.buscarListStatusPatri().ToString();
-            //lbxStatusPatri.Items.Add();
+            //Usando apenas DataTable (sem uso de List<>)
+            DataTable listStatus = Banco.buscarListStatusPatri();
+            foreach (DataRow item in listStatus.Rows)
+            {
+                lbxStatusPatri.Items.Add(item[0].ToString());
+            }
 
 
-            //dgvManutencao.DataSource = Banco.ObterManutencao();
-            //dgvManutencao.Columns[0].Width = 50;
+
+            //Usando DataTable com auxilio de List<>
+            /*List<string> listStatus = Banco.buscarListStatusPatri();
+            foreach (string item in listStatus)
+            {
+                lbxStatusPatri.Items.Add(item.ToString());
+            }*/
         }
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using System.Web.UI.WebControls;
 
 namespace Peojeto_Prog_Sistem
 {
@@ -15,6 +17,7 @@ namespace Peojeto_Prog_Sistem
         public Dashboard()
         {
             InitializeComponent();
+            
         }
 
         private void patrimonioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,6 +70,32 @@ namespace Peojeto_Prog_Sistem
         {
             StatusPatrimonio statusPatrimonio = new StatusPatrimonio();
             statusPatrimonio.ShowDialog();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            DataTable listDesc = Banco.BuscarDescricao();
+            foreach (DataRow item in listDesc.Rows)
+            {
+                cbxPatrimonio.Items.Add(item[0].ToString());
+            }
+        }
+
+        private void cbxPatrimonio_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            string descricaoPatri = cbxPatrimonio.SelectedItem.ToString();
+            DataTable dt = Banco.DashboardBuscarPatrimonioEspecifico(descricaoPatri);
+            tbxQuantidade.Text = Convert.ToString(dt.Rows.Count);
+
+            tbxQuantidade.TextAlign = HorizontalAlignment.Center;
+
+            /*DataTable listDesc = Banco.DashboardBuscarQuant(descricaoPatri);
+            foreach (DataRow item in listDesc.Rows)
+            {
+                cbxPatrimonio.Items.Add(item[0].ToString());
+            }*/
         }
     }
 }
