@@ -42,7 +42,7 @@ namespace Peojeto_Prog_Sistem
         private void btnExcluirManut_Click(object sender, EventArgs e)
         {
             //c.cadastro = dgvManutencao.SelectedRows[0].Cells["cadastro"].Value.ToString();
-            DialogResult res = MessageBox.Show("Confirmar exclusão do curriculo de " + c.cadastro + "?", "PatriMundi - Confirmar exclusao", MessageBox.YesNo);
+            DialogResult res = MessageBox.Show("Confirmar exclusão do curriculo de " + c.cadastro + "?", "PatriMundi - Confirmar exclusao", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
                 c.id_manutencao = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["id_patrimonio"].Value);
