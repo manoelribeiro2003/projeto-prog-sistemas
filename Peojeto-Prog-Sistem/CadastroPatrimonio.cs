@@ -42,7 +42,18 @@ namespace Peojeto_Prog_Sistem
             patrimonio.valor          = txbValor.Text;
             patrimonio.obs            = cbxObservacoes.Text;
 
-            Banco.cadastrarPatrimonio(patrimonio);
+            if (patrimonio.descricaoPatri == "" || patrimonio.nf == "" || 
+                patrimonio.fornecedor == "" || patrimonio.status == "" || 
+                patrimonio.localizacao == "" || patrimonio.valor == "")
+            {
+                MessageBox.Show("Preencha todos os campos obrigatórios","Erro");
+            }
+            else
+            {
+                Banco.cadastrarPatrimonio(patrimonio);
+            }
+
+            
         }
     }
 }

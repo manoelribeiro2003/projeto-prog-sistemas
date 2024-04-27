@@ -28,31 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             this.lbxStatusPatri = new System.Windows.Forms.ListBox();
             this.tbxAddPatrimonio = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btnEditar
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(315, 264);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 32);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Sai&r";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(315, 264);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(96, 32);
+            this.btnEditar.TabIndex = 9;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // btnSalvar
+            // btnAdicionar
             // 
-            this.btnSalvar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(197, 264);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(96, 32);
-            this.btnSalvar.TabIndex = 8;
-            this.btnSalvar.Text = "&Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionar.Location = new System.Drawing.Point(197, 264);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(96, 32);
+            this.btnAdicionar.TabIndex = 8;
+            this.btnAdicionar.Text = "&Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // lbxStatusPatri
             // 
@@ -63,9 +65,12 @@
             this.lbxStatusPatri.Name = "lbxStatusPatri";
             this.lbxStatusPatri.Size = new System.Drawing.Size(330, 151);
             this.lbxStatusPatri.TabIndex = 10;
+            this.lbxStatusPatri.SelectedIndexChanged += new System.EventHandler(this.lbxStatusPatri_SelectedIndexChanged);
+            this.lbxStatusPatri.DoubleClick += new System.EventHandler(this.lbxStatusPatri_DoubleClick);
             // 
             // tbxAddPatrimonio
             // 
+            this.tbxAddPatrimonio.BorderColor = System.Drawing.Color.Black;
             this.tbxAddPatrimonio.BorderRadius = 10;
             this.tbxAddPatrimonio.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbxAddPatrimonio.DefaultText = "";
@@ -74,15 +79,18 @@
             this.tbxAddPatrimonio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbxAddPatrimonio.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbxAddPatrimonio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxAddPatrimonio.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbxAddPatrimonio.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxAddPatrimonio.ForeColor = System.Drawing.Color.Black;
             this.tbxAddPatrimonio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxAddPatrimonio.Location = new System.Drawing.Point(138, 205);
+            this.tbxAddPatrimonio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbxAddPatrimonio.Name = "tbxAddPatrimonio";
             this.tbxAddPatrimonio.PasswordChar = '\0';
             this.tbxAddPatrimonio.PlaceholderText = "";
             this.tbxAddPatrimonio.SelectedText = "";
             this.tbxAddPatrimonio.Size = new System.Drawing.Size(330, 30);
             this.tbxAddPatrimonio.TabIndex = 11;
+            this.tbxAddPatrimonio.TextChanged += new System.EventHandler(this.tbxAddPatrimonio_TextChanged);
             // 
             // StatusPatrimonio
             // 
@@ -91,8 +99,8 @@
             this.ClientSize = new System.Drawing.Size(607, 405);
             this.Controls.Add(this.tbxAddPatrimonio);
             this.Controls.Add(this.lbxStatusPatri);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnAdicionar);
             this.Name = "StatusPatrimonio";
             this.Text = "Editar Status Patrimonio";
             this.Load += new System.EventHandler(this.StatusPatrimonio_Load);
@@ -102,8 +110,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.ListBox lbxStatusPatri;
         private Guna.UI2.WinForms.Guna2TextBox tbxAddPatrimonio;
     }

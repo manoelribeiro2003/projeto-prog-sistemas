@@ -1,0 +1,8 @@
+
+-> LISTA DE STATUS PARA PATRIMONIOS
+Ativo - em uso ou nao
+Inativo - nao está em uso
+Em manutenção - nao está em uso e está em um setor de manutenção
+Perdido
+Emprestado
+Vendido

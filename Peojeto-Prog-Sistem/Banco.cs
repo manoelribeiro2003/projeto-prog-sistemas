@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
+using System.Security.Cryptography.X509Certificates;
 
 
 namespace Peojeto_Prog_Sistem
@@ -14,7 +15,7 @@ namespace Peojeto_Prog_Sistem
     {
         private static SQLiteConnection conexao;
 
-        private static SQLiteConnection ConexaoBanco()
+        public static SQLiteConnection ConexaoBanco()
         {
             conexao = new SQLiteConnection("Data Source = ..\\..\\..\\Banco\\patriBanco.db");
             conexao.Open();
@@ -82,6 +83,68 @@ namespace Peojeto_Prog_Sistem
             }
            
         }
+
+        public static void cadstrarStatus(string status)
+        {
+            if (existeStatus(status))
+            {
+                MessageBox.Show("Este status já está cadastrado!", "Erro");
+            }
+            else
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = $"INSERT INTO configuracoes (ListStatusPatri) VALUES ('{status}')";
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Status cadastrado com sucesso", "PatriMundo - Cadastro de Status");
+                        ConexaoBanco().Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Status");
+                    ConexaoBanco().Close();
+                    throw ex;
+                }
+            }
+        }
+
+        public static void editarStatus(string newStatus, string oldStatus)
+        {
+
+
+            if (oldStatus != newStatus) 
+            {
+                if (existeStatus(oldStatus))
+                {
+                    try
+                    {
+                        using (var cmd = ConexaoBanco().CreateCommand())
+                        {
+                            cmd.CommandText = $"UPDATE configuracoes SET ListStatusPatri = '{newStatus}' WHERE ListStatusPatri = '{oldStatus}'";
+
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Status editado com sucesso", "PatriMundo - Cadastro de Status");
+                            ConexaoBanco().Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ops!!! erro na edição do status", "PatriMundo - Cadastro de Status");
+                        ConexaoBanco().Close();
+                        throw ex;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Status já cadastrado!", "Erro");
+            }
+            
+        }
         private static bool existePatrimonio(Patrimonio c)
         {
             DataTable dt = null;
@@ -89,6 +152,19 @@ namespace Peojeto_Prog_Sistem
             string sql = "SELECT descricaoPatri FROM patrimonios WHERE id = '" + c.descricaoPatri + "'";
             dt = Banco.consulta(sql);
             if (dt.Rows.Count > 0) 
+            {
+                res = true;
+            }
+            return res;
+        }
+
+        private static bool existeStatus(string status)
+        {
+            DataTable dt = null;
+            bool res = false;
+            string sql = $"SELECT * FROM configuracoes WHERE ListStatusPatri = '{status}'";
+            dt = Banco.consulta(sql);
+            if (dt.Rows.Count > 0)
             {
                 res = true;
             }
@@ -210,6 +286,133 @@ namespace Peojeto_Prog_Sistem
             }
 
         }
+
+        public static DataTable buscarListStatusPatri()
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT ListStatusPatri FROM configuracoes";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+
+
+            //Usando DataTable com auxilio de List<>
+            /*SQLiteDataReader reader;
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    List<string> listaStatus = new List<string>();
+                    cmd.CommandText = "SELECT ListStatusPatri FROM configuracoes";
+                    reader = cmd.ExecuteReader(); //retorna um DataReader
+
+                    //Aqui é como se fosse o Fill()
+                    while (reader.Read())//Lê o proximo registro
+                    {
+                        listaStatus.Add(reader.GetString(0));
+                        // substitua 0 pelo índice da coluna que você deseja adicionar à lista
+                        //Neste caso estou usando index 0 porque quero a coluna ListStatusPatri
+                    }
+                    reader.Close();
+                    ConexaoBanco().Close();
+                    return listaStatus;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }*/
+
+
+
+        }
+
+        public static DataTable BuscarDescricao()
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT DISTINCT descricaoPatri FROM Patrimonios";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+
+        public static DataTable DashboardBuscarPatrimonioEspecifico(string descricaoPatri)
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"SELECT * FROM patrimonios WHERE descricaoPatri = '{descricaoPatri}'";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+
+        }
+
+        public static DataTable DashboardBuscarQuantAloc(string descricaoPatri)
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"SELECT * FROM patrimonios WHERE descricaoPatri = '{descricaoPatri}' AND locacao != 0";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+
+        }
+
 
     }
 }
