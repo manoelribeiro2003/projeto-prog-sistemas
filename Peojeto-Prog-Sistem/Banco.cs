@@ -114,30 +114,36 @@ namespace Peojeto_Prog_Sistem
 
         public static void editarStatus(string newStatus, string oldStatus)
         {
-            if (existeStatus(oldStatus))
-            {
-                try
-                {
-                    using (var cmd = ConexaoBanco().CreateCommand())
-                    {
-                        cmd.CommandText = $"UPDATE configuracoes SET ListStatusPatri = '{newStatus}' WHERE ListStatusPatri = '{oldStatus}'";
 
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Status editado com sucesso", "PatriMundo - Cadastro de Status");
-                        ConexaoBanco().Close();
-                    }
-                }
-                catch (Exception ex)
+
+            if (oldStatus != newStatus) 
+            {
+                if (existeStatus(oldStatus))
                 {
-                    MessageBox.Show("Ops!!! erro na edição do status", "PatriMundo - Cadastro de Status");
-                    ConexaoBanco().Close();
-                    throw ex;
+                    try
+                    {
+                        using (var cmd = ConexaoBanco().CreateCommand())
+                        {
+                            cmd.CommandText = $"UPDATE configuracoes SET ListStatusPatri = '{newStatus}' WHERE ListStatusPatri = '{oldStatus}'";
+
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Status editado com sucesso", "PatriMundo - Cadastro de Status");
+                            ConexaoBanco().Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ops!!! erro na edição do status", "PatriMundo - Cadastro de Status");
+                        ConexaoBanco().Close();
+                        throw ex;
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Erro ao editar o status!", "Erro");
+                MessageBox.Show("Status já cadastrado!", "Erro");
             }
+            
         }
         private static bool existePatrimonio(Patrimonio c)
         {

@@ -12,6 +12,8 @@ namespace Peojeto_Prog_Sistem
 {
     public partial class StatusPatrimonio : Form
     {
+        object itemSelecionado;
+
         public StatusPatrimonio()
         {
             InitializeComponent();
@@ -46,9 +48,14 @@ namespace Peojeto_Prog_Sistem
             if (tbxAddPatrimonio.Text == "")
             {
                 btnAdicionar.Enabled = false;
+                btnEditar.Enabled = false;
             }
             else
             {
+                if (lbxStatusPatri.SelectedItem == itemSelecionado)
+                {
+                    btnEditar.Enabled = true;
+                }
                 btnAdicionar.Enabled = true;
             }
         }
@@ -67,8 +74,9 @@ namespace Peojeto_Prog_Sistem
 
         private void lbxStatusPatri_DoubleClick(object sender, EventArgs e)
         {
-                tbxAddPatrimonio.Text = lbxStatusPatri.SelectedItem.ToString();
-                btnEditar.Enabled = true;
+            itemSelecionado = lbxStatusPatri.SelectedItem;
+            tbxAddPatrimonio.Text = lbxStatusPatri.SelectedItem.ToString();
+            btnEditar.Enabled = true;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
