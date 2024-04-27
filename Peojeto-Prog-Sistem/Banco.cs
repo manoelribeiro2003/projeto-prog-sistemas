@@ -209,8 +209,9 @@ namespace Peojeto_Prog_Sistem
                 using (var cmd = ConexaoBanco().CreateCommand())
                 {
                     //preenche o comando com a string
-                    cmd.CommandText = "INSERT INTO t_manutencao (cadastro, previsao, motivo) VALUES (@cadastro, @previsao, @motivo)";
-                    cmd.Parameters.AddWithValue("@cadastro", c.cadastro);
+                    cmd.CommandText = "INSERT INTO t_manutencao (id_patrimonio, descPatri, previsao, motivo) VALUES (@id_patrimonio, @descPatri, @previsao, @motivo)";
+                    cmd.Parameters.AddWithValue("@id_patrimonio", c.id_patrimonio);
+                    cmd.Parameters.AddWithValue("@descPatri", c.descPatri);
                     cmd.Parameters.AddWithValue("@previsao", c.previsao);
                     cmd.Parameters.AddWithValue("@motivo", c.motivo);
                     
@@ -304,7 +305,7 @@ namespace Peojeto_Prog_Sistem
             {
                 using (var cmd = ConexaoBanco().CreateCommand())
                 {
-                    cmd.CommandText = "SELECT id_manutencao, cadastro, previsao, motivo FROM t_manutencao";
+                    cmd.CommandText = "SELECT id_manutencao, id_patrimonio, descPatri, previsao, motivo FROM t_manutencao";
 
                     da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
                     da.Fill(dt);
@@ -444,14 +445,14 @@ namespace Peojeto_Prog_Sistem
             }
 
         }
-        public static void excluirCurriclo(int id_manutencao)
+        public static void excluirManutencao(int id_manutencao)
                            
         {
             try
             {
                 using (var cmd = ConexaoBanco().CreateCommand())
                 {
-                    cmd.CommandText = "SELECT FROM t_manutencao WHERE id_manutencao = @id_manutencaao";
+                    cmd.CommandText = "DELETE FROM t_manutencao WHERE id_manutencao = @id_manutencao";
                     cmd.Parameters.AddWithValue("@id_manutencao", id_manutencao);
                     cmd.ExecuteNonQuery();
                 }

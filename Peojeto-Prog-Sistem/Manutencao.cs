@@ -9,7 +9,8 @@ namespace Peojeto_Prog_Sistem
     internal class Manutencao
     {
         public int id_manutencao;
-        public int cadastro;
+        public int id_patrimonio;
+        public string descPatri;
         public string previsao;
         public string motivo;
     }

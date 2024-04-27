@@ -33,7 +33,7 @@ namespace Peojeto_Prog_Sistem
                 DataTable dt = new DataTable();
                 string vid = dgv.SelectedRows[0].Cells[0].Value.ToString();
                 c.id_manutencao = Convert.ToInt32(dgv.SelectedRows[0].Cells["id_manutencao"].Value);
-                tbxCadastro.Text = dgv.SelectedRows[0].Cells["cadastro"].Value.ToString();
+                tbxDescPatri.Text = dgv.SelectedRows[0].Cells["descPatri"].Value.ToString();
                 tbxPrevisao.Text = dgv.SelectedRows[0].Cells["previsao"].Value.ToString();
                 tbxObs.Text = dgv.SelectedRows[0].Cells["motivo"].Value.ToString();
             }
@@ -41,14 +41,19 @@ namespace Peojeto_Prog_Sistem
 
         private void btnExcluirManut_Click(object sender, EventArgs e)
         {
-            //c.cadastro = dgvManutencao.SelectedRows[0].Cells["cadastro"].Value.ToString();
-            DialogResult res = MessageBox.Show("Confirmar exclusão do curriculo de " + c.cadastro + "?", "PatriMundi - Confirmar exclusao", MessageBox.YesNo);
+            c.descPatri = dgvManutencao.SelectedRows[0].Cells["descPatri"].Value.ToString();
+            DialogResult res = MessageBox.Show("Confirmar exclusão de manutencao do item " + c.descPatri + "?", "PatriMundi - Confirmar exclusao", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
-                c.id_manutencao = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["id_patrimonio"].Value);
-                Banco.excluirCurriclo(c.id_manutencao);
+                c.id_manutencao = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["id_manutencao"].Value);
+                Banco.excluirManutencao(c.id_manutencao);
                 dgvManutencao.DataSource = Banco.ObterManutencao();
             }
+        }
+
+        private void dgvManutencao_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

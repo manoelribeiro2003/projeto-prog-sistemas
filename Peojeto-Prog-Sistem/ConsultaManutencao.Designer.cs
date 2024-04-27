@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbxObs = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbxPrevisao = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbxCadastro = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbxDescPatri = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbxPatrimonio = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -84,25 +84,25 @@
             this.tbxPrevisao.Size = new System.Drawing.Size(281, 28);
             this.tbxPrevisao.TabIndex = 101;
             // 
-            // tbxCadastro
+            // tbxDescPatri
             // 
-            this.tbxCadastro.BorderRadius = 10;
-            this.tbxCadastro.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxCadastro.DefaultText = "";
-            this.tbxCadastro.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbxCadastro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbxCadastro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxCadastro.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxCadastro.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxCadastro.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbxCadastro.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxCadastro.Location = new System.Drawing.Point(125, 92);
-            this.tbxCadastro.Name = "tbxCadastro";
-            this.tbxCadastro.PasswordChar = '\0';
-            this.tbxCadastro.PlaceholderText = "";
-            this.tbxCadastro.SelectedText = "";
-            this.tbxCadastro.Size = new System.Drawing.Size(281, 28);
-            this.tbxCadastro.TabIndex = 100;
+            this.tbxDescPatri.BorderRadius = 10;
+            this.tbxDescPatri.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxDescPatri.DefaultText = "";
+            this.tbxDescPatri.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbxDescPatri.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbxDescPatri.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxDescPatri.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxDescPatri.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxDescPatri.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbxDescPatri.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxDescPatri.Location = new System.Drawing.Point(125, 92);
+            this.tbxDescPatri.Name = "tbxDescPatri";
+            this.tbxDescPatri.PasswordChar = '\0';
+            this.tbxDescPatri.PlaceholderText = "";
+            this.tbxDescPatri.SelectedText = "";
+            this.tbxDescPatri.Size = new System.Drawing.Size(281, 28);
+            this.tbxDescPatri.TabIndex = 100;
             // 
             // tbxPatrimonio
             // 
@@ -164,9 +164,9 @@
             this.labelNF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelNF.Location = new System.Drawing.Point(21, 96);
             this.labelNF.Name = "labelNF";
-            this.labelNF.Size = new System.Drawing.Size(88, 21);
+            this.labelNF.Size = new System.Drawing.Size(87, 21);
             this.labelNF.TabIndex = 95;
-            this.labelNF.Text = "Cadastro:";
+            this.labelNF.Text = "Descrição";
             // 
             // dgvManutencao
             // 
@@ -188,6 +188,7 @@
             this.dgvManutencao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvManutencao.Size = new System.Drawing.Size(355, 316);
             this.dgvManutencao.TabIndex = 103;
+            this.dgvManutencao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManutencao_CellContentClick);
             this.dgvManutencao.DoubleClick += new System.EventHandler(this.dgvManutencao_DoubleClick);
             // 
             // btnEditar
@@ -221,7 +222,7 @@
             this.Controls.Add(this.dgvManutencao);
             this.Controls.Add(this.tbxObs);
             this.Controls.Add(this.tbxPrevisao);
-            this.Controls.Add(this.tbxCadastro);
+            this.Controls.Add(this.tbxDescPatri);
             this.Controls.Add(this.tbxPatrimonio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -240,7 +241,7 @@
 
         private Guna.UI2.WinForms.Guna2TextBox tbxObs;
         private Guna.UI2.WinForms.Guna2TextBox tbxPrevisao;
-        private Guna.UI2.WinForms.Guna2TextBox tbxCadastro;
+        private Guna.UI2.WinForms.Guna2TextBox tbxDescPatri;
         private Guna.UI2.WinForms.Guna2TextBox tbxPatrimonio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
