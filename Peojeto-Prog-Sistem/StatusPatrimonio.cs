@@ -62,7 +62,7 @@ namespace Peojeto_Prog_Sistem
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            Banco.cadstrarStatus(tbxAddPatrimonio.Text);
+            Banco.DmlStatus("INSERT", "",tbxAddPatrimonio.Text);
             lbxStatusPatri.Items.Clear();
             DataTable listStatus = Banco.buscarListStatusPatri();
             foreach (DataRow item in listStatus.Rows)
@@ -70,20 +70,14 @@ namespace Peojeto_Prog_Sistem
                 lbxStatusPatri.Items.Add(item[0].ToString());
             }
             btnEditar.Enabled = false;
+            tbxAddPatrimonio.Text = "";
+            tbxAddPatrimonio.Focus();
         }
-
-        private void lbxStatusPatri_DoubleClick(object sender, EventArgs e)
-        {
-            itemSelecionado = lbxStatusPatri.SelectedItem;
-            tbxAddPatrimonio.Text = lbxStatusPatri.SelectedItem.ToString();
-            btnEditar.Enabled = true;
-        }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (lbxStatusPatri.SelectedItem != null)
             {
-                Banco.editarStatus(tbxAddPatrimonio.Text, lbxStatusPatri.SelectedItem.ToString());
+                Banco.DmlStatus("UPDATE", lbxStatusPatri.SelectedItem.ToString(), tbxAddPatrimonio.Text);
                 lbxStatusPatri.Items.Clear();
                 DataTable listStatus = Banco.buscarListStatusPatri();
                 foreach (DataRow item in listStatus.Rows)
@@ -94,6 +88,28 @@ namespace Peojeto_Prog_Sistem
 
             btnEditar.Enabled = false;
         }
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (lbxStatusPatri.SelectedItem != null)
+            {
+                Banco.DmlStatus("DELETE", lbxStatusPatri.SelectedItem.ToString());
+                lbxStatusPatri.Items.Clear();
+                DataTable listStatus = Banco.buscarListStatusPatri();
+                foreach (DataRow item in listStatus.Rows)
+                {
+                    lbxStatusPatri.Items.Add(item[0].ToString());
+                }
+            }
+        }
+
+        private void lbxStatusPatri_DoubleClick(object sender, EventArgs e)
+        {
+            itemSelecionado = lbxStatusPatri.SelectedItem;
+            tbxAddPatrimonio.Text = lbxStatusPatri.SelectedItem.ToString();
+            btnEditar.Enabled = true;
+        }
+
+
 
         private void lbxStatusPatri_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -32,12 +32,13 @@
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.lbxStatusPatri = new System.Windows.Forms.ListBox();
             this.tbxAddPatrimonio = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(315, 264);
+            this.btnEditar.Location = new System.Drawing.Point(255, 264);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(96, 32);
             this.btnEditar.TabIndex = 9;
@@ -48,7 +49,7 @@
             // btnAdicionar
             // 
             this.btnAdicionar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(197, 264);
+            this.btnAdicionar.Location = new System.Drawing.Point(133, 264);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(96, 32);
             this.btnAdicionar.TabIndex = 8;
@@ -92,11 +93,23 @@
             this.tbxAddPatrimonio.TabIndex = 11;
             this.tbxAddPatrimonio.TextChanged += new System.EventHandler(this.tbxAddPatrimonio_TextChanged);
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Location = new System.Drawing.Point(377, 264);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(96, 32);
+            this.btnExcluir.TabIndex = 12;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // StatusPatrimonio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 405);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.tbxAddPatrimonio);
             this.Controls.Add(this.lbxStatusPatri);
             this.Controls.Add(this.btnEditar);
@@ -114,5 +127,6 @@
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.ListBox lbxStatusPatri;
         private Guna.UI2.WinForms.Guna2TextBox tbxAddPatrimonio;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }
