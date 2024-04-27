@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Peojeto_Prog_Sistem
 {
-    internal class Manutencao
+    class Manutencao
     {
         public int id_manutencao;
         public int id_patrimonio;
         public string descPatri;
         public string previsao;
         public string motivo;
+        public string item_patrimonio;
     }
 }
