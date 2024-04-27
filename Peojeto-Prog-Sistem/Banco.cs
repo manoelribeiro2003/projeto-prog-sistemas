@@ -85,39 +85,66 @@ namespace Peojeto_Prog_Sistem
            
         }
 
-        public static void cadstrarStatus(string status)
+        public static void DmlStatus(string comando, string oldStatus, string newStatus = "")
         {
-            if (existeStatus(status))
+            if (comando == "INSERT")
             {
-                MessageBox.Show("Este status já está cadastrado!", "Erro");
-            }
-            else
-            {
-                try
+                if (existeStatus(newStatus))
                 {
-                    using (var cmd = ConexaoBanco().CreateCommand())
+                    MessageBox.Show("Este status já está cadastrado!", "Erro");
+                }
+                else
+                {
+                    try
                     {
-                        cmd.CommandText = $"INSERT INTO configuracoes (ListStatusPatri) VALUES ('{status}')";
+                        using (var cmd = ConexaoBanco().CreateCommand())
+                        {
+                            cmd.CommandText = $"INSERT INTO configuracoes (ListStatusPatri) VALUES ('{newStatus}')";
 
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Status cadastrado com sucesso", "PatriMundo - Cadastro de Status");
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Status cadastrado com sucesso", "PatriMundo - Cadastro de Status");
+                            ConexaoBanco().Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Status");
                         ConexaoBanco().Close();
+                        throw ex;
                     }
                 }
-                catch (Exception ex)
+            }
+            else if (comando == "UPDATE")
+            {
+                if (oldStatus != newStatus && newStatus != "")
                 {
-                    MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Status");
-                    ConexaoBanco().Close();
-                    throw ex;
+                    if (existeStatus(oldStatus))
+                    {
+                        try
+                        {
+                            using (var cmd = ConexaoBanco().CreateCommand())
+                            {
+                                cmd.CommandText = $"UPDATE configuracoes SET ListStatusPatri = '{newStatus}' WHERE ListStatusPatri = '{oldStatus}'";
+
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("Status editado com sucesso", "PatriMundo - Cadastro de Status");
+                                ConexaoBanco().Close();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Ops!!! erro na edição do status", "PatriMundo - Cadastro de Status");
+                            ConexaoBanco().Close();
+                            throw ex;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Status já cadastrado!", "Erro");
                 }
             }
-        }
-
-        public static void editarStatus(string newStatus, string oldStatus)
-        {
-
-
-            if (oldStatus != newStatus) 
+            else if (comando == "DELETE")
             {
                 if (existeStatus(oldStatus))
                 {
@@ -125,25 +152,29 @@ namespace Peojeto_Prog_Sistem
                     {
                         using (var cmd = ConexaoBanco().CreateCommand())
                         {
-                            cmd.CommandText = $"UPDATE configuracoes SET ListStatusPatri = '{newStatus}' WHERE ListStatusPatri = '{oldStatus}'";
+                            cmd.CommandText = $"DELETE from configuracoes WHERE ListStatusPatri = '{oldStatus}'";
 
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Status editado com sucesso", "PatriMundo - Cadastro de Status");
+                            MessageBox.Show("Status deletado com sucesso", "PatriMundo - Cadastro de Status");
                             ConexaoBanco().Close();
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Ops!!! erro na edição do status", "PatriMundo - Cadastro de Status");
+                        MessageBox.Show("Ops!!! erro na deleção do status", "PatriMundo - Cadastro de Status");
                         ConexaoBanco().Close();
                         throw ex;
                     }
                 }
             }
-            else
-            {
-                MessageBox.Show("Status já cadastrado!", "Erro");
-            }
+            
+        }
+
+        public static void editarStatus(string newStatus, string oldStatus)
+        {
+
+
+            
             
         }
         private static bool existePatrimonio(Patrimonio c)
