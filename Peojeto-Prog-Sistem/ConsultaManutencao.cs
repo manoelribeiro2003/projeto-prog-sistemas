@@ -12,7 +12,7 @@ namespace Peojeto_Prog_Sistem
 {
     public partial class ConsultaManutencao : Form
     {
-        Manutencao c = new Manutencao();
+        Manutencao manutencao = new Manutencao();
         public ConsultaManutencao()
         {
             InitializeComponent();
@@ -30,30 +30,44 @@ namespace Peojeto_Prog_Sistem
             int contLinhas = dgv.SelectedRows.Count;
             if (contLinhas > 0)
             {
-                DataTable dt = new DataTable();
-                string vid = dgv.SelectedRows[0].Cells[0].Value.ToString();
-                c.id_manutencao = Convert.ToInt32(dgv.SelectedRows[0].Cells["id_manutencao"].Value);
-                tbxDescPatri.Text = dgv.SelectedRows[0].Cells["descPatri"].Value.ToString();
-                tbxPrevisao.Text = dgv.SelectedRows[0].Cells["previsao"].Value.ToString();
-                tbxObs.Text = dgv.SelectedRows[0].Cells["motivo"].Value.ToString();
+                manutencao.id_manutencao = Convert.ToInt32(dgv.SelectedRows[0].Cells["ID Manutenção"].Value);
+                
+                tbxDescPatri.Text = dgv.SelectedRows[0].Cells["Descrição"].Value.ToString();
+                tbxPrevisao.Text = dgv.SelectedRows[0].Cells["Previsão"].Value.ToString();
+                tbxObs.Text = dgv.SelectedRows[0].Cells["Motivo"].Value.ToString();
+                tbxPatrimonio.Text = dgv.SelectedRows[0].Cells["ID Patrimônio"].Value.ToString();
             }
         }
 
         private void btnExcluirManut_Click(object sender, EventArgs e)
         {
-            c.descPatri = dgvManutencao.SelectedRows[0].Cells["descPatri"].Value.ToString();
-            DialogResult res = MessageBox.Show("Confirmar exclusão de manutencao do item " + c.descPatri + "?", "PatriMundi - Confirmar exclusao", MessageBoxButtons.YesNo);
+            manutencao.descPatri = dgvManutencao.SelectedRows[0].Cells["Descrição"].Value.ToString();
+            DialogResult res = MessageBox.Show("Confirmar exclusão de manutencao do item " + manutencao.descPatri + "?", "PatriMundi - Confirmar exclusao", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
-                c.id_manutencao = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["id_manutencao"].Value);
-                Banco.excluirManutencao(c.id_manutencao);
+                manutencao.id_manutencao = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["ID Manutenção"].Value);
+                Banco.excluirManutencao(manutencao.id_manutencao);
                 dgvManutencao.DataSource = Banco.ObterManutencao();
             }
         }
 
-        private void dgvManutencao_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            manutencao.descPatri = tbxDescPatri.Text;
+            manutencao.previsao = tbxPrevisao.Text;
+            manutencao.motivo = tbxObs.Text;
+            string nome = dgvManutencao.SelectedRows[0].Cells["Descrição"].Value.ToString();
+            DialogResult res = MessageBox.Show("Confirmar edição de manutenção do item " + nome + "?", "PatriMundi - Confirmar exclusao", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                manutencao.id_manutencao = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["ID Manutenção"].Value.ToString());
+                bool rowsAffected = Banco.editarManutencao(manutencao);
+                if (rowsAffected)
+                {
+                    MessageBox.Show("Item editado com sucesso!", "Edição de manutenção");
+                }
+                dgvManutencao.DataSource = Banco.ObterManutencao();
+            }
         }
     }
 }

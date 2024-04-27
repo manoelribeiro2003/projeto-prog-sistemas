@@ -12,7 +12,17 @@ namespace Peojeto_Prog_Sistem
 {
     public partial class CadastroManutencao : Form
     {
+        DataRowCollection dataRowCollection;
+        DataRow dataRow;
         Manutencao manutencao = new Manutencao();
+        /*
+        public int id_manutencao;
+        public int id_patrimonio;
+        public string descPatri;
+        public string previsao;
+        public string motivo;
+        public string item_patrimonio;
+        */
 
         public CadastroManutencao()
         {
@@ -21,9 +31,10 @@ namespace Peojeto_Prog_Sistem
 
         private void CadastroManutencao_Load(object sender, EventArgs e)
         {
-            string nome = "";
+            string nome;
             string sql = "SELECT id, descricaoPatri FROM patrimonios";
             DataTable listDesc = Banco.consulta(sql);
+            dataRowCollection = listDesc.Rows;
             foreach (DataRow item in listDesc.Rows)
             {
                 nome  = item[0].ToString() + " - " + item[1].ToString();
@@ -31,18 +42,20 @@ namespace Peojeto_Prog_Sistem
             }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cbxPatrimonio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            manutencao.item_patrimonio = cbxPatrimonio.SelectedItem.ToString();
-            MessageBox.Show("Item: " + manutencao.item_patrimonio);
+            dataRow = dataRowCollection[cbxPatrimonio.SelectedIndex];
+        }
 
-            string id_patri = manutencao.item_patrimonio.ToString();
-            
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            manutencao.id_patrimonio = Convert.ToInt32(dataRow[0].ToString());
+            manutencao.descPatri = dataRow[1].ToString();
+            manutencao.previsao = dtpPrevisao.Text;
+            manutencao.motivo = tbxMotivo.Text;
+
+            Banco.cadastroManutencao(manutencao);
+
 
         }
 

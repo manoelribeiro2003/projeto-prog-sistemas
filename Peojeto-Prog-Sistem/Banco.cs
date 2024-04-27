@@ -170,13 +170,6 @@ namespace Peojeto_Prog_Sistem
             
         }
 
-        public static void editarStatus(string newStatus, string oldStatus)
-        {
-
-
-            
-            
-        }
         private static bool existePatrimonio(Patrimonio c)
         {
             DataTable dt = null;
@@ -296,27 +289,49 @@ namespace Peojeto_Prog_Sistem
                 throw ex;
             }
         }
-        public static DataTable ObterManutencao()
+        public static DataTable ObterManutencao(string descPatri = "")
         {
             SQLiteDataAdapter da = null;
             DataTable dt = new DataTable();
-
-            try
+            if (descPatri == "")
             {
-                using (var cmd = ConexaoBanco().CreateCommand())
+                try
                 {
-                    cmd.CommandText = "SELECT id_manutencao, id_patrimonio, descPatri, previsao, motivo FROM t_manutencao";
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT id_manutencao as 'ID Manutenção', id_patrimonio as 'ID Patrimônio', descPatri as 'Descrição', previsao as 'Previsão', motivo as 'Motivo' FROM t_manutencao";
 
-                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
-                    da.Fill(dt);
-                    ConexaoBanco().Close();
-                    return dt;
+                        da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                        da.Fill(dt);
+                        ConexaoBanco().Close();
+                        return dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
                 }
             }
-            catch (Exception ex)
+            else 
             {
-                throw ex;
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = $"SELECT * FROM t_manutencao WHERE descPatri = '{descPatri}'";
+
+                        da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                        da.Fill(dt);
+                        ConexaoBanco().Close();
+                        return dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
+            
 
         }
 
@@ -466,7 +481,29 @@ namespace Peojeto_Prog_Sistem
             }
             
         }
-        
-        
+
+        public static bool editarManutencao(Manutencao manutencao)
+
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"UPDATE t_manutencao SET descPatri = '{manutencao.descPatri}', previsao = '{manutencao.previsao}', motivo = '{manutencao.motivo}' WHERE id_manutencao = {manutencao.id_manutencao}";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar cadastro", "PatriMundi - Edição cadastro de Manutencao");
+                ConexaoBanco().Close();
+                return false;
+            }
+
+        }
+
+
     }
 }

@@ -93,6 +93,9 @@ namespace Peojeto_Prog_Sistem
             DataTable dtQuantAloc = Banco.DashboardBuscarQuantAloc(descricaoPatri);
             tbxLocados.Text = Convert.ToString(dtQuantAloc.Rows.Count);
 
+            DataTable dtQuantManut = Banco.ObterManutencao(descricaoPatri);
+            tbxManutencao.Text = Convert.ToString(dtQuantManut.Rows.Count);
+
         }
 
 

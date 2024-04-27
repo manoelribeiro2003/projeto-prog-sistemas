@@ -53,7 +53,8 @@
             this.tbxObs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbxObs.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbxObs.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxObs.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbxObs.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxObs.ForeColor = System.Drawing.Color.Black;
             this.tbxObs.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxObs.Location = new System.Drawing.Point(125, 232);
             this.tbxObs.Multiline = true;
@@ -74,7 +75,8 @@
             this.tbxPrevisao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbxPrevisao.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbxPrevisao.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxPrevisao.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbxPrevisao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxPrevisao.ForeColor = System.Drawing.Color.Black;
             this.tbxPrevisao.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxPrevisao.Location = new System.Drawing.Point(125, 160);
             this.tbxPrevisao.Name = "tbxPrevisao";
@@ -90,11 +92,13 @@
             this.tbxDescPatri.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbxDescPatri.DefaultText = "";
             this.tbxDescPatri.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbxDescPatri.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbxDescPatri.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxDescPatri.DisabledState.FillColor = System.Drawing.Color.White;
+            this.tbxDescPatri.DisabledState.ForeColor = System.Drawing.Color.Black;
             this.tbxDescPatri.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxDescPatri.Enabled = false;
             this.tbxDescPatri.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxDescPatri.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbxDescPatri.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxDescPatri.ForeColor = System.Drawing.Color.Black;
             this.tbxDescPatri.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxDescPatri.Location = new System.Drawing.Point(125, 92);
             this.tbxDescPatri.Name = "tbxDescPatri";
@@ -110,16 +114,19 @@
             this.tbxPatrimonio.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbxPatrimonio.DefaultText = "";
             this.tbxPatrimonio.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbxPatrimonio.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbxPatrimonio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxPatrimonio.DisabledState.FillColor = System.Drawing.Color.White;
+            this.tbxPatrimonio.DisabledState.ForeColor = System.Drawing.Color.Black;
             this.tbxPatrimonio.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxPatrimonio.Enabled = false;
             this.tbxPatrimonio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxPatrimonio.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbxPatrimonio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxPatrimonio.ForeColor = System.Drawing.Color.Black;
             this.tbxPatrimonio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxPatrimonio.Location = new System.Drawing.Point(125, 24);
             this.tbxPatrimonio.Name = "tbxPatrimonio";
             this.tbxPatrimonio.PasswordChar = '\0';
             this.tbxPatrimonio.PlaceholderText = "";
+            this.tbxPatrimonio.ReadOnly = true;
             this.tbxPatrimonio.SelectedText = "";
             this.tbxPatrimonio.Size = new System.Drawing.Size(281, 28);
             this.tbxPatrimonio.TabIndex = 99;
@@ -162,11 +169,11 @@
             this.labelNF.AutoSize = true;
             this.labelNF.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelNF.Location = new System.Drawing.Point(21, 96);
+            this.labelNF.Location = new System.Drawing.Point(18, 96);
             this.labelNF.Name = "labelNF";
-            this.labelNF.Size = new System.Drawing.Size(87, 21);
+            this.labelNF.Size = new System.Drawing.Size(91, 21);
             this.labelNF.TabIndex = 95;
-            this.labelNF.Text = "Descrição";
+            this.labelNF.Text = "Descrição:";
             // 
             // dgvManutencao
             // 
@@ -181,14 +188,14 @@
             this.dgvManutencao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvManutencao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvManutencao.EnableHeadersVisualStyles = false;
-            this.dgvManutencao.Location = new System.Drawing.Point(437, 25);
+            this.dgvManutencao.Location = new System.Drawing.Point(428, 25);
             this.dgvManutencao.MultiSelect = false;
             this.dgvManutencao.Name = "dgvManutencao";
+            this.dgvManutencao.ReadOnly = true;
             this.dgvManutencao.RowHeadersVisible = false;
             this.dgvManutencao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvManutencao.Size = new System.Drawing.Size(355, 316);
             this.dgvManutencao.TabIndex = 103;
-            this.dgvManutencao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManutencao_CellContentClick);
             this.dgvManutencao.DoubleClick += new System.EventHandler(this.dgvManutencao_DoubleClick);
             // 
             // btnEditar
@@ -200,11 +207,12 @@
             this.btnEditar.TabIndex = 104;
             this.btnEditar.Text = "&Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluirManut
             // 
             this.btnExcluirManut.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluirManut.Location = new System.Drawing.Point(625, 368);
+            this.btnExcluirManut.Location = new System.Drawing.Point(522, 368);
             this.btnExcluirManut.Name = "btnExcluirManut";
             this.btnExcluirManut.Size = new System.Drawing.Size(167, 38);
             this.btnExcluirManut.TabIndex = 105;
