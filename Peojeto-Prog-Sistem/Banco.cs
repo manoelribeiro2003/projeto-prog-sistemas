@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Cryptography;
 
 
 namespace Peojeto_Prog_Sistem
@@ -412,7 +413,28 @@ namespace Peojeto_Prog_Sistem
             }
 
         }
+        public static void excluirCurriclo(int id_manutencao)
+                           
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT FROM t_manutencao WHERE id_manutencao = @id_manutencaao";
+                    cmd.Parameters.AddWithValue("@id_manutencao", id_manutencao);
+                    cmd.ExecuteNonQuery();
+                }
 
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir cadastro", "PatriMundi - Excluir cadastro de Manutencao");
+                ConexaoBanco().Close();
+                throw ex;
+            }
+            
+        }
+        
+        
     }
 }

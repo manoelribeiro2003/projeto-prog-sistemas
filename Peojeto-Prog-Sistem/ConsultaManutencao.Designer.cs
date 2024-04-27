@@ -39,7 +39,7 @@
             this.labelNF = new System.Windows.Forms.Label();
             this.dgvManutencao = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExcluirManut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManutencao)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,22 +200,23 @@
             this.btnEditar.Text = "&Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnExcluirManut
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(319, 368);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 38);
-            this.button1.TabIndex = 105;
-            this.button1.Text = "E&xcluir";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExcluirManut.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluirManut.Location = new System.Drawing.Point(625, 368);
+            this.btnExcluirManut.Name = "btnExcluirManut";
+            this.btnExcluirManut.Size = new System.Drawing.Size(167, 38);
+            this.btnExcluirManut.TabIndex = 105;
+            this.btnExcluirManut.Text = "E&xcluir";
+            this.btnExcluirManut.UseVisualStyleBackColor = true;
+            this.btnExcluirManut.Click += new System.EventHandler(this.btnExcluirManut_Click);
             // 
             // ConsultaManutencao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExcluirManut);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvManutencao);
             this.Controls.Add(this.tbxObs);
@@ -247,6 +248,6 @@
         private System.Windows.Forms.Label labelNF;
         private System.Windows.Forms.DataGridView dgvManutencao;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExcluirManut;
     }
 }

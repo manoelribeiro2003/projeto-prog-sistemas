@@ -38,5 +38,17 @@ namespace Peojeto_Prog_Sistem
                 tbxObs.Text = dgv.SelectedRows[0].Cells["motivo"].Value.ToString();
             }
         }
+
+        private void btnExcluirManut_Click(object sender, EventArgs e)
+        {
+            //c.cadastro = dgvManutencao.SelectedRows[0].Cells["cadastro"].Value.ToString();
+            DialogResult res = MessageBox.Show("Confirmar exclusão do curriculo de " + c.cadastro + "?", "PatriMundi - Confirmar exclusao", MessageBox.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                c.id_manutencao = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["id_patrimonio"].Value);
+                Banco.excluirCurriclo(c.id_manutencao);
+                dgvManutencao.DataSource = Banco.ObterManutencao();
+            }
+        }
     }
 }
