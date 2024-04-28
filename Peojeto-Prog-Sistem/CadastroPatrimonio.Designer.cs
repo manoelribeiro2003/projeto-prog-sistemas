@@ -46,7 +46,7 @@
             this.cbxStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbxLocacao = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbxLocalizacao = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbbOperador = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbxOperador = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbGestorResp = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txbValor = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbxObservacoes = new Guna.UI2.WinForms.Guna2TextBox();
@@ -310,24 +310,24 @@
             this.cbxLocalizacao.TabIndex = 89;
             this.cbxLocalizacao.SelectionChangeCommitted += new System.EventHandler(this.cbxLocalizacao_SelectionChangeCommitted);
             // 
-            // cbbOperador
+            // cbxOperador
             // 
-            this.cbbOperador.BackColor = System.Drawing.Color.Transparent;
-            this.cbbOperador.BorderColor = System.Drawing.Color.Black;
-            this.cbbOperador.BorderRadius = 10;
-            this.cbbOperador.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbOperador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbOperador.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbOperador.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbOperador.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbOperador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbOperador.ItemHeight = 30;
-            this.cbbOperador.Items.AddRange(new object[] {
+            this.cbxOperador.BackColor = System.Drawing.Color.Transparent;
+            this.cbxOperador.BorderColor = System.Drawing.Color.Black;
+            this.cbxOperador.BorderRadius = 10;
+            this.cbxOperador.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxOperador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxOperador.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxOperador.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxOperador.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxOperador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbxOperador.ItemHeight = 30;
+            this.cbxOperador.Items.AddRange(new object[] {
             "Operador 1"});
-            this.cbbOperador.Location = new System.Drawing.Point(215, 386);
-            this.cbbOperador.Name = "cbbOperador";
-            this.cbbOperador.Size = new System.Drawing.Size(293, 36);
-            this.cbbOperador.TabIndex = 90;
+            this.cbxOperador.Location = new System.Drawing.Point(215, 386);
+            this.cbxOperador.Name = "cbxOperador";
+            this.cbxOperador.Size = new System.Drawing.Size(293, 36);
+            this.cbxOperador.TabIndex = 90;
             // 
             // cbbGestorResp
             // 
@@ -434,7 +434,7 @@
             this.Controls.Add(this.cbxObservacoes);
             this.Controls.Add(this.txbValor);
             this.Controls.Add(this.cbbGestorResp);
-            this.Controls.Add(this.cbbOperador);
+            this.Controls.Add(this.cbxOperador);
             this.Controls.Add(this.cbxLocalizacao);
             this.Controls.Add(this.cbxLocacao);
             this.Controls.Add(this.cbxStatus);
@@ -484,7 +484,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbxStatus;
         private Guna.UI2.WinForms.Guna2ComboBox cbxLocacao;
         private Guna.UI2.WinForms.Guna2ComboBox cbxLocalizacao;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbOperador;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxOperador;
         private Guna.UI2.WinForms.Guna2ComboBox cbbGestorResp;
         private Guna.UI2.WinForms.Guna2TextBox txbValor;
         private Guna.UI2.WinForms.Guna2TextBox cbxObservacoes;

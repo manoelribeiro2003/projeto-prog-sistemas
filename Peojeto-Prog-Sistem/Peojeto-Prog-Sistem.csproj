@@ -152,6 +152,19 @@
     <Compile Include="CadastroSetores.Designer.cs">
       <DependentUpon>CadastroSetores.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastroUsuarioPatri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroUsuarioPatri.Designer.cs">
+      <DependentUpon>CadastroUsuarioPatri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioPatri.cs" />
+    <Compile Include="CadastroUsuarioSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroUsuarioSistema.Designer.cs">
+      <DependentUpon>CadastroUsuarioSistema.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaManutencao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +200,7 @@
     <Compile Include="StatusPatrimonio.Designer.cs">
       <DependentUpon>StatusPatrimonio.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuarioSistema.cs" />
     <EmbeddedResource Include="CadastroFornecedor.resx">
       <DependentUpon>CadastroFornecedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +212,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroSetores.resx">
       <DependentUpon>CadastroSetores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroUsuarioPatri.resx">
+      <DependentUpon>CadastroUsuarioPatri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroUsuarioSistema.resx">
+      <DependentUpon>CadastroUsuarioSistema.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaManutencao.resx">
       <DependentUpon>ConsultaManutencao.cs</DependentUpon>

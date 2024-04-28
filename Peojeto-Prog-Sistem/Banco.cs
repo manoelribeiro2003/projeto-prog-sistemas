@@ -282,6 +282,48 @@ namespace Peojeto_Prog_Sistem
                 throw ex;
             }
         }
+        public static void cadastraruserSis(UsuarioSistema usuarioSistema)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    //preenche o comando com a string
+                    cmd.CommandText = $"INSERT INTO usuario_sis (usuario, senha, adm, nome) VALUES ('{usuarioSistema.usuario}', '{usuarioSistema.senha}', {usuarioSistema.adm}, '{usuarioSistema.nome}')";
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Usuário cadastrado com sucesso!!!", "PatriMundo - Cadastro de Usuários");
+                    ConexaoBanco().Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Usuário");
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+
+        public static void cadastrarUserPatri(UsuarioPatri usuarioPatri)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    //preenche o comando com a string
+                    cmd.CommandText = $"INSERT INTO t_usuario_patri (nome, responsavel, cargo, setor, subdivisao) VALUES ('{usuarioPatri.nome}', '{usuarioPatri.responsavel}', '{usuarioPatri.cargo}', '{usuarioPatri.setor}', '{usuarioPatri.subdivisao}')";
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Usuário cadastrado com sucesso!!!", "PatriMundo - Cadastro de Usuários");
+                    ConexaoBanco().Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Usuário");
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+
         public static DataTable ObterManutencao(string descPatri = "")
         {
             SQLiteDataAdapter da = null;
@@ -433,7 +475,7 @@ namespace Peojeto_Prog_Sistem
                 {
                     using (var cmd = ConexaoBanco().CreateCommand())
                     {
-                        cmd.CommandText = $"SELECT subDivisao FROM t_setor WHERE nome = '{setor}' AND subDivisao != ''";
+                        cmd.CommandText = $"SELECT * FROM t_setor WHERE nome = '{setor}' AND subDivisao != ''";
                         da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
                         da.Fill(dt);
                         ConexaoBanco().Close();
@@ -464,7 +506,52 @@ namespace Peojeto_Prog_Sistem
             {
                 using (var cmd = ConexaoBanco().CreateCommand())
                 {
-                    cmd.CommandText = "SELECT DISTINCT * FROM t_setor";
+                    cmd.CommandText = "SELECT DISTINCT nome FROM t_setor";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+        public static DataTable buscarListUserPatri(string setor)
+        {
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"SELECT DISTINCT * FROM T_usuario_patri WHERE setor = '{setor}'";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+
+        public static DataTable buscarListGestor()
+        {
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT DISTINCT responsavel FROM T_usuario_patri";
                     da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
                     da.Fill(dt);
                     ConexaoBanco().Close();

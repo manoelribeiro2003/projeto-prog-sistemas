@@ -20,6 +20,8 @@ namespace Peojeto_Prog_Sistem
 
         private void CadastroPatrimonio_Load(object sender, EventArgs e)
         {
+            cbxOperador.Items.Clear();
+
             DataTable listStatus = Banco.buscarListStatusPatri();
             foreach (DataRow item in listStatus.Rows)
             {
@@ -34,6 +36,13 @@ namespace Peojeto_Prog_Sistem
             }
 
             
+
+            DataTable listGestor = Banco.buscarListGestor();
+            cbbGestorResp.Items.Clear();
+            foreach (DataRow item in listGestor.Rows)
+            {
+                cbbGestorResp.Items.Add(item["responsavel"].ToString());
+            }
         }
 
         private void buttonSalvar_Click_1(object sender, EventArgs e)
@@ -46,7 +55,7 @@ namespace Peojeto_Prog_Sistem
             patrimonio.status         = cbxStatus.Text;
             patrimonio.locacao        = cbxLocacao.Text;
             patrimonio.localizacao    = cbxLocalizacao.Text;
-            patrimonio.operador       = cbbOperador.Text;
+            patrimonio.operador       = cbxOperador.Text;
             patrimonio.gestorResp     = cbbGestorResp.Text;
             patrimonio.valor          = txbValor.Text;
             patrimonio.obs            = cbxObservacoes.Text;
@@ -76,6 +85,13 @@ namespace Peojeto_Prog_Sistem
                 }
             }
             cbxLocacao.Items.Add(cbxLocalizacao.SelectedItem.ToString());
+
+            DataTable listUsuarios = Banco.buscarListUserPatri(cbxLocalizacao.SelectedItem.ToString());
+            cbxOperador.Items.Clear();
+            foreach (DataRow item in listUsuarios.Rows)
+            {
+                cbxOperador.Items.Add(item["nome"].ToString());
+            }
         }
     }
 }

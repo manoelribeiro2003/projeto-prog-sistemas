@@ -71,6 +71,7 @@
             this.txbLogin.Name = "txbLogin";
             this.txbLogin.Size = new System.Drawing.Size(100, 20);
             this.txbLogin.TabIndex = 3;
+            this.txbLogin.Text = "manoelAdm";
             // 
             // txbSenha
             // 
@@ -79,6 +80,7 @@
             this.txbSenha.PasswordChar = '*';
             this.txbSenha.Size = new System.Drawing.Size(100, 20);
             this.txbSenha.TabIndex = 4;
+            this.txbSenha.Text = "1234";
             // 
             // btnEntrar
             // 

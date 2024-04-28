@@ -124,5 +124,17 @@ namespace Peojeto_Prog_Sistem
         {
 
         }
+
+        private void usuarioDoSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroUsuarioSistema usuarioSistema = new CadastroUsuarioSistema();
+            usuarioSistema.ShowDialog();
+        }
+
+        private void usuarioPatrimonioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroUsuarioPatri cadastroUsuarioPatri = new CadastroUsuarioPatri();
+            cadastroUsuarioPatri.ShowDialog();
+        }
     }
 }

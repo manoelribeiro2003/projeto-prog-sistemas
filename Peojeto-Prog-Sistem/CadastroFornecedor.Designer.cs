@@ -232,7 +232,7 @@
             this.Controls.Add(this.labelNF);
             this.Name = "CadastroFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CadastroFornecedor";
+            this.Text = "Cadastro de Fornecedor";
             this.ResumeLayout(false);
             this.PerformLayout();
 
