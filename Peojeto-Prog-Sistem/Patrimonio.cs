@@ -21,13 +21,10 @@ namespace Peojeto_Prog_Sistem
         public string gestorResp;
         public string valor;
         public string obs;
-
-        public List<string> listaStatus = new List<string>();
         
         public Patrimonio()
         {
-            listaStatus.Add("Disponível");
-            listaStatus.Add("Indisponível");
+
         }
     }
 }

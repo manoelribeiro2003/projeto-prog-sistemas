@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Cryptography;
 
 
 namespace Peojeto_Prog_Sistem
@@ -265,9 +259,8 @@ namespace Peojeto_Prog_Sistem
             }
         }
         /*Cadastro de setor*/
-        public static void CadastrarSetor2(CadastrarSetor c)
+        public static void CadastrarSetor(CadastrarSetor c)
         {
-            
             try
             {
                 using (var cmd = ConexaoBanco().CreateCommand())
@@ -278,7 +271,7 @@ namespace Peojeto_Prog_Sistem
                     cmd.Parameters.AddWithValue("@subDivisao", c.subDivisao);
                     
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Setpr cadastrado com sucesso!!!", "PatriMundo - Cadastro de Setor");
+                    MessageBox.Show("Setor cadastrado com sucesso!!!", "PatriMundo - Cadastro de Setor");
                     ConexaoBanco().Close();
                 }
             }
@@ -388,6 +381,101 @@ namespace Peojeto_Prog_Sistem
 
 
 
+        }
+
+        public static DataTable buscarListLocalizacoes(bool distinct = false, bool subdivisao = false, string setor = "")
+        {
+            //Usando apenas DataTable (sem uso de List<>)
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+
+            if (distinct == true && subdivisao == false && setor == "")
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT DISTINCT nome FROM t_setor";
+                        da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                        da.Fill(dt);
+                        ConexaoBanco().Close();
+                        return dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ConexaoBanco().Close();
+                    throw ex;
+                }
+            }
+            else if(distinct == false && subdivisao == true && setor == "")
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT subDivisao FROM t_setor";
+                        da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                        da.Fill(dt);
+                        ConexaoBanco().Close();
+                        return dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ConexaoBanco().Close();
+                    throw ex;
+                }
+            }
+            else if (distinct == false && subdivisao == true && setor != "")
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = $"SELECT subDivisao FROM t_setor WHERE nome = '{setor}' AND subDivisao != ''";
+                        da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                        da.Fill(dt);
+                        ConexaoBanco().Close();
+                        return dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ConexaoBanco().Close();
+                    throw ex;
+                }
+            }
+            else
+            {
+                return dt;
+            }
+            
+        }
+
+        public static DataTable buscarListLocacoes()
+        {
+            //Locacoes sao as subdivisoes. Se nao houver subdivisao, entao é so o nome do setor mesmo
+
+            SQLiteDataAdapter da;
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT DISTINCT * FROM t_setor";
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                ConexaoBanco().Close();
+                throw ex;
+            }
         }
 
         public static DataTable BuscarDescricao()

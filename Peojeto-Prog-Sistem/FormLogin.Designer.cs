@@ -89,7 +89,7 @@
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 33);
             this.btnEntrar.TabIndex = 5;
-            this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.Text = "&Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 

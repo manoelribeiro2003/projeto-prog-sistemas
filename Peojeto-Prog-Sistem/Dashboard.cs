@@ -40,13 +40,13 @@ namespace Peojeto_Prog_Sistem
         private void patrimonioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastroPatrimonio cp = new CadastroPatrimonio();
-            cp.Show();
+            cp.ShowDialog();
         }
 
         private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastroFornecedor cf = new CadastroFornecedor();
-            cf.Show();
+            cf.ShowDialog();
         }
 
         private void setoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,6 +116,11 @@ namespace Peojeto_Prog_Sistem
         }
 
         private void sobreToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dashboard_KeyDown(object sender, KeyEventArgs e)
         {
 
         }

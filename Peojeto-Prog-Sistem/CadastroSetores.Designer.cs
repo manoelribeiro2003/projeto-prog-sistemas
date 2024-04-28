@@ -1,6 +1,6 @@
 ﻿namespace Peojeto_Prog_Sistem
 {
-    partial class StatusPatrimonio
+    partial class CadastroSetores
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.tbxAddPatrimonio = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbxStatusPatri = new System.Windows.Forms.ListBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.lbxStatusPatri = new System.Windows.Forms.ListBox();
-            this.tbxAddPatrimonio = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnEditar
+            // btnExcluir
             // 
-            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(255, 264);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(96, 32);
-            this.btnEditar.TabIndex = 9;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(133, 264);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(96, 32);
-            this.btnAdicionar.TabIndex = 8;
-            this.btnAdicionar.Text = "&Adicionar";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
-            // 
-            // lbxStatusPatri
-            // 
-            this.lbxStatusPatri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbxStatusPatri.FormattingEnabled = true;
-            this.lbxStatusPatri.ItemHeight = 21;
-            this.lbxStatusPatri.Location = new System.Drawing.Point(138, 39);
-            this.lbxStatusPatri.Name = "lbxStatusPatri";
-            this.lbxStatusPatri.Size = new System.Drawing.Size(330, 151);
-            this.lbxStatusPatri.TabIndex = 10;
-            this.lbxStatusPatri.SelectedIndexChanged += new System.EventHandler(this.lbxStatusPatri_SelectedIndexChanged);
-            this.lbxStatusPatri.DoubleClick += new System.EventHandler(this.lbxStatusPatri_DoubleClick);
+            this.btnExcluir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Location = new System.Drawing.Point(346, 298);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(96, 32);
+            this.btnExcluir.TabIndex = 17;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // tbxAddPatrimonio
             // 
@@ -83,51 +59,69 @@
             this.tbxAddPatrimonio.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxAddPatrimonio.ForeColor = System.Drawing.Color.Black;
             this.tbxAddPatrimonio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxAddPatrimonio.Location = new System.Drawing.Point(138, 205);
+            this.tbxAddPatrimonio.Location = new System.Drawing.Point(107, 239);
             this.tbxAddPatrimonio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbxAddPatrimonio.Name = "tbxAddPatrimonio";
             this.tbxAddPatrimonio.PasswordChar = '\0';
             this.tbxAddPatrimonio.PlaceholderText = "";
             this.tbxAddPatrimonio.SelectedText = "";
             this.tbxAddPatrimonio.Size = new System.Drawing.Size(330, 30);
-            this.tbxAddPatrimonio.TabIndex = 11;
-            this.tbxAddPatrimonio.TextChanged += new System.EventHandler(this.tbxAddPatrimonio_TextChanged);
+            this.tbxAddPatrimonio.TabIndex = 16;
             // 
-            // btnExcluir
+            // lbxStatusPatri
             // 
-            this.btnExcluir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(377, 264);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(96, 32);
-            this.btnExcluir.TabIndex = 12;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.lbxStatusPatri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxStatusPatri.FormattingEnabled = true;
+            this.lbxStatusPatri.ItemHeight = 21;
+            this.lbxStatusPatri.Location = new System.Drawing.Point(107, 73);
+            this.lbxStatusPatri.Name = "lbxStatusPatri";
+            this.lbxStatusPatri.Size = new System.Drawing.Size(330, 151);
+            this.lbxStatusPatri.TabIndex = 15;
             // 
-            // StatusPatrimonio
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(224, 298);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(96, 32);
+            this.btnEditar.TabIndex = 14;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionar.Location = new System.Drawing.Point(102, 298);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(96, 32);
+            this.btnAdicionar.TabIndex = 13;
+            this.btnAdicionar.Text = "&Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            // 
+            // CadastroSetores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 405);
+            this.ClientSize = new System.Drawing.Size(544, 402);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.tbxAddPatrimonio);
             this.Controls.Add(this.lbxStatusPatri);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAdicionar);
-            this.Name = "StatusPatrimonio";
+            this.Name = "CadastroSetores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editar Status Patrimonio";
-            this.Load += new System.EventHandler(this.StatusPatrimonio_Load);
+            this.Text = "Cadastro de Setores";
+            this.Load += new System.EventHandler(this.CadastroSetores_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Button btnExcluir;
+        private Guna.UI2.WinForms.Guna2TextBox tbxAddPatrimonio;
+        private System.Windows.Forms.ListBox lbxStatusPatri;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.ListBox lbxStatusPatri;
-        private Guna.UI2.WinForms.Guna2TextBox tbxAddPatrimonio;
-        private System.Windows.Forms.Button btnExcluir;
     }
 }

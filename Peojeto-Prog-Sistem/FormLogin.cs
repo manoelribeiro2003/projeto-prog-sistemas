@@ -64,11 +64,6 @@ namespace Peojeto_Prog_Sistem
             Application.Run(new Dashboard(nomeUsuario, adm));
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
