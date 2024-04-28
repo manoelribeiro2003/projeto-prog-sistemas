@@ -24,7 +24,7 @@ namespace Peojeto_Prog_Sistem
         }
         public static DataTable consulta(string sql)
         {
-            SQLiteDataAdapter da = null;
+            SQLiteDataAdapter da;
             DataTable dt = new DataTable();
             try
             {

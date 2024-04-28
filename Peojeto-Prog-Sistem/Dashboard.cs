@@ -9,37 +9,38 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Web.UI.WebControls;
+using System.Threading;
 
 namespace Peojeto_Prog_Sistem
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        int adm;
+        public Dashboard(string login, int adm)
         {
             InitializeComponent();
-            
+            lblUserName.Text = login;
+            this.adm = adm;
+            if (this.adm == 1)
+            {
+                usuarioToolStripMenuItem.Enabled = true;
+                setorToolStripMenuItem.Enabled = true;
+                configuracoesToolStripMenuItem.Enabled = true;
+
+            }
+            else
+            {
+                usuarioToolStripMenuItem.Enabled = false;
+                setorToolStripMenuItem.Enabled = false;
+                configuracoesToolStripMenuItem.Enabled = false;
+            }
+
         }
 
         private void patrimonioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastroPatrimonio cp = new CadastroPatrimonio();
             cp.Show();
-        }
-
-        private void Locados_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CadastroManutencao cm = new CadastroManutencao();
-            cm.Show();
         }
 
         private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,7 +58,7 @@ namespace Peojeto_Prog_Sistem
         private void cadastrarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             CadastroManutencao cm = new CadastroManutencao();
-                cm.ShowDialog();
+            cm.ShowDialog();
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,15 +92,32 @@ namespace Peojeto_Prog_Sistem
             tbxQuantidade.Text = Convert.ToString(dtQuantidade.Rows.Count);
 
             DataTable dtQuantAloc = Banco.DashboardBuscarQuantAloc(descricaoPatri);
-            tbxLocados.Text = Convert.ToString(dtQuantAloc.Rows.Count);
+            tbxAlocados.Text = Convert.ToString(dtQuantAloc.Rows.Count);
 
             DataTable dtQuantManut = Banco.ObterManutencao(descricaoPatri);
             tbxManutencao.Text = Convert.ToString(dtQuantManut.Rows.Count);
 
         }
 
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+            Thread td = new Thread(fecharDashboard);
+            td.SetApartmentState(ApartmentState.STA);
+            td.Start();
+        }
 
+        private void fecharDashboard()
+        {
+            this.Close();
 
+            Application.Run(new FormLogin());
+
+        }
+
+        private void sobreToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
