@@ -66,6 +66,8 @@
             this.tbxManPreventiva = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbxUltAquisicao = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbxPatrimonio = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.usuárioDePatrimônioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuárioDoSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msDashboard.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -227,20 +229,23 @@
             // 
             // usuárioToolStripMenuItem1
             // 
+            this.usuárioToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuárioDePatrimônioToolStripMenuItem,
+            this.usuárioDoSistemaToolStripMenuItem});
             this.usuárioToolStripMenuItem1.Name = "usuárioToolStripMenuItem1";
-            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.usuárioToolStripMenuItem1.Text = "Usuário";
             // 
             // fornecedorToolStripMenuItem1
             // 
             this.fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
-            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
             // 
             // patrimonioToolStripMenuItem1
             // 
             this.patrimonioToolStripMenuItem1.Name = "patrimonioToolStripMenuItem1";
-            this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.patrimonioToolStripMenuItem1.Text = "Patrimônio";
             // 
             // manutençãoToolStripMenuItem
@@ -497,6 +502,19 @@
             this.cbxPatrimonio.SelectionChangeCommitted += new System.EventHandler(this.cbxPatrimonio_SelectionChangeCommitted);
             this.cbxPatrimonio.Click += new System.EventHandler(this.cbxPatrimonio_Click);
             // 
+            // usuárioDePatrimônioToolStripMenuItem
+            // 
+            this.usuárioDePatrimônioToolStripMenuItem.Name = "usuárioDePatrimônioToolStripMenuItem";
+            this.usuárioDePatrimônioToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.usuárioDePatrimônioToolStripMenuItem.Text = "Usuário de Patrimônio";
+            this.usuárioDePatrimônioToolStripMenuItem.Click += new System.EventHandler(this.usuárioDePatrimônioToolStripMenuItem_Click);
+            // 
+            // usuárioDoSistemaToolStripMenuItem
+            // 
+            this.usuárioDoSistemaToolStripMenuItem.Name = "usuárioDoSistemaToolStripMenuItem";
+            this.usuárioDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.usuárioDoSistemaToolStripMenuItem.Text = "Usuário do Sistema";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -570,5 +588,7 @@
         private System.Windows.Forms.ToolStripMenuItem configuracoesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statusDePatrimônioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroDeSetoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuárioDePatrimônioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuárioDoSistemaToolStripMenuItem;
     }
 }
