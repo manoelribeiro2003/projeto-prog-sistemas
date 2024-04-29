@@ -151,5 +151,11 @@ namespace Peojeto_Prog_Sistem
                 cbxPatrimonio.Items.Add(item[0].ToString());
             }
         }
+
+        private void usuárioDePatrimônioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarUsuarioPatri cup = new ConsultarUsuarioPatri();
+            cup.ShowDialog();
+        }
     }
 }
