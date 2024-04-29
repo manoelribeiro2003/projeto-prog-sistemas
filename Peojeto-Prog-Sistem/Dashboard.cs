@@ -142,5 +142,14 @@ namespace Peojeto_Prog_Sistem
             ConsultarSetores consultarSetores = new ConsultarSetores();
             consultarSetores.ShowDialog();
         }
+
+        private void cbxPatrimonio_Click(object sender, EventArgs e)
+        {
+            DataTable listDesc = Banco.BuscarDescricao();
+            foreach (DataRow item in listDesc.Rows)
+            {
+                cbxPatrimonio.Items.Add(item[0].ToString());
+            }
+        }
     }
 }
