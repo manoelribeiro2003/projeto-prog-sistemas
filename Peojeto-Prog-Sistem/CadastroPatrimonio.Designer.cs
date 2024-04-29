@@ -456,7 +456,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(187)))), ((int)(((byte)(70)))));
             this.Name = "CadastroPatrimonio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro Patrimonio";
+            this.Text = "Cadastro Patrimônio";
             this.Load += new System.EventHandler(this.CadastroPatrimonio_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -51,13 +51,23 @@ namespace Peojeto_Prog_Sistem
         {
             Fornecedor fornecedor = new Fornecedor();
 
-            fornecedor.cnpj             = tbxcnpj.Text;
-            fornecedor.razaosocial      = tbxRazaoSocial.Text;
-            fornecedor.endFornecedor    = tbxEnd.Text;
-            fornecedor.contato          = tbxContato.Text;
-            fornecedor.obs              = tbxObs.Text;
+            fornecedor.cnpj = tbxcnpj.Text;
+            fornecedor.razaosocial = tbxRazaoSocial.Text;
+            fornecedor.endFornecedor = tbxEnd.Text;
+            fornecedor.contato = tbxContato.Text;
+            fornecedor.obs = tbxObs.Text;
 
-            Banco.CadastroFornecedor(fornecedor);
+            if (fornecedor.cnpj != "" && fornecedor.razaosocial != "" &&
+                fornecedor.endFornecedor != "" && fornecedor.contato != "")
+            {
+                Banco.CadastroFornecedor(fornecedor);
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos obrigatórios", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
 
 
         }

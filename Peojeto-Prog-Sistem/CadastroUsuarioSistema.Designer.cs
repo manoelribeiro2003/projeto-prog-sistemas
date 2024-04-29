@@ -216,7 +216,7 @@
             this.Controls.Add(this.labelNF);
             this.Name = "CadastroUsuarioSistema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de Usuario do Sistema";
+            this.Text = "Cadastro de Usuários do Sistema";
             this.ResumeLayout(false);
             this.PerformLayout();
 

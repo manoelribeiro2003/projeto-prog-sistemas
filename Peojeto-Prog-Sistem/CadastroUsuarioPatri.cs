@@ -19,27 +19,37 @@ namespace Peojeto_Prog_Sistem
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            UsuarioPatri usuariopatri = new UsuarioPatri();
-            usuariopatri.nome = tbxNome.Text;
-            usuariopatri.responsavel = tbxResponsavel.Text;
-            usuariopatri.cargo = tbxCargo.Text; 
-            usuariopatri.setor = cbxSetor.SelectedItem.ToString();
-            usuariopatri.subdivisao = cbxSubdivisao.SelectedItem.ToString();
+            try
+            {
+                UsuarioPatri usuariopatri = new UsuarioPatri();
+                usuariopatri.nome = tbxNome.Text;
+                usuariopatri.responsavel = tbxResponsavel.Text;
+                usuariopatri.cargo = tbxCargo.Text;
+                usuariopatri.setor = cbxSetor.SelectedItem.ToString();
+                usuariopatri.subdivisao = cbxSubdivisao.SelectedItem.ToString();
 
-            if (usuariopatri.nome != "" && usuariopatri.responsavel != "" &&
+                if (usuariopatri.nome != "" && usuariopatri.responsavel != "" &&
                                 usuariopatri.cargo != "" && usuariopatri.setor != "")
-            {
-                Banco.cadastrarUserPatri(usuariopatri);
-                tbxNome.Text = "";
-                tbxResponsavel.Text = "";
-                tbxCargo.Text = "";
-                cbxSetor.SelectedIndex = -1;
-                cbxSubdivisao.SelectedIndex = -1;
+                {
+                    Banco.cadastrarUserPatri(usuariopatri);
+                    tbxNome.Text = "";
+                    tbxResponsavel.Text = "";
+                    tbxCargo.Text = "";
+                    cbxSetor.SelectedIndex = -1;
+                    cbxSubdivisao.SelectedIndex = -1;
+                }
+                else
+                {
+                    MessageBox.Show("Preencha todos os campos obrigatórios!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Preencha todos os campos obrigatórios!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch{
+                MessageBox.Show("Erro ao realizar cadastro!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
+
+            
         }
 
         private void CadastroUsuarioPatri_Load(object sender, EventArgs e)

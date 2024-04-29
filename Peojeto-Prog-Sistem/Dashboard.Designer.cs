@@ -133,11 +133,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(220, 47);
+            this.label1.Location = new System.Drawing.Point(214, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 33);
+            this.label1.Size = new System.Drawing.Size(310, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Gestão de Patrimônio";
+            this.label1.Text = "Gestão de Patrimônios";
             // 
             // label7
             // 
@@ -183,14 +183,14 @@
             // usuarioDoSistemaToolStripMenuItem
             // 
             this.usuarioDoSistemaToolStripMenuItem.Name = "usuarioDoSistemaToolStripMenuItem";
-            this.usuarioDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.usuarioDoSistemaToolStripMenuItem.Text = "Usuario do Sistema";
+            this.usuarioDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.usuarioDoSistemaToolStripMenuItem.Text = "Usuário do Sistema";
             this.usuarioDoSistemaToolStripMenuItem.Click += new System.EventHandler(this.usuarioDoSistemaToolStripMenuItem_Click);
             // 
             // usuarioPatrimonioToolStripMenuItem
             // 
             this.usuarioPatrimonioToolStripMenuItem.Name = "usuarioPatrimonioToolStripMenuItem";
-            this.usuarioPatrimonioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuarioPatrimonioToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.usuarioPatrimonioToolStripMenuItem.Text = "Usuário Patrimônio";
             this.usuarioPatrimonioToolStripMenuItem.Click += new System.EventHandler(this.usuarioPatrimonioToolStripMenuItem_Click);
             // 
@@ -241,7 +241,7 @@
             // 
             this.patrimonioToolStripMenuItem1.Name = "patrimonioToolStripMenuItem1";
             this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
-            this.patrimonioToolStripMenuItem1.Text = "Patrimonio";
+            this.patrimonioToolStripMenuItem1.Text = "Patrimônio";
             // 
             // manutençãoToolStripMenuItem
             // 
@@ -333,6 +333,7 @@
             this.cadastroDeSetoresToolStripMenuItem.Name = "cadastroDeSetoresToolStripMenuItem";
             this.cadastroDeSetoresToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.cadastroDeSetoresToolStripMenuItem.Text = "Cadastro de Setores";
+            this.cadastroDeSetoresToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeSetoresToolStripMenuItem_Click);
             // 
             // tbxQuantidade
             // 

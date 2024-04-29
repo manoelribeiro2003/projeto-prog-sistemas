@@ -31,7 +31,7 @@ namespace Peojeto_Prog_Sistem
 
             if (login == "" || senha == "")
             {
-                MessageBox.Show("usuario ou senha invalida");
+                MessageBox.Show("Preencha os campos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txbLogin.Focus();
                 return;
             }
@@ -54,7 +54,7 @@ namespace Peojeto_Prog_Sistem
                 }
                 else
                 {
-                    MessageBox.Show("Dados Incorretos!");
+                    MessageBox.Show("Dados Incorretos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

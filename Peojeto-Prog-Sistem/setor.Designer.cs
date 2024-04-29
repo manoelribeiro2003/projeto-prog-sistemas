@@ -120,7 +120,7 @@
             this.Controls.Add(this.label1);
             this.Name = "setor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PatriMundi - Cadastro de Setor";
+            this.Text = "Cadastrar Setor";
             this.Load += new System.EventHandler(this.setor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

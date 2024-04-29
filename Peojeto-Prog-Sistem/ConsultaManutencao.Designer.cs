@@ -237,7 +237,7 @@
             this.Controls.Add(this.labelFornecedor);
             this.Controls.Add(this.labelNF);
             this.Name = "ConsultaManutencao";
-            this.Text = "ConsultaManutencao";
+            this.Text = "Consulta de Manutenções";
             this.Load += new System.EventHandler(this.ConsultaManutencao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvManutencao)).EndInit();
             this.ResumeLayout(false);

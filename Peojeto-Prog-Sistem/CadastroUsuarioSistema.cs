@@ -37,7 +37,7 @@ namespace Peojeto_Prog_Sistem
                 if (usuarioSistema.usuario != "" && usuarioSistema.senha != "" &&
                                 usuarioSistema.nome != "")
                 {
-                    Banco.cadastraruserSis(usuarioSistema);
+                    Banco.cadastrarUserSis(usuarioSistema);
                     tbxNomeDeUsuario.Text = "";
                     tbxNome.Text = "";
                     tbxSenha.Text = "";

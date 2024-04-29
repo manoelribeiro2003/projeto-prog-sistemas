@@ -21,11 +21,20 @@ namespace Peojeto_Prog_Sistem
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            
-            cadastrarSetor.nome       = tbxNome.Text;
+
+            cadastrarSetor.nome = tbxNome.Text;
             cadastrarSetor.subDivisao = tbxSubDivisao.Text;
 
-            Banco.CadastrarSetor(cadastrarSetor);
+            if (cadastrarSetor.nome == "")
+            {
+                MessageBox.Show("Preencha o nome do setor", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Banco.CadastrarSetor(cadastrarSetor);
+            }
+
+
         }
 
         private void setor_Load(object sender, EventArgs e)

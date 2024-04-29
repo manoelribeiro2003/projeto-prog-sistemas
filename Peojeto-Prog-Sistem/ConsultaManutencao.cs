@@ -64,7 +64,7 @@ namespace Peojeto_Prog_Sistem
                 bool rowsAffected = Banco.editarManutencao(manutencao);
                 if (rowsAffected)
                 {
-                    MessageBox.Show("Item editado com sucesso!", "Edição de manutenção");
+                    MessageBox.Show("Item editado com sucesso!", "Edição de manutenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 dgvManutencao.DataSource = Banco.ObterManutencao();
             }

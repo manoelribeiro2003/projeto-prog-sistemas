@@ -116,7 +116,7 @@
             this.Controls.Add(this.btnAdicionar);
             this.Name = "StatusPatrimonio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editar Status Patrimonio";
+            this.Text = "Editar Status de Patrimônio";
             this.Load += new System.EventHandler(this.StatusPatrimonio_Load);
             this.ResumeLayout(false);
 

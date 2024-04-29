@@ -144,7 +144,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelFornecedor);
             this.Name = "CadastroManutencao";
-            this.Text = "CadastroManutencao";
+            this.Text = "Cadastro de Manutenções";
             this.Load += new System.EventHandler(this.CadastroManutencao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

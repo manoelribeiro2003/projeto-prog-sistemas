@@ -228,7 +228,7 @@
             this.Controls.Add(this.labelNF);
             this.Name = "CadastroUsuarioPatri";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro Usuario Patri";
+            this.Text = "Cadastro de Usuário de Patrimônio";
             this.Load += new System.EventHandler(this.CadastroUsuarioPatri_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

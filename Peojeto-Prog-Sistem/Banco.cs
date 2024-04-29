@@ -203,13 +203,13 @@ namespace Peojeto_Prog_Sistem
                     cmd.Parameters.AddWithValue("@motivo", c.motivo);
                     
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Manutenção cadastrada com sucesso", "PatriMundo - Cadastro de Manutenção");
+                    MessageBox.Show("Manutenção cadastrada com sucesso", "PatriMundo - Cadastro de Manutenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConexaoBanco().Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Manutenção");
+                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Manutenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ConexaoBanco().Close();
                 throw ex;
             }
@@ -282,7 +282,7 @@ namespace Peojeto_Prog_Sistem
                 throw ex;
             }
         }
-        public static void cadastraruserSis(UsuarioSistema usuarioSistema)
+        public static void cadastrarUserSis(UsuarioSistema usuarioSistema)
         {
             try
             {
@@ -368,6 +368,28 @@ namespace Peojeto_Prog_Sistem
             }
             
 
+        }
+
+        public static DataTable ObterSetores()
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT id as 'ID', nome as 'Nome', subDivisao as 'Subdivisão' FROM t_setor";
+
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    da.Fill(dt);
+                    ConexaoBanco().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public static DataTable buscarListStatusPatri()
@@ -677,6 +699,46 @@ namespace Peojeto_Prog_Sistem
                 return false;
             }
 
+        }
+
+        public static bool editarSetor(int id, string nome, string subdivisao)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"UPDATE t_setor SET nome = '{nome}', subDivisao = '{subdivisao}' WHERE id = {id}";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar cadastro", "PatriMundi - Edição cadastro de Setores", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConexaoBanco().Close();
+                return false;
+            }
+        }
+
+        public static bool editarPatrimonioManutencao(int id)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"UPDATE patrimonios SET status = 'Em manutenção', locacao = 'Manutenção' WHERE id = {id}";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar patrimônio\nCertifique-se que o Patrimônio está no setor de Manutenção", "PatriMundi - Edição de Patrimônios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConexaoBanco().Close();
+                return false;
+            }
         }
 
 

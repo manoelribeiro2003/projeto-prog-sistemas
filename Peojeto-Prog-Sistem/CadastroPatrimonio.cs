@@ -64,7 +64,7 @@ namespace Peojeto_Prog_Sistem
                 patrimonio.fornecedor == "" || patrimonio.status == "" || 
                 patrimonio.localizacao == "" || patrimonio.valor == "")
             {
-                MessageBox.Show("Preencha todos os campos obrigatórios","Erro");
+                MessageBox.Show("Preencha todos os campos obrigatórios","Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

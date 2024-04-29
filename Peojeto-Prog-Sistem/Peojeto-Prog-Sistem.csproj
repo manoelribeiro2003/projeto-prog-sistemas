@@ -158,6 +158,12 @@
     <Compile Include="CadastroUsuarioPatri.Designer.cs">
       <DependentUpon>CadastroUsuarioPatri.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarSetores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarSetores.Designer.cs">
+      <DependentUpon>ConsultarSetores.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioPatri.cs" />
     <Compile Include="CadastroUsuarioSistema.cs">
       <SubType>Form</SubType>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaManutencao.resx">
       <DependentUpon>ConsultaManutencao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarSetores.resx">
+      <DependentUpon>ConsultarSetores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

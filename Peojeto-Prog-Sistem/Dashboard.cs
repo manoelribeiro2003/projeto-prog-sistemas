@@ -136,5 +136,11 @@ namespace Peojeto_Prog_Sistem
             CadastroUsuarioPatri cadastroUsuarioPatri = new CadastroUsuarioPatri();
             cadastroUsuarioPatri.ShowDialog();
         }
+
+        private void cadastroDeSetoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarSetores consultarSetores = new ConsultarSetores();
+            consultarSetores.ShowDialog();
+        }
     }
 }
