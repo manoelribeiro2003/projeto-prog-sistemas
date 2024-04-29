@@ -60,7 +60,9 @@ namespace Peojeto_Prog_Sistem
                 {
                     Banco.cadastroManutencao(manutencao);
                     Banco.editarPatrimonioManutencao(manutencao.id_patrimonio);
+                    
                 }
+
                 else
                 {
                     MessageBox.Show("Preencha todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -71,11 +73,7 @@ namespace Peojeto_Prog_Sistem
             {
                 MessageBox.Show("Erro ao cadastrar manutenção!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
-
-
+            
 
         }
 
