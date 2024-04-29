@@ -46,7 +46,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(126, 44);
+            this.label1.Location = new System.Drawing.Point(71, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 21);
             this.label1.TabIndex = 69;
@@ -58,7 +58,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(100, 233);
+            this.label2.Location = new System.Drawing.Point(71, 233);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 21);
             this.label2.TabIndex = 68;
@@ -70,7 +70,7 @@
             this.labelFornecedor.AutoSize = true;
             this.labelFornecedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelFornecedor.Location = new System.Drawing.Point(70, 107);
+            this.labelFornecedor.Location = new System.Drawing.Point(71, 107);
             this.labelFornecedor.Name = "labelFornecedor";
             this.labelFornecedor.Size = new System.Drawing.Size(118, 21);
             this.labelFornecedor.TabIndex = 67;
@@ -82,7 +82,7 @@
             this.labelNF.AutoSize = true;
             this.labelNF.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelNF.Location = new System.Drawing.Point(93, 170);
+            this.labelNF.Location = new System.Drawing.Point(71, 170);
             this.labelNF.Name = "labelNF";
             this.labelNF.Size = new System.Drawing.Size(95, 21);
             this.labelNF.TabIndex = 66;

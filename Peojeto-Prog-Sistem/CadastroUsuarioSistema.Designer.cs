@@ -61,7 +61,8 @@
             this.tbxRepitaSenha.PlaceholderText = "";
             this.tbxRepitaSenha.SelectedText = "";
             this.tbxRepitaSenha.Size = new System.Drawing.Size(343, 28);
-            this.tbxRepitaSenha.TabIndex = 111;
+            this.tbxRepitaSenha.TabIndex = 4;
+            this.tbxRepitaSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbxRepitaSenha_KeyUp);
             // 
             // tbxSenha
             // 
@@ -84,7 +85,7 @@
             this.tbxSenha.PlaceholderText = "";
             this.tbxSenha.SelectedText = "";
             this.tbxSenha.Size = new System.Drawing.Size(343, 28);
-            this.tbxSenha.TabIndex = 110;
+            this.tbxSenha.TabIndex = 3;
             // 
             // tbxNomeDeUsuario
             // 
@@ -107,7 +108,7 @@
             this.tbxNomeDeUsuario.PlaceholderText = "";
             this.tbxNomeDeUsuario.SelectedText = "";
             this.tbxNomeDeUsuario.Size = new System.Drawing.Size(343, 28);
-            this.tbxNomeDeUsuario.TabIndex = 109;
+            this.tbxNomeDeUsuario.TabIndex = 1;
             // 
             // labelCadastro
             // 
@@ -174,7 +175,7 @@
             this.tbxNome.PlaceholderText = "";
             this.tbxNome.SelectedText = "";
             this.tbxNome.Size = new System.Drawing.Size(343, 28);
-            this.tbxNome.TabIndex = 119;
+            this.tbxNome.TabIndex = 2;
             // 
             // cbxEAdm
             // 
@@ -183,7 +184,7 @@
             this.cbxEAdm.Location = new System.Drawing.Point(210, 246);
             this.cbxEAdm.Name = "cbxEAdm";
             this.cbxEAdm.Size = new System.Drawing.Size(185, 24);
-            this.cbxEAdm.TabIndex = 120;
+            this.cbxEAdm.TabIndex = 5;
             this.cbxEAdm.Text = "Usuário Administrador";
             this.cbxEAdm.UseVisualStyleBackColor = true;
             // 
@@ -194,7 +195,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(266, 307);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(107, 34);
-            this.btnSalvar.TabIndex = 121;
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);

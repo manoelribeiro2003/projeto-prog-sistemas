@@ -48,7 +48,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(266, 322);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(107, 34);
-            this.btnSalvar.TabIndex = 131;
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -74,7 +74,7 @@
             this.tbxResponsavel.PlaceholderText = "";
             this.tbxResponsavel.SelectedText = "";
             this.tbxResponsavel.Size = new System.Drawing.Size(343, 28);
-            this.tbxResponsavel.TabIndex = 129;
+            this.tbxResponsavel.TabIndex = 2;
             // 
             // tbxCargo
             // 
@@ -97,7 +97,7 @@
             this.tbxCargo.PlaceholderText = "";
             this.tbxCargo.SelectedText = "";
             this.tbxCargo.Size = new System.Drawing.Size(343, 28);
-            this.tbxCargo.TabIndex = 127;
+            this.tbxCargo.TabIndex = 3;
             // 
             // labelCadastro
             // 
@@ -164,7 +164,7 @@
             this.tbxNome.PlaceholderText = "";
             this.tbxNome.SelectedText = "";
             this.tbxNome.Size = new System.Drawing.Size(343, 28);
-            this.tbxNome.TabIndex = 126;
+            this.tbxNome.TabIndex = 1;
             // 
             // label1
             // 
@@ -191,7 +191,7 @@
             this.cbxSetor.Location = new System.Drawing.Point(219, 186);
             this.cbxSetor.Name = "cbxSetor";
             this.cbxSetor.Size = new System.Drawing.Size(343, 36);
-            this.cbxSetor.TabIndex = 133;
+            this.cbxSetor.TabIndex = 4;
             this.cbxSetor.SelectionChangeCommitted += new System.EventHandler(this.cbxSetor_SelectionChangeCommitted);
             // 
             // cbxSubdivisao
@@ -208,7 +208,7 @@
             this.cbxSubdivisao.Location = new System.Drawing.Point(219, 246);
             this.cbxSubdivisao.Name = "cbxSubdivisao";
             this.cbxSubdivisao.Size = new System.Drawing.Size(343, 36);
-            this.cbxSubdivisao.TabIndex = 134;
+            this.cbxSubdivisao.TabIndex = 5;
             // 
             // CadastroUsuarioPatri
             // 
