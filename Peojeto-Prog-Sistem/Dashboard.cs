@@ -157,5 +157,11 @@ namespace Peojeto_Prog_Sistem
             ConsultarUsuarioPatri cup = new ConsultarUsuarioPatri();
             cup.ShowDialog();
         }
+
+        private void fornecedorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ConsultaFornecedor cF = new ConsultaFornecedor();
+            cF.ShowDialog();
+        }
     }
 }
