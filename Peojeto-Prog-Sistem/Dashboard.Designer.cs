@@ -248,6 +248,7 @@
             this.usuárioDoSistemaToolStripMenuItem.Name = "usuárioDoSistemaToolStripMenuItem";
             this.usuárioDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.usuárioDoSistemaToolStripMenuItem.Text = "Usuário do Sistema";
+            this.usuárioDoSistemaToolStripMenuItem.Click += new System.EventHandler(this.usuárioDoSistemaToolStripMenuItem_Click);
             // 
             // fornecedorToolStripMenuItem1
             // 

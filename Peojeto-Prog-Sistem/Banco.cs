@@ -312,13 +312,13 @@ namespace Peojeto_Prog_Sistem
                     //preenche o comando com a string
                     cmd.CommandText = $"INSERT INTO t_usuario_patri (nome, responsavel, cargo, setor, subdivisao) VALUES ('{usuarioPatri.nome}', '{usuarioPatri.responsavel}', '{usuarioPatri.cargo}', '{usuarioPatri.setor}', '{usuarioPatri.subdivisao}')";
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Usuário cadastrado com sucesso!!!", "PatriMundo - Cadastro de Usuários");
+                    MessageBox.Show("Usuário cadastrado com sucesso!!!", "PatriMundo - Cadastro de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConexaoBanco().Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Usuário");
+                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ConexaoBanco().Close();
                 throw ex;
             }
@@ -678,6 +678,30 @@ namespace Peojeto_Prog_Sistem
             }
             
         }
+        public static void excluirUserPatri(int id)
+
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"DELETE FROM t_usuario_patri WHERE id = {id}";
+                    int result = cmd.ExecuteNonQuery();
+                    if (result>0)
+                    {
+                        MessageBox.Show("Usuário excluído!", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir cadastro", "PatriMundi - Excluir cadastro de Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConexaoBanco().Close();
+                throw ex;
+            }
+
+        }
 
         public static bool editarManutencao(Manutencao manutencao)
 
@@ -695,6 +719,28 @@ namespace Peojeto_Prog_Sistem
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao editar cadastro", "PatriMundi - Edição cadastro de Manutencao");
+                ConexaoBanco().Close();
+                return false;
+            }
+
+        }
+
+        public static bool editarUserPatri(int id, string nome, string responsavel, string cargo, string subdivisao)
+
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"UPDATE t_usuario_patri SET nome = '{nome}', responsavel = '{responsavel}', cargo = '{cargo}', subDivisao = '{subdivisao}' WHERE id = {id}";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar cadastro", "PatriMundi - Edição cadastro de Usuários",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ConexaoBanco().Close();
                 return false;
             }

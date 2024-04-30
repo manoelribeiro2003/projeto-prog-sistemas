@@ -146,6 +146,7 @@ namespace Peojeto_Prog_Sistem
         private void cbxPatrimonio_Click(object sender, EventArgs e)
         {
             DataTable listDesc = Banco.BuscarDescricao();
+            cbxPatrimonio.Items.Clear();
             foreach (DataRow item in listDesc.Rows)
             {
                 cbxPatrimonio.Items.Add(item[0].ToString());
@@ -162,6 +163,12 @@ namespace Peojeto_Prog_Sistem
         {
             ConsultaFornecedor cF = new ConsultaFornecedor();
             cF.ShowDialog();
+        }
+
+        private void usuárioDoSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarUsuarioSis cus = new ConsultarUsuarioSis();
+            cus.ShowDialog();
         }
     }
 }
