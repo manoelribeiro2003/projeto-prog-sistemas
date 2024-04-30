@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Peojeto_Prog_Sistem
 {
-    internal class Fornecedor
+    class Fornecedor
     {
         public int id_Fornecedor;
         public string cnpj;
@@ -14,5 +14,6 @@ namespace Peojeto_Prog_Sistem
         public string endFornecedor;
         public string contato;
         public string obs;
+
     }
 }

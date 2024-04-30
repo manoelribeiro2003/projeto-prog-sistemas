@@ -370,6 +370,54 @@ namespace Peojeto_Prog_Sistem
 
         }
 
+        //trazer os dados da tabela fornecedores para o dataGridView
+
+        public static DataTable ObterFornecedor(string razaoSocial = "")
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            if (razaoSocial == "")
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT id_fornecedor as 'ID', cnpj as 'CNPJ', razaoSocial as 'R Social', enderecoFornecedor as 'Endereço', contato as 'Contato', obs as 'Obs' FROM t_fornecedores";
+
+                        da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                        da.Fill(dt);
+                        ConexaoBanco().Close();
+                        return dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            else
+            {
+                try
+                {
+                    using (var cmd = ConexaoBanco().CreateCommand())
+                    {
+                        cmd.CommandText = $"SELECT * FROM t_fornecedores WHERE razaoSocial = '{razaoSocial}'";
+
+                        da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                        da.Fill(dt);
+                        ConexaoBanco().Close();
+                        return dt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+
+        }
+
         public static DataTable ObterSetores()
         {
             SQLiteDataAdapter da = null;
@@ -786,7 +834,54 @@ namespace Peojeto_Prog_Sistem
                 return false;
             }
         }
+        public static void editarFornecedor(Fornecedor fornecedor)
 
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    //preencer o comando com a string sql para alteração
+                    cmd.CommandText = "UPDATE t_fornecedores SET cnpj = @cnpj, razaoSocial = @razaoSocial, enderecoFornecedor = @enderecoFornecedor, contato = @contato, obs = @obs  WHERE id_fornecedor = @id_fornecedor";
+                    cmd.Parameters.AddWithValue("@id_fornecedor", fornecedor.id_Fornecedor);
+                    cmd.Parameters.AddWithValue("@cnpj", fornecedor.cnpj);
+                    cmd.Parameters.AddWithValue("@razaoSocial", fornecedor.razaosocial);
+                    cmd.Parameters.AddWithValue("@enderecoFornecedor", fornecedor.endFornecedor);
+                    cmd.Parameters.AddWithValue("@contato", fornecedor.contato);
+                    cmd.Parameters.AddWithValue("@obs", fornecedor.obs);
+                    
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Fornecedor atualizado com sucesso");
+                    ConexaoBanco().Clone();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static void excluirFornecedor(int id_fornecedor)
+
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM t_fornecedores WHERE id_fornecedor = @id_fornecedor";
+                    cmd.Parameters.AddWithValue("@id_fornecedor", id_fornecedor);
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir cadastro", "PatriMundi - Excluir cadastro de Fornecedor");
+                ConexaoBanco().Close();
+                throw ex;
+            }
+
+        }
 
     }
 }

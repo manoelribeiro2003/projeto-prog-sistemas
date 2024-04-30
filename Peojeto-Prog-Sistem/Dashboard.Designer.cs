@@ -233,7 +233,7 @@
             this.usuárioDePatrimônioToolStripMenuItem,
             this.usuárioDoSistemaToolStripMenuItem});
             this.usuárioToolStripMenuItem1.Name = "usuárioToolStripMenuItem1";
-            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.usuárioToolStripMenuItem1.Text = "Usuário";
             // 
             // usuárioDePatrimônioToolStripMenuItem
@@ -253,14 +253,14 @@
             // fornecedorToolStripMenuItem1
             // 
             this.fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
-            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem1.Click += new System.EventHandler(this.fornecedorToolStripMenuItem1_Click);
             // 
             // patrimonioToolStripMenuItem1
             // 
             this.patrimonioToolStripMenuItem1.Name = "patrimonioToolStripMenuItem1";
-            this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.patrimonioToolStripMenuItem1.Text = "Patrimônio";
             // 
             // manutençãoToolStripMenuItem
@@ -501,6 +501,7 @@
             // 
             // cbxPatrimonio
             // 
+            this.cbxPatrimonio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxPatrimonio.BackColor = System.Drawing.Color.Transparent;
             this.cbxPatrimonio.BorderRadius = 10;
             this.cbxPatrimonio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
