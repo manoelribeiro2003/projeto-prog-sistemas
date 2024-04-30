@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace Peojeto_Prog_Sistem
@@ -793,6 +794,26 @@ namespace Peojeto_Prog_Sistem
                 return false;
             }
 
+        }
+
+        public static bool editarUserSis(int id, string userName, string nome, string senha, int adm)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"UPDATE usuario_sis SET usuario = '{userName}', senha = '{senha}', adm = {adm}, nome = '{nome}' WHERE id = {id}";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar cadastro", "PatriMundi - Edição cadastro de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConexaoBanco().Close();
+                return false;
+            }
         }
 
         public static bool editarSetor(int id, string nome, string subdivisao)

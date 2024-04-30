@@ -7,15 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Peojeto_Prog_Sistem
 {
     public partial class ConsultarUsuarioSis : Form
     {
-        int id;
-        string nome;
-        string senha;
-        int adm;
+        int id, adm;
+        string nome, userName, senha;
+
         public ConsultarUsuarioSis()
         {
             InitializeComponent();
@@ -48,6 +48,53 @@ namespace Peojeto_Prog_Sistem
                 {
                     cbxEAdm.Checked = false;
                 }
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (tbxSenha.Text == tbxRepitaSenha.Text)
+            {
+                userName = tbxNomeDeUsuario.Text;
+                nome = tbxNome.Text;
+                senha = tbxSenha.Text;
+                if (cbxEAdm.Enabled)
+                {
+                    adm = 1;
+                }
+                else
+                {
+                    adm = 0;
+                }
+
+                DialogResult res = MessageBox.Show($"Quer realmente editar o usuário {dgvUsuariosPatri.SelectedRows[0].Cells["Usuário"].Value.ToString()}?", "Editar Usuário", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (res == DialogResult.Yes)
+                {
+                    if (Banco.editarUserSis(id, userName, nome, senha, adm))
+                    {
+                        MessageBox.Show("Usuário editado com sucesso", "Edição de Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        tbxNome.Text = "";
+                        tbxNomeDeUsuario.Text = "";
+                        tbxSenha.Text = "";
+                        tbxRepitaSenha.Text = "";
+                        cbxEAdm.Checked = false;
+
+                        string sql = "SELECT id as 'ID', usuario as 'Usuário', nome as 'Nome', senha as 'Senha', CASE WHEN adm = 1 THEN 'sim' ELSE 'não' END AS Adm FROM usuario_sis;";
+                        dgvUsuariosPatri.DataSource = Banco.consulta(sql);
+                        dgvUsuariosPatri.Columns[0].Width = 50;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possível editar o usuário", "Edição de Usuário", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("As senhas são divergentes!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
