@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroSetores));
             this.btnExcluir = new System.Windows.Forms.Button();
             this.tbxAddPatrimonio = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbxStatusPatri = new System.Windows.Forms.ListBox();
@@ -108,6 +109,7 @@
             this.Controls.Add(this.lbxStatusPatri);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAdicionar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroSetores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Setores";

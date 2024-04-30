@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroPatrimonio));
             this.labelValor = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelGestorResp = new System.Windows.Forms.Label();
@@ -454,6 +455,7 @@
             this.Controls.Add(this.labelFornecedor);
             this.Controls.Add(this.labelNF);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(187)))), ((int)(((byte)(70)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroPatrimonio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Patrimônio";

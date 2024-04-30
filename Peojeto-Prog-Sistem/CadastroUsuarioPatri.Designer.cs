@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuarioPatri));
             this.btnSalvar = new System.Windows.Forms.Button();
             this.tbxResponsavel = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbxCargo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -226,6 +227,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelFornecedor);
             this.Controls.Add(this.labelNF);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroUsuarioPatri";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Usuário de Patrimônio";
