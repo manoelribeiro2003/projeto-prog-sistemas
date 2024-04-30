@@ -46,10 +46,6 @@ namespace Peojeto_Prog_Sistem
             catch{
                 MessageBox.Show("Erro ao realizar cadastro!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
-            
         }
 
         private void CadastroUsuarioPatri_Load(object sender, EventArgs e)
@@ -63,7 +59,8 @@ namespace Peojeto_Prog_Sistem
 
         private void cbxSetor_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            DataTable listLocacao = Banco.buscarListLocalizacoes(distinct: false, subdivisao: true, setor: cbxSetor.SelectedItem.ToString());
+            string sql = $"SELECT DISTINCT subDivisao FROM t_setor WHERE nome = '{cbxSetor.SelectedItem.ToString()}' AND subDivisao != ''";
+            DataTable listLocacao = Banco.consulta(sql);
             cbxSubdivisao.Items.Clear();
             foreach (DataRow item in listLocacao.Rows)
             {

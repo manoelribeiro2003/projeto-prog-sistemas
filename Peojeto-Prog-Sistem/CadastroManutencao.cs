@@ -44,7 +44,14 @@ namespace Peojeto_Prog_Sistem
 
         private void cbxPatrimonio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataRow = dataRowCollection[cbxPatrimonio.SelectedIndex];
+            try
+            {
+                dataRow = dataRowCollection[cbxPatrimonio.SelectedIndex];
+            }
+            catch
+            {
+
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -60,6 +67,9 @@ namespace Peojeto_Prog_Sistem
                 {
                     Banco.cadastroManutencao(manutencao);
                     Banco.editarPatrimonioManutencao(manutencao.id_patrimonio);
+                    tbxMotivo.Text = "";
+                    cbxPatrimonio.SelectedIndex = -1;
+
                 }
                 else
                 {
@@ -71,7 +81,7 @@ namespace Peojeto_Prog_Sistem
             {
                 MessageBox.Show("Erro ao cadastrar manutenção!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            cbxPatrimonio.SelectedIndex = -1;
 
 
 

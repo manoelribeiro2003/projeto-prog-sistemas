@@ -142,5 +142,33 @@ namespace Peojeto_Prog_Sistem
             ConsultarSetores consultarSetores = new ConsultarSetores();
             consultarSetores.ShowDialog();
         }
+
+        private void cbxPatrimonio_Click(object sender, EventArgs e)
+        {
+            DataTable listDesc = Banco.BuscarDescricao();
+            cbxPatrimonio.Items.Clear();
+            foreach (DataRow item in listDesc.Rows)
+            {
+                cbxPatrimonio.Items.Add(item[0].ToString());
+            }
+        }
+
+        private void usuárioDePatrimônioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarUsuarioPatri cup = new ConsultarUsuarioPatri();
+            cup.ShowDialog();
+        }
+
+        private void fornecedorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ConsultaFornecedor cF = new ConsultaFornecedor();
+            cF.ShowDialog();
+        }
+
+        private void usuárioDoSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarUsuarioSis cus = new ConsultarUsuarioSis();
+            cus.ShowDialog();
+        }
     }
 }

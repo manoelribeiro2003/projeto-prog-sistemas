@@ -31,7 +31,7 @@ namespace Peojeto_Prog_Sistem
             if (contLinhas > 0)
             {
                 manutencao.id_manutencao = Convert.ToInt32(dgv.SelectedRows[0].Cells["ID Manutenção"].Value);
-                
+
                 tbxDescPatri.Text = dgv.SelectedRows[0].Cells["Descrição"].Value.ToString();
                 tbxPrevisao.Text = dgv.SelectedRows[0].Cells["Previsão"].Value.ToString();
                 tbxObs.Text = dgv.SelectedRows[0].Cells["Motivo"].Value.ToString();
@@ -49,6 +49,11 @@ namespace Peojeto_Prog_Sistem
                 Banco.excluirManutencao(manutencao.id_manutencao);
                 dgvManutencao.DataSource = Banco.ObterManutencao();
             }
+            tbxPatrimonio.Text = "";
+            tbxDescPatri.Text = "";
+            tbxPrevisao.Text = "";
+            tbxObs.Text = "";
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -67,7 +72,13 @@ namespace Peojeto_Prog_Sistem
                     MessageBox.Show("Item editado com sucesso!", "Edição de manutenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 dgvManutencao.DataSource = Banco.ObterManutencao();
+
             }
+            tbxPatrimonio.Text = "";
+            tbxDescPatri.Text = "";
+            tbxPrevisao.Text = "";
+            tbxObs.Text = "";
+
         }
     }
 }

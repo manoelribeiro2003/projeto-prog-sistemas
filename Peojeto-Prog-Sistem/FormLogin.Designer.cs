@@ -83,6 +83,8 @@
             this.txbSenha.Size = new System.Drawing.Size(100, 20);
             this.txbSenha.TabIndex = 4;
             this.txbSenha.Text = "1234";
+            this.txbSenha.TextChanged += new System.EventHandler(this.txbSenha_TextChanged);
+            this.txbSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbSenha_KeyUp);
             // 
             // btnEntrar
             // 

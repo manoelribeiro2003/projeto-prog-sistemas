@@ -56,5 +56,12 @@ namespace Peojeto_Prog_Sistem
 
 
         }
+
+        private void tbxRepitaSenha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnSalvar.PerformClick();
+
+        }
     }
 }

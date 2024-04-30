@@ -68,6 +68,17 @@ namespace Peojeto_Prog_Sistem
         {
             this.Close();
         }
+
+        private void txbSenha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnEntrar.PerformClick();
+        }
+
+        private void txbSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

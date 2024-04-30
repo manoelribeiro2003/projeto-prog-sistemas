@@ -158,11 +158,29 @@
     <Compile Include="CadastroUsuarioPatri.Designer.cs">
       <DependentUpon>CadastroUsuarioPatri.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaFornecedor.Designer.cs">
+      <DependentUpon>ConsultaFornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultarSetores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsultarSetores.Designer.cs">
       <DependentUpon>ConsultarSetores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarUsuarioPatri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarUsuarioPatri.Designer.cs">
+      <DependentUpon>ConsultarUsuarioPatri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarUsuarioSis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarUsuarioSis.Designer.cs">
+      <DependentUpon>ConsultarUsuarioSis.cs</DependentUpon>
     </Compile>
     <Compile Include="UsuarioPatri.cs" />
     <Compile Include="CadastroUsuarioSistema.cs">
@@ -225,11 +243,20 @@
     <EmbeddedResource Include="CadastroUsuarioSistema.resx">
       <DependentUpon>CadastroUsuarioSistema.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaFornecedor.resx">
+      <DependentUpon>ConsultaFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaManutencao.resx">
       <DependentUpon>ConsultaManutencao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarSetores.resx">
       <DependentUpon>ConsultarSetores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarUsuarioPatri.resx">
+      <DependentUpon>ConsultarUsuarioPatri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarUsuarioSis.resx">
+      <DependentUpon>ConsultarUsuarioSis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
