@@ -28,7 +28,7 @@ namespace Peojeto_Prog_Sistem
                 DialogResult res = MessageBox.Show("Deseja realmente editar?", "Edição", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
-                    Banco.editarUserPatri(id, nome, responsavel, cargo, subdivisao);
+                    Banco.editarUserPatri(id, nome, responsavel, cargo, setor, subdivisao);
                     tbxNome.Text = "";
                     tbxResponsavel.Text = "";
                     tbxCargo.Text = "";

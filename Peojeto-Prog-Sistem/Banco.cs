@@ -797,16 +797,19 @@ namespace Peojeto_Prog_Sistem
 
         }
 
-        public static bool editarUserPatri(int id, string nome, string responsavel, string cargo, string subdivisao)
+        public static void editarUserPatri(int id, string nome, string responsavel, string cargo, string setor, string subdivisao)
 
         {
             try
             {
                 using (var cmd = ConexaoBanco().CreateCommand())
                 {
-                    cmd.CommandText = $"UPDATE t_usuario_patri SET nome = '{nome}', responsavel = '{responsavel}', cargo = '{cargo}', subDivisao = '{subdivisao}' WHERE id = {id}";
+                    cmd.CommandText = $"UPDATE t_usuario_patri SET nome = '{nome}', responsavel = '{responsavel}', cargo = '{cargo}', setor = '{setor}', subDivisao = '{subdivisao}' WHERE id = {id}";
                     int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
+                    if (rowsAffected>0)
+                    {
+                        MessageBox.Show("Usuário editado com sucesso!", "PatriMundi - Edição cadastro de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
 
             }
@@ -814,7 +817,6 @@ namespace Peojeto_Prog_Sistem
             {
                 MessageBox.Show("Erro ao editar cadastro", "PatriMundi - Edição cadastro de Usuários",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ConexaoBanco().Close();
-                return false;
             }
 
         }

@@ -256,6 +256,7 @@
             this.Controls.Add(this.dgvUsuariosPatri);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultarUsuarioSis";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Usuário do Sistema";
             this.Load += new System.EventHandler(this.ConsultarUsuarioSis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuariosPatri)).EndInit();

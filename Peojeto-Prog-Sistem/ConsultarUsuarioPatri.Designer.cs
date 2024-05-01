@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarUsuarioPatri));
             this.btnExcluirManut = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.dgvUsuariosPatri = new System.Windows.Forms.DataGridView();
@@ -265,6 +266,7 @@
             this.Controls.Add(this.btnExcluirManut);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvUsuariosPatri);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultarUsuarioPatri";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Usuário de Patrimônio";
