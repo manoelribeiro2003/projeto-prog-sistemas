@@ -49,6 +49,7 @@
             this.btnExcluirManut.TabIndex = 116;
             this.btnExcluirManut.Text = "E&xcluir";
             this.btnExcluirManut.UseVisualStyleBackColor = true;
+            this.btnExcluirManut.Click += new System.EventHandler(this.btnExcluirManut_Click);
             // 
             // btnEditar
             // 
@@ -163,7 +164,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultarSetores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de Setores";
+            this.Text = "Consulta de Setores";
             this.Load += new System.EventHandler(this.ConsultarSetores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSetores)).EndInit();
             this.ResumeLayout(false);

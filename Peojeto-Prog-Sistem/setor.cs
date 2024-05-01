@@ -32,6 +32,8 @@ namespace Peojeto_Prog_Sistem
             else
             {
                 Banco.CadastrarSetor(cadastrarSetor);
+                tbxSubDivisao.Text = "";
+
             }
 
 

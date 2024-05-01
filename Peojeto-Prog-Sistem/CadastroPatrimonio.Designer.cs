@@ -43,7 +43,6 @@
             this.labelNF = new System.Windows.Forms.Label();
             this.txbDescricaoPatri = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbNf = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txbFornecedor = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbxStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbxLocacao = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbxLocalizacao = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -54,6 +53,7 @@
             this.dtpDtAquisicao = new System.Windows.Forms.DateTimePicker();
             this.dtpDtGarantia = new System.Windows.Forms.DateTimePicker();
             this.buttonSalvar = new System.Windows.Forms.Button();
+            this.cbxFornecedor = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelValor
@@ -208,7 +208,7 @@
             this.txbDescricaoPatri.PasswordChar = '\0';
             this.txbDescricaoPatri.PlaceholderText = "";
             this.txbDescricaoPatri.SelectedText = "";
-            this.txbDescricaoPatri.Size = new System.Drawing.Size(343, 28);
+            this.txbDescricaoPatri.Size = new System.Drawing.Size(422, 28);
             this.txbDescricaoPatri.TabIndex = 81;
             // 
             // txbNf
@@ -231,31 +231,8 @@
             this.txbNf.PasswordChar = '\0';
             this.txbNf.PlaceholderText = "";
             this.txbNf.SelectedText = "";
-            this.txbNf.Size = new System.Drawing.Size(343, 28);
+            this.txbNf.Size = new System.Drawing.Size(422, 28);
             this.txbNf.TabIndex = 82;
-            // 
-            // txbFornecedor
-            // 
-            this.txbFornecedor.BorderColor = System.Drawing.Color.Black;
-            this.txbFornecedor.BorderRadius = 10;
-            this.txbFornecedor.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbFornecedor.DefaultText = "";
-            this.txbFornecedor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txbFornecedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txbFornecedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbFornecedor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txbFornecedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbFornecedor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbFornecedor.ForeColor = System.Drawing.Color.Black;
-            this.txbFornecedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbFornecedor.Location = new System.Drawing.Point(215, 112);
-            this.txbFornecedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txbFornecedor.Name = "txbFornecedor";
-            this.txbFornecedor.PasswordChar = '\0';
-            this.txbFornecedor.PlaceholderText = "";
-            this.txbFornecedor.SelectedText = "";
-            this.txbFornecedor.Size = new System.Drawing.Size(343, 28);
-            this.txbFornecedor.TabIndex = 83;
             // 
             // cbxStatus
             // 
@@ -323,8 +300,6 @@
             this.cbxOperador.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbxOperador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbxOperador.ItemHeight = 30;
-            this.cbxOperador.Items.AddRange(new object[] {
-            "Operador 1"});
             this.cbxOperador.Location = new System.Drawing.Point(215, 386);
             this.cbxOperador.Name = "cbxOperador";
             this.cbxOperador.Size = new System.Drawing.Size(293, 36);
@@ -423,12 +398,24 @@
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click_1);
             // 
+            // cbxFornecedor
+            // 
+            this.cbxFornecedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxFornecedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxFornecedor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxFornecedor.FormattingEnabled = true;
+            this.cbxFornecedor.Location = new System.Drawing.Point(215, 112);
+            this.cbxFornecedor.Name = "cbxFornecedor";
+            this.cbxFornecedor.Size = new System.Drawing.Size(422, 29);
+            this.cbxFornecedor.TabIndex = 99;
+            // 
             // CadastroPatrimonio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(767, 669);
+            this.Controls.Add(this.cbxFornecedor);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.dtpDtGarantia);
             this.Controls.Add(this.dtpDtAquisicao);
@@ -439,7 +426,6 @@
             this.Controls.Add(this.cbxLocalizacao);
             this.Controls.Add(this.cbxLocacao);
             this.Controls.Add(this.cbxStatus);
-            this.Controls.Add(this.txbFornecedor);
             this.Controls.Add(this.txbNf);
             this.Controls.Add(this.txbDescricaoPatri);
             this.Controls.Add(this.labelValor);
@@ -480,7 +466,6 @@
         private System.Windows.Forms.Label labelNF;
         private Guna.UI2.WinForms.Guna2TextBox txbDescricaoPatri;
         private Guna.UI2.WinForms.Guna2TextBox txbNf;
-        private Guna.UI2.WinForms.Guna2TextBox txbFornecedor;
         //private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker1;
         //private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker2;
         private Guna.UI2.WinForms.Guna2ComboBox cbxStatus;
@@ -493,6 +478,7 @@
         private System.Windows.Forms.DateTimePicker dtpDtAquisicao;
         private System.Windows.Forms.DateTimePicker dtpDtGarantia;
         private System.Windows.Forms.Button buttonSalvar;
+        private System.Windows.Forms.ComboBox cbxFornecedor;
     }
 }
 

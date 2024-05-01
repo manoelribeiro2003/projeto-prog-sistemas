@@ -939,5 +939,31 @@ namespace Peojeto_Prog_Sistem
 
         }
 
+        public static void excluirSetor(int id)
+
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"DELETE FROM t_setor WHERE id = {id}";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Setor excluído com sucesso!", "PatriMundi - Excluir cadastro de Setor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir cadastro", "PatriMundi - Excluir cadastro de Setor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConexaoBanco().Close();
+                throw ex;
+            }
+
+        }
+
     }
 }
