@@ -28,6 +28,11 @@ namespace Peojeto_Prog_Sistem
             {
                 
                 Banco.excluirUserSis(Convert.ToInt32(dgvUsuariosPatri.SelectedRows[0].Cells["ID"].Value));
+                tbxNome.Text = "";
+                tbxNomeDeUsuario.Text = "";
+                tbxSenha.Text = "";
+                tbxRepitaSenha.Text = "";
+                cbxEAdm.Checked = false;
                 string sql = "SELECT id as 'ID', usuario as 'Usuário', nome as 'Nome', senha as 'Senha', CASE WHEN adm = 1 THEN 'sim' ELSE 'não' END AS Adm FROM usuario_sis;";
                 dgvUsuariosPatri.DataSource = Banco.consulta(sql);
             }

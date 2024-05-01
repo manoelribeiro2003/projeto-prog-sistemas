@@ -39,7 +39,7 @@ namespace Peojeto_Prog_Sistem
                 tbxEnd.Text = dgv.SelectedRows[0].Cells["Endereço"].Value.ToString();
                 tbxContato.Text = dgv.SelectedRows[0].Cells["Contato"].Value.ToString();
                 tbxObs.Text = dgv.SelectedRows[0].Cells["Obs"].Value.ToString();
-                
+
             }
         }
 
@@ -51,8 +51,22 @@ namespace Peojeto_Prog_Sistem
             fornecedor.contato = tbxContato.Text;
             fornecedor.obs = tbxObs.Text;
 
-            Banco.editarFornecedor(fornecedor);
-            dgvFornecedor.DataSource = Banco.ObterFornecedor();
+            DialogResult res = MessageBox.Show("Confirmar edição do Fornecedor " + dgvFornecedor.SelectedRows[0].Cells["R Social"].Value.ToString() + "?", "PatriMundi - Confirmar Edição", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (res == DialogResult.Yes)
+            {
+                Banco.editarFornecedor(fornecedor);
+
+                tbxcnpj.Text = "";
+                tbxRazaoSocial.Text = "";
+                tbxEnd.Text = "";
+                tbxContato.Text = "";
+                tbxObs.Text = "";
+
+                dgvFornecedor.DataSource = Banco.ObterFornecedor();
+            }
+
+
             /*
             string nome = dgvFornecedor.SelectedRows[0].Cells["R Social"].Value.ToString();
             DialogResult res = MessageBox.Show("Confirmar edição do Fornecedor " + nome + "?", "PatriMundi - Confirmar Edição", MessageBoxButtons.YesNo);
@@ -77,8 +91,7 @@ namespace Peojeto_Prog_Sistem
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            fornecedor.cnpj = dgvFornecedor.SelectedRows[0].Cells["CNPJ"].Value.ToString();
-            DialogResult res = MessageBox.Show("Confirmar exclusão de Fornecedor " + fornecedor.cnpj + "?", "PatriMundi - Confirmar exclusao", MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show("Confirmar exclusão de Fornecedor " + dgvFornecedor.SelectedRows[0].Cells["R Social"].Value.ToString() + "?", "PatriMundi - Confirmar exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
                 fornecedor.id_Fornecedor = Convert.ToInt32(dgvFornecedor.SelectedRows[0].Cells["ID"].Value);

@@ -267,7 +267,8 @@
             this.Controls.Add(this.labelNF);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaFornecedor";
-            this.Text = "ConsultaFornecedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consulta de Fornecedores";
             this.Load += new System.EventHandler(this.ConsultaFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
             this.ResumeLayout(false);

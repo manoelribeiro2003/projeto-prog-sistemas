@@ -77,7 +77,7 @@ namespace Peojeto_Prog_Sistem
                 ConexaoBanco().Close();
                 throw ex;
             }
-           
+
         }
 
         public static void DmlStatus(string comando, string oldStatus, string newStatus = "")
@@ -162,7 +162,7 @@ namespace Peojeto_Prog_Sistem
                     }
                 }
             }
-            
+
         }
 
         private static bool existePatrimonio(Patrimonio c)
@@ -171,7 +171,7 @@ namespace Peojeto_Prog_Sistem
             bool res = false;
             string sql = "SELECT descricaoPatri FROM patrimonios WHERE id = '" + c.descricaoPatri + "'";
             dt = Banco.consulta(sql);
-            if (dt.Rows.Count > 0) 
+            if (dt.Rows.Count > 0)
             {
                 res = true;
             }
@@ -202,7 +202,7 @@ namespace Peojeto_Prog_Sistem
                     cmd.Parameters.AddWithValue("@descPatri", c.descPatri);
                     cmd.Parameters.AddWithValue("@previsao", c.previsao);
                     cmd.Parameters.AddWithValue("@motivo", c.motivo);
-                    
+
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Manutenção cadastrada com sucesso", "PatriMundo - Cadastro de Manutenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConexaoBanco().Close();
@@ -248,7 +248,7 @@ namespace Peojeto_Prog_Sistem
                     cmd.Parameters.AddWithValue("@obs", c.obs);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Fornecedor cadastrado com sucesso", "PatriMundo - Cadastro de Fornecedores");
+                    MessageBox.Show("Fornecedor cadastrado com sucesso", "PatriMundo - Cadastro de Fornecedores", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConexaoBanco().Close();
                 }
             }
@@ -270,7 +270,7 @@ namespace Peojeto_Prog_Sistem
                     cmd.CommandText = "INSERT INTO t_setor (nome, subDivisao) VALUES (@setor, @subDivisao)";
                     cmd.Parameters.AddWithValue("@setor", c.nome);
                     cmd.Parameters.AddWithValue("@subDivisao", c.subDivisao);
-                    
+
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Setor cadastrado com sucesso!!!", "PatriMundo - Cadastro de Setor");
                     ConexaoBanco().Close();
@@ -348,7 +348,7 @@ namespace Peojeto_Prog_Sistem
                     throw ex;
                 }
             }
-            else 
+            else
             {
                 try
                 {
@@ -367,7 +367,7 @@ namespace Peojeto_Prog_Sistem
                     throw ex;
                 }
             }
-            
+
 
         }
 
@@ -521,7 +521,7 @@ namespace Peojeto_Prog_Sistem
                     throw ex;
                 }
             }
-            else if(distinct == false && subdivisao == true && setor == "")
+            else if (distinct == false && subdivisao == true && setor == "")
             {
                 try
                 {
@@ -563,7 +563,7 @@ namespace Peojeto_Prog_Sistem
             {
                 return dt;
             }
-            
+
         }
 
         public static DataTable buscarListLocacoes()
@@ -707,7 +707,7 @@ namespace Peojeto_Prog_Sistem
 
         }
         public static void excluirManutencao(int id_manutencao)
-                           
+
         {
             try
             {
@@ -715,17 +715,21 @@ namespace Peojeto_Prog_Sistem
                 {
                     cmd.CommandText = "DELETE FROM t_manutencao WHERE id_manutencao = @id_manutencao";
                     cmd.Parameters.AddWithValue("@id_manutencao", id_manutencao);
-                    cmd.ExecuteNonQuery();
+                    int affectedRows = cmd.ExecuteNonQuery();
+                    if (affectedRows > 0)
+                    {
+                        MessageBox.Show("Manutenção excluída com sucesso!", "PatriMundi - Excluir cadastro de Manutencao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao excluir cadastro", "PatriMundi - Excluir cadastro de Manutencao");
+                MessageBox.Show("Erro ao excluir cadastro", "PatriMundi - Excluir cadastro de Manutencao", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ConexaoBanco().Close();
                 throw ex;
             }
-            
+
         }
         public static void excluirUserPatri(int id)
 
@@ -736,7 +740,7 @@ namespace Peojeto_Prog_Sistem
                 {
                     cmd.CommandText = $"DELETE FROM t_usuario_patri WHERE id = {id}";
                     int result = cmd.ExecuteNonQuery();
-                    if (result>0)
+                    if (result > 0)
                     {
                         MessageBox.Show("Usuário excluído!", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -786,7 +790,7 @@ namespace Peojeto_Prog_Sistem
                     int rowsAffected = cmd.ExecuteNonQuery();
                     return rowsAffected > 0;
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -806,7 +810,7 @@ namespace Peojeto_Prog_Sistem
                 {
                     cmd.CommandText = $"UPDATE t_usuario_patri SET nome = '{nome}', responsavel = '{responsavel}', cargo = '{cargo}', setor = '{setor}', subDivisao = '{subdivisao}' WHERE id = {id}";
                     int rowsAffected = cmd.ExecuteNonQuery();
-                    if (rowsAffected>0)
+                    if (rowsAffected > 0)
                     {
                         MessageBox.Show("Usuário editado com sucesso!", "PatriMundi - Edição cadastro de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -815,7 +819,7 @@ namespace Peojeto_Prog_Sistem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao editar cadastro", "PatriMundi - Edição cadastro de Usuários",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao editar cadastro", "PatriMundi - Edição cadastro de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ConexaoBanco().Close();
             }
 
@@ -895,15 +899,16 @@ namespace Peojeto_Prog_Sistem
                     cmd.Parameters.AddWithValue("@enderecoFornecedor", fornecedor.endFornecedor);
                     cmd.Parameters.AddWithValue("@contato", fornecedor.contato);
                     cmd.Parameters.AddWithValue("@obs", fornecedor.obs);
-                    
+
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Fornecedor atualizado com sucesso");
+                    MessageBox.Show("Fornecedor editado com sucesso!", "Edição de fornecedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConexaoBanco().Clone();
                 }
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Não foi possível editar o fornecedor", "Edição de fornecedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw ex;
             }
         }
@@ -916,13 +921,18 @@ namespace Peojeto_Prog_Sistem
                 {
                     cmd.CommandText = "DELETE FROM t_fornecedores WHERE id_fornecedor = @id_fornecedor";
                     cmd.Parameters.AddWithValue("@id_fornecedor", id_fornecedor);
-                    cmd.ExecuteNonQuery();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Fornecedor excluído com sucesso!", "PatriMundi - Excluir cadastro de Fornecedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao excluir cadastro", "PatriMundi - Excluir cadastro de Fornecedor");
+                MessageBox.Show("Erro ao excluir cadastro", "PatriMundi - Excluir cadastro de Fornecedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ConexaoBanco().Close();
                 throw ex;
             }
