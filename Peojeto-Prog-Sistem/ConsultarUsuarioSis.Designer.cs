@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarUsuarioSis));
             this.dgvUsuariosPatri = new System.Windows.Forms.DataGridView();
             this.btnExcluirManut = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -76,6 +77,7 @@
             this.btnExcluirManut.TabIndex = 157;
             this.btnExcluirManut.Text = "E&xcluir";
             this.btnExcluirManut.UseVisualStyleBackColor = true;
+            this.btnExcluirManut.Click += new System.EventHandler(this.btnExcluirManut_Click);
             // 
             // btnEditar
             // 
@@ -252,8 +254,9 @@
             this.Controls.Add(this.btnExcluirManut);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvUsuariosPatri);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultarUsuarioSis";
-            this.Text = "ConsultarUsuarioSis";
+            this.Text = "Consultar Usuário do Sistema";
             this.Load += new System.EventHandler(this.ConsultarUsuarioSis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuariosPatri)).EndInit();
             this.ResumeLayout(false);

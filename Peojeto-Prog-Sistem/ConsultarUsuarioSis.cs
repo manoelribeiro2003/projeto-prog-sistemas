@@ -21,6 +21,18 @@ namespace Peojeto_Prog_Sistem
             InitializeComponent();
         }
 
+        private void btnExcluirManut_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Confirmar exclusão do usuário " + dgvUsuariosPatri.SelectedRows[0].Cells["Usuário"].Value.ToString() + "?", "PatriMundi - Confirmar exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                
+                Banco.excluirUserSis(Convert.ToInt32(dgvUsuariosPatri.SelectedRows[0].Cells["ID"].Value));
+                string sql = "SELECT id as 'ID', usuario as 'Usuário', nome as 'Nome', senha as 'Senha', CASE WHEN adm = 1 THEN 'sim' ELSE 'não' END AS Adm FROM usuario_sis;";
+                dgvUsuariosPatri.DataSource = Banco.consulta(sql);
+            }
+        }
+
         private void ConsultarUsuarioSis_Load(object sender, EventArgs e)
         {
             string sql = "SELECT id as 'ID', usuario as 'Usuário', nome as 'Nome', senha as 'Senha', CASE WHEN adm = 1 THEN 'sim' ELSE 'não' END AS Adm FROM usuario_sis;";

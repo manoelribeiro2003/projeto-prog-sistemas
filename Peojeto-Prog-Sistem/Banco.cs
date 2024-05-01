@@ -292,13 +292,13 @@ namespace Peojeto_Prog_Sistem
                     //preenche o comando com a string
                     cmd.CommandText = $"INSERT INTO usuario_sis (usuario, senha, adm, nome) VALUES ('{usuarioSistema.usuario}', '{usuarioSistema.senha}', {usuarioSistema.adm}, '{usuarioSistema.nome}')";
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Usuário cadastrado com sucesso!!!", "PatriMundo - Cadastro de Usuários");
+                    MessageBox.Show("Usuário cadastrado com sucesso!", "PatriMundo - Cadastro de Usuários", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConexaoBanco().Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Usuário");
+                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ConexaoBanco().Close();
                 throw ex;
             }
@@ -750,6 +750,29 @@ namespace Peojeto_Prog_Sistem
                 throw ex;
             }
 
+        }
+
+        public static void excluirUserSis(int id)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"DELETE FROM usuario_sis WHERE id = {id}";
+                    int result = cmd.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Usuário excluído!", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir cadastro", "PatriMundi - Excluir cadastro de Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConexaoBanco().Close();
+                throw ex;
+            }
         }
 
         public static bool editarManutencao(Manutencao manutencao)
