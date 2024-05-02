@@ -100,8 +100,16 @@ namespace Peojeto_Prog_Sistem
             tbxManutencao.Text = Convert.ToString(dtQuantManut.Rows.Count);
 
             string sql = $"SELECT * FROM patrimonios WHERE status = 'Em manutenção' AND descricaoPatri = '{descricaoPatri}'";
-            DataTable dtQuantDisp = Banco.consulta(sql);
-            //tbx dtQuantDisp
+            DataTable dtQuantManutencao = Banco.consulta(sql);
+            int quantManut = dtQuantManutencao.Rows.Count;
+
+            sql = $"SELECT * FROM patrimonios WHERE descricaoPatri = '{descricaoPatri}'";
+            DataTable dtQuantTotal = Banco.consulta(sql);
+            int total = dtQuantTotal.Rows.Count;
+
+            int disp = total - (quantManut + dtQuantAloc.Rows.Count);
+
+            tbxDisponíveis.Text = Convert.ToString(disp);
 
 
 
