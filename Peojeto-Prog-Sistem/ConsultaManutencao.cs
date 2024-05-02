@@ -41,12 +41,13 @@ namespace Peojeto_Prog_Sistem
 
         private void btnExcluirManut_Click(object sender, EventArgs e)
         {
+            manutencao.id_patrimonio = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["ID Patrimônio"].Value.ToString());
             manutencao.descPatri = dgvManutencao.SelectedRows[0].Cells["Descrição"].Value.ToString();
             DialogResult res = MessageBox.Show("Confirmar exclusão de manutenção do item " + manutencao.descPatri + "?", "PatriMundi - Confirmar exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
                 manutencao.id_manutencao = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["ID Manutenção"].Value);
-                Banco.excluirManutencao(manutencao.id_manutencao);
+                Banco.excluirManutencao(manutencao.id_manutencao, manutencao.id_patrimonio);
                 dgvManutencao.DataSource = Banco.ObterManutencao();
             }
             tbxPatrimonio.Text = "";
