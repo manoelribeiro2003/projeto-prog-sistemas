@@ -692,7 +692,7 @@ namespace Peojeto_Prog_Sistem
             {
                 using (var cmd = ConexaoBanco().CreateCommand())
                 {
-                    cmd.CommandText = $"SELECT * FROM patrimonios WHERE descricaoPatri = '{descricaoPatri}' AND locacao != 0";
+                    cmd.CommandText = $"SELECT * FROM patrimonios WHERE status = 'Alocado' AND descricaoPatri = '{descricaoPatri}'";
                     da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
                     da.Fill(dt);
                     ConexaoBanco().Close();
