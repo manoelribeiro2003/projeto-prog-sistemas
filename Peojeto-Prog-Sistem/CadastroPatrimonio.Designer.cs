@@ -209,7 +209,7 @@
             this.txbDescricaoPatri.PlaceholderText = "";
             this.txbDescricaoPatri.SelectedText = "";
             this.txbDescricaoPatri.Size = new System.Drawing.Size(422, 28);
-            this.txbDescricaoPatri.TabIndex = 81;
+            this.txbDescricaoPatri.TabIndex = 1;
             // 
             // txbNf
             // 
@@ -232,7 +232,7 @@
             this.txbNf.PlaceholderText = "";
             this.txbNf.SelectedText = "";
             this.txbNf.Size = new System.Drawing.Size(422, 28);
-            this.txbNf.TabIndex = 82;
+            this.txbNf.TabIndex = 2;
             // 
             // cbxStatus
             // 
@@ -249,7 +249,7 @@
             this.cbxStatus.Location = new System.Drawing.Point(215, 233);
             this.cbxStatus.Name = "cbxStatus";
             this.cbxStatus.Size = new System.Drawing.Size(293, 36);
-            this.cbxStatus.TabIndex = 87;
+            this.cbxStatus.TabIndex = 6;
             // 
             // cbxLocacao
             // 
@@ -266,7 +266,7 @@
             this.cbxLocacao.Location = new System.Drawing.Point(215, 335);
             this.cbxLocacao.Name = "cbxLocacao";
             this.cbxLocacao.Size = new System.Drawing.Size(293, 36);
-            this.cbxLocacao.TabIndex = 88;
+            this.cbxLocacao.TabIndex = 8;
             // 
             // cbxLocalizacao
             // 
@@ -285,7 +285,7 @@
             this.cbxLocalizacao.Location = new System.Drawing.Point(215, 284);
             this.cbxLocalizacao.Name = "cbxLocalizacao";
             this.cbxLocalizacao.Size = new System.Drawing.Size(293, 36);
-            this.cbxLocalizacao.TabIndex = 89;
+            this.cbxLocalizacao.TabIndex = 7;
             this.cbxLocalizacao.SelectionChangeCommitted += new System.EventHandler(this.cbxLocalizacao_SelectionChangeCommitted);
             // 
             // cbxOperador
@@ -303,7 +303,7 @@
             this.cbxOperador.Location = new System.Drawing.Point(215, 386);
             this.cbxOperador.Name = "cbxOperador";
             this.cbxOperador.Size = new System.Drawing.Size(293, 36);
-            this.cbxOperador.TabIndex = 90;
+            this.cbxOperador.TabIndex = 9;
             // 
             // cbbGestorResp
             // 
@@ -322,7 +322,7 @@
             this.cbbGestorResp.Location = new System.Drawing.Point(215, 437);
             this.cbbGestorResp.Name = "cbbGestorResp";
             this.cbbGestorResp.Size = new System.Drawing.Size(293, 36);
-            this.cbbGestorResp.TabIndex = 91;
+            this.cbbGestorResp.TabIndex = 10;
             // 
             // txbValor
             // 
@@ -345,7 +345,7 @@
             this.txbValor.PlaceholderText = "";
             this.txbValor.SelectedText = "";
             this.txbValor.Size = new System.Drawing.Size(343, 28);
-            this.txbValor.TabIndex = 92;
+            this.txbValor.TabIndex = 11;
             // 
             // cbxObservacoes
             // 
@@ -368,7 +368,7 @@
             this.cbxObservacoes.PlaceholderText = "";
             this.cbxObservacoes.SelectedText = "";
             this.cbxObservacoes.Size = new System.Drawing.Size(343, 110);
-            this.cbxObservacoes.TabIndex = 93;
+            this.cbxObservacoes.TabIndex = 12;
             // 
             // dtpDtAquisicao
             // 
@@ -376,7 +376,7 @@
             this.dtpDtAquisicao.Location = new System.Drawing.Point(215, 155);
             this.dtpDtAquisicao.Name = "dtpDtAquisicao";
             this.dtpDtAquisicao.Size = new System.Drawing.Size(343, 24);
-            this.dtpDtAquisicao.TabIndex = 96;
+            this.dtpDtAquisicao.TabIndex = 4;
             // 
             // dtpDtGarantia
             // 
@@ -384,7 +384,7 @@
             this.dtpDtGarantia.Location = new System.Drawing.Point(215, 194);
             this.dtpDtGarantia.Name = "dtpDtGarantia";
             this.dtpDtGarantia.Size = new System.Drawing.Size(343, 24);
-            this.dtpDtGarantia.TabIndex = 97;
+            this.dtpDtGarantia.TabIndex = 5;
             // 
             // buttonSalvar
             // 
@@ -393,7 +393,7 @@
             this.buttonSalvar.Location = new System.Drawing.Point(619, 612);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(107, 34);
-            this.buttonSalvar.TabIndex = 98;
+            this.buttonSalvar.TabIndex = 13;
             this.buttonSalvar.Text = "&Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click_1);
@@ -407,7 +407,7 @@
             this.cbxFornecedor.Location = new System.Drawing.Point(215, 112);
             this.cbxFornecedor.Name = "cbxFornecedor";
             this.cbxFornecedor.Size = new System.Drawing.Size(422, 29);
-            this.cbxFornecedor.TabIndex = 99;
+            this.cbxFornecedor.TabIndex = 3;
             // 
             // CadastroPatrimonio
             // 
