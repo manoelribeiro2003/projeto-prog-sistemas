@@ -75,7 +75,7 @@ namespace Peojeto_Prog_Sistem
                 userName = tbxNomeDeUsuario.Text;
                 nome = tbxNome.Text;
                 senha = tbxSenha.Text;
-                if (cbxEAdm.Enabled)
+                if (cbxEAdm.Checked)
                 {
                     adm = 1;
                 }

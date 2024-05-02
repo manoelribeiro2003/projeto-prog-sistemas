@@ -26,6 +26,7 @@ namespace Peojeto_Prog_Sistem
                 usuarioToolStripMenuItem.Enabled = true;
                 setorToolStripMenuItem.Enabled = true;
                 configuracoesToolStripMenuItem.Enabled = true;
+                usuárioDoSistemaToolStripMenuItem.Enabled = true;
 
             }
             else
@@ -33,6 +34,7 @@ namespace Peojeto_Prog_Sistem
                 usuarioToolStripMenuItem.Enabled = false;
                 setorToolStripMenuItem.Enabled = false;
                 configuracoesToolStripMenuItem.Enabled = false;
+                usuárioDoSistemaToolStripMenuItem.Enabled = false;
             }
 
         }
@@ -115,15 +117,7 @@ namespace Peojeto_Prog_Sistem
 
         }
 
-        private void sobreToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Dashboard_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
+        
 
         private void usuarioDoSistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -175,6 +169,11 @@ namespace Peojeto_Prog_Sistem
         {
             ConsultarPatrimonio cs = new ConsultarPatrimonio();
             cs.ShowDialog();
+        }
+
+        private void Dashboard_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
