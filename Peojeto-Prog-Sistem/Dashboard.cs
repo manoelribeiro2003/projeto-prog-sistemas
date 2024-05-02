@@ -99,7 +99,11 @@ namespace Peojeto_Prog_Sistem
             DataTable dtQuantManut = Banco.ObterManutencao(descricaoPatri);
             tbxManutencao.Text = Convert.ToString(dtQuantManut.Rows.Count);
 
-            
+            string sql = $"SELECT * FROM patrimonios WHERE status = 'Em manutenção' AND descricaoPatri = '{descricaoPatri}'";
+            DataTable dtQuantDisp = Banco.consulta(sql);
+            //tbx dtQuantDisp
+
+
 
         }
 

@@ -36,10 +36,10 @@
             this.btnEntrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,7 +73,6 @@
             this.txbLogin.Name = "txbLogin";
             this.txbLogin.Size = new System.Drawing.Size(100, 20);
             this.txbLogin.TabIndex = 3;
-            this.txbLogin.Text = "manoelAdm";
             // 
             // txbSenha
             // 
@@ -82,7 +81,6 @@
             this.txbSenha.PasswordChar = '*';
             this.txbSenha.Size = new System.Drawing.Size(100, 20);
             this.txbSenha.TabIndex = 4;
-            this.txbSenha.Text = "1234";
             this.txbSenha.TextChanged += new System.EventHandler(this.txbSenha_TextChanged);
             this.txbSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbSenha_KeyUp);
             // 
@@ -122,6 +120,18 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label2.Location = new System.Drawing.Point(10, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(199, 37);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "🛡️PatriMundi";
+            // 
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -155,18 +165,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(10, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 37);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "🛡️PatriMundi";
             // 
             // FormLogin
             // 

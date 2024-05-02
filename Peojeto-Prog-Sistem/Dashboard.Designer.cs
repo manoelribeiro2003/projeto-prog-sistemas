@@ -32,9 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblAlocados = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
@@ -66,8 +64,6 @@
             this.tbxAlocados = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbxManutencao = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbxDisponíveis = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbxManPreventiva = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbxUltAquisicao = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbxPatrimonio = new Guna.UI2.WinForms.Guna2ComboBox();
             this.msDashboard.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +72,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(62, 211);
+            this.label2.Location = new System.Drawing.Point(62, 248);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 21);
             this.label2.TabIndex = 2;
@@ -86,7 +82,7 @@
             // 
             this.lblAlocados.AutoSize = true;
             this.lblAlocados.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlocados.Location = new System.Drawing.Point(62, 253);
+            this.lblAlocados.Location = new System.Drawing.Point(62, 290);
             this.lblAlocados.Name = "lblAlocados";
             this.lblAlocados.Size = new System.Drawing.Size(84, 21);
             this.lblAlocados.TabIndex = 3;
@@ -96,41 +92,21 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(62, 297);
+            this.label4.Location = new System.Drawing.Point(62, 334);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 21);
             this.label4.TabIndex = 4;
             this.label4.Text = "Manutenção";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(62, 381);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(203, 21);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Manutenção Preventiva";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(62, 339);
+            this.label6.Location = new System.Drawing.Point(62, 376);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 21);
             this.label6.TabIndex = 6;
             this.label6.Text = "Disponíveis";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(62, 421);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 21);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Última aquisição";
             // 
             // label1
             // 
@@ -180,7 +156,7 @@
             this.usuarioDoSistemaToolStripMenuItem,
             this.usuarioPatrimonioToolStripMenuItem});
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.usuarioToolStripMenuItem.Text = "Usuário";
             // 
             // usuarioDoSistemaToolStripMenuItem
@@ -200,21 +176,21 @@
             // patrimonioToolStripMenuItem
             // 
             this.patrimonioToolStripMenuItem.Name = "patrimonioToolStripMenuItem";
-            this.patrimonioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.patrimonioToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.patrimonioToolStripMenuItem.Text = "Patrimônio";
             this.patrimonioToolStripMenuItem.Click += new System.EventHandler(this.patrimonioToolStripMenuItem_Click);
             // 
             // fornecedorToolStripMenuItem
             // 
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.fornecedorToolStripMenuItem.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
             // 
             // setorToolStripMenuItem
             // 
             this.setorToolStripMenuItem.Name = "setorToolStripMenuItem";
-            this.setorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setorToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.setorToolStripMenuItem.Text = "Setor";
             this.setorToolStripMenuItem.Click += new System.EventHandler(this.setoToolStripMenuItem_Click);
             // 
@@ -234,7 +210,7 @@
             this.usuárioDePatrimônioToolStripMenuItem,
             this.usuárioDoSistemaToolStripMenuItem});
             this.usuárioToolStripMenuItem1.Name = "usuárioToolStripMenuItem1";
-            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.usuárioToolStripMenuItem1.Text = "Usuário";
             // 
             // usuárioDePatrimônioToolStripMenuItem
@@ -254,14 +230,14 @@
             // fornecedorToolStripMenuItem1
             // 
             this.fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
-            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem1.Click += new System.EventHandler(this.fornecedorToolStripMenuItem1_Click);
             // 
             // patrimonioToolStripMenuItem1
             // 
             this.patrimonioToolStripMenuItem1.Name = "patrimonioToolStripMenuItem1";
-            this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.patrimonioToolStripMenuItem1.Text = "Patrimônio";
             this.patrimonioToolStripMenuItem1.Click += new System.EventHandler(this.patrimonioToolStripMenuItem1_Click);
             // 
@@ -370,7 +346,7 @@
             this.tbxQuantidade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxQuantidade.ForeColor = System.Drawing.Color.Black;
             this.tbxQuantidade.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxQuantidade.Location = new System.Drawing.Point(572, 204);
+            this.tbxQuantidade.Location = new System.Drawing.Point(572, 241);
             this.tbxQuantidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxQuantidade.Name = "tbxQuantidade";
             this.tbxQuantidade.PasswordChar = '\0';
@@ -394,7 +370,7 @@
             this.tbxAlocados.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxAlocados.ForeColor = System.Drawing.Color.Black;
             this.tbxAlocados.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxAlocados.Location = new System.Drawing.Point(572, 246);
+            this.tbxAlocados.Location = new System.Drawing.Point(572, 283);
             this.tbxAlocados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxAlocados.Name = "tbxAlocados";
             this.tbxAlocados.PasswordChar = '\0';
@@ -418,7 +394,7 @@
             this.tbxManutencao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxManutencao.ForeColor = System.Drawing.Color.Black;
             this.tbxManutencao.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxManutencao.Location = new System.Drawing.Point(572, 288);
+            this.tbxManutencao.Location = new System.Drawing.Point(572, 325);
             this.tbxManutencao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxManutencao.Name = "tbxManutencao";
             this.tbxManutencao.PasswordChar = '\0';
@@ -442,7 +418,7 @@
             this.tbxDisponíveis.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxDisponíveis.ForeColor = System.Drawing.Color.Black;
             this.tbxDisponíveis.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxDisponíveis.Location = new System.Drawing.Point(572, 330);
+            this.tbxDisponíveis.Location = new System.Drawing.Point(572, 367);
             this.tbxDisponíveis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxDisponíveis.Name = "tbxDisponíveis";
             this.tbxDisponíveis.PasswordChar = '\0';
@@ -452,54 +428,6 @@
             this.tbxDisponíveis.Size = new System.Drawing.Size(110, 28);
             this.tbxDisponíveis.TabIndex = 99;
             this.tbxDisponíveis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbxManPreventiva
-            // 
-            this.tbxManPreventiva.BorderRadius = 10;
-            this.tbxManPreventiva.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxManPreventiva.DefaultText = "";
-            this.tbxManPreventiva.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbxManPreventiva.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbxManPreventiva.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxManPreventiva.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxManPreventiva.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxManPreventiva.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxManPreventiva.ForeColor = System.Drawing.Color.Black;
-            this.tbxManPreventiva.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxManPreventiva.Location = new System.Drawing.Point(572, 372);
-            this.tbxManPreventiva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbxManPreventiva.Name = "tbxManPreventiva";
-            this.tbxManPreventiva.PasswordChar = '\0';
-            this.tbxManPreventiva.PlaceholderText = "";
-            this.tbxManPreventiva.ReadOnly = true;
-            this.tbxManPreventiva.SelectedText = "";
-            this.tbxManPreventiva.Size = new System.Drawing.Size(110, 28);
-            this.tbxManPreventiva.TabIndex = 100;
-            this.tbxManPreventiva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbxUltAquisicao
-            // 
-            this.tbxUltAquisicao.BorderRadius = 10;
-            this.tbxUltAquisicao.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxUltAquisicao.DefaultText = "";
-            this.tbxUltAquisicao.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbxUltAquisicao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbxUltAquisicao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxUltAquisicao.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxUltAquisicao.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxUltAquisicao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxUltAquisicao.ForeColor = System.Drawing.Color.Black;
-            this.tbxUltAquisicao.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxUltAquisicao.Location = new System.Drawing.Point(572, 414);
-            this.tbxUltAquisicao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbxUltAquisicao.Name = "tbxUltAquisicao";
-            this.tbxUltAquisicao.PasswordChar = '\0';
-            this.tbxUltAquisicao.PlaceholderText = "";
-            this.tbxUltAquisicao.ReadOnly = true;
-            this.tbxUltAquisicao.SelectedText = "";
-            this.tbxUltAquisicao.Size = new System.Drawing.Size(110, 28);
-            this.tbxUltAquisicao.TabIndex = 101;
-            this.tbxUltAquisicao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cbxPatrimonio
             // 
@@ -527,17 +455,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(738, 528);
             this.Controls.Add(this.cbxPatrimonio);
-            this.Controls.Add(this.tbxUltAquisicao);
-            this.Controls.Add(this.tbxManPreventiva);
             this.Controls.Add(this.tbxDisponíveis);
             this.Controls.Add(this.tbxManutencao);
             this.Controls.Add(this.tbxAlocados);
             this.Controls.Add(this.tbxQuantidade);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblAlocados);
             this.Controls.Add(this.label2);
@@ -560,9 +484,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblAlocados;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblUserName;
@@ -587,8 +509,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tbxAlocados;
         private Guna.UI2.WinForms.Guna2TextBox tbxManutencao;
         private Guna.UI2.WinForms.Guna2TextBox tbxDisponíveis;
-        private Guna.UI2.WinForms.Guna2TextBox tbxManPreventiva;
-        private Guna.UI2.WinForms.Guna2TextBox tbxUltAquisicao;
         private Guna.UI2.WinForms.Guna2ComboBox cbxPatrimonio;
         private System.Windows.Forms.ToolStripMenuItem usuarioDoSistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioPatrimonioToolStripMenuItem;
