@@ -97,6 +97,8 @@ namespace Peojeto_Prog_Sistem
             DataTable dtQuantManut = Banco.ObterManutencao(descricaoPatri);
             tbxManutencao.Text = Convert.ToString(dtQuantManut.Rows.Count);
 
+            
+
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

@@ -706,7 +706,7 @@ namespace Peojeto_Prog_Sistem
             }
 
         }
-        public static void excluirManutencao(int id_manutencao)
+        public static void excluirManutencao(int id_manutencao, int id_patri)
 
         {
             try
@@ -720,6 +720,11 @@ namespace Peojeto_Prog_Sistem
                     {
                         MessageBox.Show("Manutenção excluída com sucesso!", "PatriMundi - Excluir cadastro de Manutencao", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+
+                    cmd.CommandText = "UPDATE patrimonios SET status = 'Alocado' WHERE id = @id_patri";
+                    cmd.Parameters.AddWithValue("@id_patri", id_patri);
+                    cmd.ExecuteNonQuery();
+
                 }
 
             }
@@ -900,7 +905,7 @@ namespace Peojeto_Prog_Sistem
             {
                 using (var cmd = ConexaoBanco().CreateCommand())
                 {
-                    cmd.CommandText = $"UPDATE patrimonios SET status = 'Em manutenção', locacao = 'Manutenção' WHERE id = {id}";
+                    cmd.CommandText = $"UPDATE patrimonios SET status = 'Em manutenção' WHERE id = {id}";
                     int rowsAffected = cmd.ExecuteNonQuery();
                     return rowsAffected > 0;
                 }
