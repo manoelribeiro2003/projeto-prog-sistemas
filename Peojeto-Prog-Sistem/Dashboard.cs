@@ -170,5 +170,11 @@ namespace Peojeto_Prog_Sistem
             ConsultarUsuarioSis cus = new ConsultarUsuarioSis();
             cus.ShowDialog();
         }
+
+        private void patrimonioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ConsultarPatrimonio cs = new ConsultarPatrimonio();
+            cs.ShowDialog();
+        }
     }
 }

@@ -138,7 +138,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(214, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(309, 32);
+            this.label1.Size = new System.Drawing.Size(310, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gestão de Patrimônios";
             // 
@@ -180,7 +180,7 @@
             this.usuarioDoSistemaToolStripMenuItem,
             this.usuarioPatrimonioToolStripMenuItem});
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuarioToolStripMenuItem.Text = "Usuário";
             // 
             // usuarioDoSistemaToolStripMenuItem
@@ -200,21 +200,21 @@
             // patrimonioToolStripMenuItem
             // 
             this.patrimonioToolStripMenuItem.Name = "patrimonioToolStripMenuItem";
-            this.patrimonioToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.patrimonioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.patrimonioToolStripMenuItem.Text = "Patrimônio";
             this.patrimonioToolStripMenuItem.Click += new System.EventHandler(this.patrimonioToolStripMenuItem_Click);
             // 
             // fornecedorToolStripMenuItem
             // 
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fornecedorToolStripMenuItem.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
             // 
             // setorToolStripMenuItem
             // 
             this.setorToolStripMenuItem.Name = "setorToolStripMenuItem";
-            this.setorToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.setorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.setorToolStripMenuItem.Text = "Setor";
             this.setorToolStripMenuItem.Click += new System.EventHandler(this.setoToolStripMenuItem_Click);
             // 
@@ -234,7 +234,7 @@
             this.usuárioDePatrimônioToolStripMenuItem,
             this.usuárioDoSistemaToolStripMenuItem});
             this.usuárioToolStripMenuItem1.Name = "usuárioToolStripMenuItem1";
-            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.usuárioToolStripMenuItem1.Text = "Usuário";
             // 
             // usuárioDePatrimônioToolStripMenuItem
@@ -254,15 +254,16 @@
             // fornecedorToolStripMenuItem1
             // 
             this.fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
-            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem1.Click += new System.EventHandler(this.fornecedorToolStripMenuItem1_Click);
             // 
             // patrimonioToolStripMenuItem1
             // 
             this.patrimonioToolStripMenuItem1.Name = "patrimonioToolStripMenuItem1";
-            this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.patrimonioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.patrimonioToolStripMenuItem1.Text = "Patrimônio";
+            this.patrimonioToolStripMenuItem1.Click += new System.EventHandler(this.patrimonioToolStripMenuItem1_Click);
             // 
             // manutençãoToolStripMenuItem
             // 

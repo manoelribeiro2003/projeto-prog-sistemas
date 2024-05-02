@@ -78,6 +78,18 @@ namespace Peojeto_Prog_Sistem
             else
             {
                 Banco.cadastrarPatrimonio(patrimonio);
+                txbDescricaoPatri.Text = "";
+                txbNf.Text = "";
+                cbxFornecedor.SelectedIndex = -1;
+                dtpDtAquisicao.Text = "";
+                dtpDtGarantia.Text = "";
+                cbxStatus.SelectedIndex = -1;
+                cbxLocalizacao.SelectedIndex = -1;
+                cbxLocacao.SelectedIndex = -1;
+                cbxOperador.SelectedIndex = -1;
+                cbbGestorResp.SelectedIndex = -1;
+                txbValor.Text = "";
+                cbxObservacoes.Text = "";
             }
         }
 

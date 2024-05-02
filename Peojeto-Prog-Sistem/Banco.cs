@@ -801,6 +801,35 @@ namespace Peojeto_Prog_Sistem
 
         }
 
+        public static void editarPatrimonio(Patrimonio p)
+
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"UPDATE patrimonios SET descricaoPatri = '{p.descricaoPatri}', " +
+                        $"nf = '{p.nf}', fornecedor = '{p.fornecedor}', dtAquisicao = '{p.dtAquisicao}', " +
+                        $"dtGarantia = '{p.dtGarantia}', status = '{p.status}', locacao = '{p.locacao}', " +
+                        $"localizacao = '{p.localizacao}', operador = '{p.operador}', gestorResp = '{p.gestorResp}', " +
+                        $"valor = '{p.valor}', obs = '{p.obs}' WHERE id = {p.id}";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Patrimônio editado com sucesso!", "PatriMundi - Edição de Patrimônio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar patrimonio", "PatriMundi - Edição de patrimônio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConexaoBanco().Close();
+            }
+
+        }
+
         public static void editarUserPatri(int id, string nome, string responsavel, string cargo, string setor, string subdivisao)
 
         {
@@ -940,7 +969,6 @@ namespace Peojeto_Prog_Sistem
         }
 
         public static void excluirSetor(int id)
-
         {
             try
             {
@@ -964,6 +992,32 @@ namespace Peojeto_Prog_Sistem
             }
 
         }
+
+        public static void excluirPatrimonio(Patrimonio p)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = $"DELETE FROM patrimonios WHERE id = {p.id}";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Patrimônio excluído com sucesso!", "PatriMundi - Excluir patrimônio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir patrimônio", "PatriMundi - Excluir Patrimônio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+
+
 
     }
 }
