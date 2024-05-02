@@ -117,5 +117,27 @@ namespace Peojeto_Prog_Sistem
                 //}
             }
         }
+
+        private void cbxLocacao_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string sql;
+            if (cbxLocacao.SelectedItem.ToString() == cbxLocalizacao.SelectedItem.ToString())
+            {
+                sql = $"select * from t_usuario_patri where setor = '{cbxLocalizacao.SelectedItem.ToString()}'";
+            }
+            else
+            {
+                sql = $"select * from t_usuario_patri where subDivisao = '{cbxLocacao.SelectedItem.ToString()}'";
+            }
+            DataTable listOperador = Banco.consulta(sql);
+            cbxOperador.Items.Clear();
+            foreach (DataRow item in listOperador.Rows)
+            {
+                //if (item["nome"].ToString() != "")
+                //{
+                cbxOperador.Items.Add(item["nome"].ToString());
+                //}
+            }
+        }
     }
 }

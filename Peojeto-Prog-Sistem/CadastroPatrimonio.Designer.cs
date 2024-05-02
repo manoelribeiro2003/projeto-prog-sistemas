@@ -267,6 +267,7 @@
             this.cbxLocacao.Name = "cbxLocacao";
             this.cbxLocacao.Size = new System.Drawing.Size(293, 36);
             this.cbxLocacao.TabIndex = 8;
+            this.cbxLocacao.SelectionChangeCommitted += new System.EventHandler(this.cbxLocacao_SelectionChangeCommitted);
             // 
             // cbxLocalizacao
             // 

@@ -67,13 +67,13 @@ namespace Peojeto_Prog_Sistem
                     cmd.Parameters.AddWithValue("@obs", c.obs);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Patrimônio cadastrado com sucesso", "PatriMundo - Cadastro de Patrimônio");
+                    MessageBox.Show("Patrimônio cadastrado com sucesso", "PatriMundo - Cadastro de Patrimônio", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConexaoBanco().Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Patrimônio");
+                MessageBox.Show("Ops!!! erro no Cadastro", "PatriMundo - Cadastro de Patrimônio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ConexaoBanco().Close();
                 throw ex;
             }
