@@ -61,6 +61,11 @@ namespace Peojeto_Prog_Sistem
                 fornecedor.endFornecedor != "" && fornecedor.contato != "")
             {
                 Banco.CadastroFornecedor(fornecedor);
+                tbxcnpj.Text = "";
+                tbxRazaoSocial.Text = "";
+                tbxEnd.Text = "";
+                tbxContato.Text = "";
+                tbxObs.Text = "";
             }
             else
             {

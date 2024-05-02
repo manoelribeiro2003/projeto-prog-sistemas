@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,6 +69,18 @@ namespace Peojeto_Prog_Sistem
             }
 
 
+        }
+
+        private void btnExcluirManut_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Confirmar exclusão do setor " + dgvSetores.SelectedRows[0].Cells["Nome"].Value.ToString() + "?", "PatriMundi - Confirmar exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                Banco.excluirSetor(Convert.ToInt32(dgvSetores.SelectedRows[0].Cells["ID"].Value.ToString()));
+                dgvSetores.DataSource = Banco.ObterSetores();
+            }
+            tbxNome.Text = "";
+            tbxSubdivisao.Text = "";
         }
     }
 }

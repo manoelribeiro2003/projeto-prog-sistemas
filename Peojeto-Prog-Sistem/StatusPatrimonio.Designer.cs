@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatusPatrimonio));
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.lbxStatusPatri = new System.Windows.Forms.ListBox();
@@ -114,6 +115,7 @@
             this.Controls.Add(this.lbxStatusPatri);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAdicionar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StatusPatrimonio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Status de Patrimônio";

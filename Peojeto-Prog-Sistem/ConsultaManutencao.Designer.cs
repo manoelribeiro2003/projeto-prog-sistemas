@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaManutencao));
             this.tbxObs = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbxPrevisao = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbxDescPatri = new Guna.UI2.WinForms.Guna2TextBox();
@@ -236,6 +237,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelFornecedor);
             this.Controls.Add(this.labelNF);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaManutencao";
             this.Text = "Consulta de Manutenções";
             this.Load += new System.EventHandler(this.ConsultaManutencao_Load);

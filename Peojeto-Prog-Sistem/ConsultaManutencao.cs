@@ -42,7 +42,7 @@ namespace Peojeto_Prog_Sistem
         private void btnExcluirManut_Click(object sender, EventArgs e)
         {
             manutencao.descPatri = dgvManutencao.SelectedRows[0].Cells["Descrição"].Value.ToString();
-            DialogResult res = MessageBox.Show("Confirmar exclusão de manutencao do item " + manutencao.descPatri + "?", "PatriMundi - Confirmar exclusao", MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show("Confirmar exclusão de manutenção do item " + manutencao.descPatri + "?", "PatriMundi - Confirmar exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
                 manutencao.id_manutencao = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["ID Manutenção"].Value);
@@ -62,7 +62,7 @@ namespace Peojeto_Prog_Sistem
             manutencao.previsao = tbxPrevisao.Text;
             manutencao.motivo = tbxObs.Text;
             string nome = dgvManutencao.SelectedRows[0].Cells["Descrição"].Value.ToString();
-            DialogResult res = MessageBox.Show("Confirmar edição de manutenção do item " + nome + "?", "PatriMundi - Confirmar exclusao", MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show("Confirmar edição de manutenção do item " + nome + "?", "PatriMundi - Confirmar exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
                 manutencao.id_manutencao = Convert.ToInt32(dgvManutencao.SelectedRows[0].Cells["ID Manutenção"].Value.ToString());

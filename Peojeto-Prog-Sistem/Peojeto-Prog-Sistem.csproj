@@ -146,12 +146,6 @@
     <Compile Include="CadastroPatrimonio.Designer.cs">
       <DependentUpon>CadastroPatrimonio.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroSetores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CadastroSetores.Designer.cs">
-      <DependentUpon>CadastroSetores.cs</DependentUpon>
-    </Compile>
     <Compile Include="CadastroUsuarioPatri.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +158,12 @@
     <Compile Include="ConsultaFornecedor.Designer.cs">
       <DependentUpon>ConsultaFornecedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarPatrimonio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarPatrimonio.Designer.cs">
+      <DependentUpon>ConsultarPatrimonio.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultarSetores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +175,12 @@
     </Compile>
     <Compile Include="ConsultarUsuarioPatri.Designer.cs">
       <DependentUpon>ConsultarUsuarioPatri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarUsuarioSis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarUsuarioSis.Designer.cs">
+      <DependentUpon>ConsultarUsuarioSis.cs</DependentUpon>
     </Compile>
     <Compile Include="UsuarioPatri.cs" />
     <Compile Include="CadastroUsuarioSistema.cs">
@@ -228,9 +234,6 @@
     <EmbeddedResource Include="CadastroPatrimonio.resx">
       <DependentUpon>CadastroPatrimonio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroSetores.resx">
-      <DependentUpon>CadastroSetores.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CadastroUsuarioPatri.resx">
       <DependentUpon>CadastroUsuarioPatri.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,11 +246,17 @@
     <EmbeddedResource Include="ConsultaManutencao.resx">
       <DependentUpon>ConsultaManutencao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarPatrimonio.resx">
+      <DependentUpon>ConsultarPatrimonio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultarSetores.resx">
       <DependentUpon>ConsultarSetores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarUsuarioPatri.resx">
       <DependentUpon>ConsultarUsuarioPatri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarUsuarioSis.resx">
+      <DependentUpon>ConsultarUsuarioSis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
