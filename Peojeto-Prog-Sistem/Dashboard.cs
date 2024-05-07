@@ -193,19 +193,37 @@ namespace Peojeto_Prog_Sistem
 
         private void backUpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+                // define o endereço para salvar 
+                string verPasta = @"C:\Backup\";
+                
                 // Get current date and time
                 string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
 
+            if (!Directory.Exists(verPasta))
+            {
+                // Create the directory
+                Directory.CreateDirectory(verPasta);
                 // Set the file name and path
-                string filePath = @"C:\Backup\" + timestamp + ".sql";
+                string filePath = verPasta + timestamp + ".sql";
 
                 // Set the content to be saved in the file
                 string content = "This is the content to be saved in the backup file.";
 
                 // Save the content to the file
                 File.WriteAllText(filePath, content);
+                //MessageBox.Show("pasta Criada com sucesso "+verPasta);
+            }
+            else
+            {
+                string filePath = verPasta + timestamp + ".sql";
 
+                // Set the content to be saved in the file
+                string content = "This is the content to be saved in the backup file.";
+
+                MessageBox.Show("A pasta "+verPasta+" já existe");
+                // Save the content to the file
+                File.WriteAllText(filePath, content);
+            }
                 // Show a message box to confirm that the backup was successful
                 MessageBox.Show("Backup realizado com sucesso nome do arquivo " + timestamp +" ", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
