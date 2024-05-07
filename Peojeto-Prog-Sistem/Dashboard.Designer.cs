@@ -65,6 +65,8 @@
             this.tbxManutencao = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbxDisponíveis = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbxPatrimonio = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.backUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.msDashboard.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -269,7 +271,9 @@
             this.ajudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sairToolStripMenuItem,
             this.ajudaToolStripMenuItem1,
-            this.sobreToolStripMenuItem1});
+            this.sobreToolStripMenuItem1,
+            this.toolStripSeparator1,
+            this.backUpToolStripMenuItem});
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
             this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.ajudaToolStripMenuItem.Text = "Opções";
@@ -277,20 +281,20 @@
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // ajudaToolStripMenuItem1
             // 
             this.ajudaToolStripMenuItem1.Name = "ajudaToolStripMenuItem1";
-            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
+            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.ajudaToolStripMenuItem1.Text = "Ajuda";
             // 
             // sobreToolStripMenuItem1
             // 
             this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
+            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.sobreToolStripMenuItem1.Text = "Sobre";
             // 
             // msDashboard
@@ -448,6 +452,18 @@
             this.cbxPatrimonio.SelectionChangeCommitted += new System.EventHandler(this.cbxPatrimonio_SelectionChangeCommitted);
             this.cbxPatrimonio.Click += new System.EventHandler(this.cbxPatrimonio_Click);
             // 
+            // backUpToolStripMenuItem
+            // 
+            this.backUpToolStripMenuItem.Name = "backUpToolStripMenuItem";
+            this.backUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backUpToolStripMenuItem.Text = "BackUp";
+            this.backUpToolStripMenuItem.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,5 +533,7 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroDeSetoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuárioDePatrimônioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuárioDoSistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backUpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

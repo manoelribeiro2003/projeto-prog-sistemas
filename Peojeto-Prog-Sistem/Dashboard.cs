@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Web.UI.WebControls;
 using System.Threading;
+using System.IO;
 
 namespace Peojeto_Prog_Sistem
 {
@@ -188,6 +189,26 @@ namespace Peojeto_Prog_Sistem
         private void Dashboard_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void backUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+                // Get current date and time
+                string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+
+                // Set the file name and path
+                string filePath = @"C:\Backup\" + timestamp + ".sql";
+
+                // Set the content to be saved in the file
+                string content = "This is the content to be saved in the backup file.";
+
+                // Save the content to the file
+                File.WriteAllText(filePath, content);
+
+                // Show a message box to confirm that the backup was successful
+                MessageBox.Show("Backup realizado com sucesso nome do arquivo " + timestamp +" ", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
     }
 }
